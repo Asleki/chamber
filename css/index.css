@@ -1,0 +1,753 @@
+/* ==========================================================================
+   Homepage-Specific Styles 
+   ========================================================================== */
+
+/* --- General Main Container --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.hero-image-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-image.active-slide {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--background-color-white);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: var(--background-color-white);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.primary-cta {
+    background-color: var(--primary-color);
+    color: var(--background-color-white);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-cta:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+}
+
+/* --- Quick Links Section --- */
+.quick-links-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.quick-links-section h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--heading-color);
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.quick-link-card {
+    background-color: var(--background-color-white);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.quick-link-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.quick-link-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.quick-link-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.quick-link-card p {
+    font-size: 1rem;
+    color: var(--text-color-secondary);
+}
+
+/* --- Ad Space --- */
+.ad-space {
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: var(--primary-color-light);
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ad-space h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--heading-color);
+}
+
+.ad-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 250px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.ad-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.ad-image.active-ad {
+    opacity: 1;
+}
+
+.ad-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+.ad-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: var(--background-color-white);
+    border: 2px solid var(--background-color-white);
+}
+
+.secondary-cta:hover {
+    background-color: var(--background-color-white);
+    color: var(--primary-color);
+}
+
+/* --- Community Overview --- */
+.community-overview {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.community-overview h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--heading-color);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.overview-grid article {
+    background-color: var(--background-color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.overview-grid article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.overview-grid article h4 {
+    font-size: 1.6rem;
+    padding: 15px 20px 10px;
+    color: var(--primary-color);
+}
+
+.overview-grid article p {
+    font-size: 1.1rem;
+    padding: 0 20px 20px;
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+}
+
+/* --- Weather and News --- */
+.weather-and-news {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.weather-widget,
+.news-updates {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--background-color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 25px;
+}
+
+.weather-widget h3,
+.news-updates h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Weather Widget Overall */
+.weather-widget {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+.weather-widget h3 {
+    font-size: 2.2em;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+#weather-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Current Day Weather Card */
+.current-weather-card {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    border: 1px solid #d0e0f0;
+}
+
+.current-weather-card .day-name {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.current-weather-card .weather-icon-lg {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.current-weather-card .temperature {
+    font-size: 3.5em;
+    font-weight: 800;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.current-weather-card .description {
+    font-size: 1.2em;
+    color: #666;
+    text-transform: capitalize;
+}
+
+/* Forecast Cards Wrapper (for horizontal layout) */
+.forecast-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Individual Forecast Day Card (Minor Card) */
+.forecast-day-card {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1;
+    min-width: 120px;
+    max-width: 150px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast-day-card .day-name {
+    font-size: 1em;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+.forecast-day-card .weather-icon-sm {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+.forecast-day-card .temperature {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+}
+
+.news-updates article {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color-light);
+}
+
+.news-updates article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.news-updates article h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.news-updates article h4 a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.news-updates article h4 a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+.news-updates article p {
+    font-size: 0.95rem;
+    color: var(--text-color-secondary);
+    line-height: 1.5;
+}
+
+.news-updates .secondary-cta {
+    margin-top: 15px;
+    float: right;
+    background-color: var(--primary-color);
+    color: var(--background-color-white);
+    border: 2px solid var(--primary-color);
+}
+
+.news-updates .secondary-cta:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    color: var(--background-color-white);
+}
+
+/* --- Business Dictionary --- */
+.business-dictionary {
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .business-dictionary {
+    background-color: var(--background-color-footer-dark);
+}
+
+#dictionary-quote-heading {
+    font-size: 1.8em;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.dictionary-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.carousel-btn {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background-color: #004085;
+    transform: scale(1.05);
+}
+
+.carousel-btn i {
+    color: #fff;
+}
+
+#dictionary-display {
+    flex-grow: 1;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px 30px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* Styling for Quote Text */
+#dictionary-display .quote-text {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #0056b3;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Styling for Author Name */
+#dictionary-display .quote-author {
+    font-size: 1.1em;
+    color: #555;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Styling for Dictionary Term and Definition */
+#dictionary-display .term-text {
+    font-size: 1.6em;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+#dictionary-display .definition-text {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* --- Member Spotlights --- */
+.member-spotlights {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.member-spotlights h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--heading-color);
+}
+
+.spotlight-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+}
+
+/* Hide scrollbar for aesthetic purposes, but keep functionality */
+.spotlight-carousel::-webkit-scrollbar {
+    display: none;
+}
+.spotlight-carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Individual member spotlight card styles */
+.member-spotlight-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+}
+
+.member-spotlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.member-spotlight-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 0;
+}
+
+.member-spotlight-card h4 {
+    font-size: 1.4em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.member-spotlight-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.member-spotlight-card p strong {
+    color: #333;
+}
+
+.member-spotlight-card .website-link {
+    display: inline-block;
+    background-color: #f57c00;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.member-spotlight-card .website-link:hover {
+    background-color: #e65100;
+}
+
+.fas {
+    color: inherit;
+}
+
+/* --- Media Queries --- */
+
+/* Small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .quick-links-grid,
+    .overview-grid,
+    .spotlight-carousel {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-and-news {
+        flex-direction: column;
+    }
+
+    .weather-widget,
+    .news-updates {
+        min-width: auto;
+    }
+
+    .ad-container {
+        height: 200px;
+    }
+
+    .ad-overlay p {
+        font-size: 1rem;
+    }
+
+    .news-updates .secondary-cta {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .business-dictionary .carousel-btn {
+        font-size: 2rem;
+    }
+
+    .current-weather-card {
+        width: 95%;
+    }
+
+    .forecast-cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast-day-card {
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .quick-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spotlight-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-text h2 {
+        font-size: 3rem;
+    }
+}

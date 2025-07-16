@@ -1,0 +1,123 @@
+[
+    {
+        "id": "annual-networking-mixer",
+        "name": "Annual Business Networking Mixer",
+        "image": "images/networking-event.webp",
+        "description": "An evening dedicated to connecting with fellow entrepreneurs, industry leaders, and potential collaborators. Expand your network and discover new opportunities.",
+        "fullDescription": "Join us for our signature Annual Business Networking Mixer, a prime opportunity to forge new connections and strengthen existing ones within Nairobi's vibrant business community. Enjoy light refreshments, engaging conversations, and discover potential partnerships. Dress code is business casual.",
+        "date": "August 20, 2025",
+        "time": "6:00 PM - 9:00 PM EAT",
+        "location": "The Grand Ballroom, Nairobi CBD",
+        "pricing": {
+            "non-member": 1500,
+            "club-member": 1000,
+            "directory-member": 800,
+            "board-director": 0
+        },
+        "transportOptions": [
+            { "type": "None", "fee": 0 },
+            { "type": "La Familia Staff Bus", "fee": 300, "pickupPoints": ["Nairobi CBD", "Westlands", "Kilimani"] },
+            { "type": "La Familia Swift Cab", "fee": 800 }
+        ],
+        "snacksAvailable": [
+            { "name": "Assorted Pastries", "price": 300 },
+            { "name": "Fruit Platter", "price": 400 }
+        ],
+        "registrationRequired": true
+    },
+    {
+        "id": "digital-marketing-workshop",
+        "name": "Digital Marketing Strategies for SMEs",
+        "image": "images/digital-marketing-workshop.webp",
+        "description": "A hands-on workshop designed to equip small and medium enterprises with effective digital marketing tools and strategies to boost their online presence and sales.",
+        "fullDescription": "This intensive workshop will cover SEO basics, social media marketing, email campaigns, and analytics. Learn practical tips and tools to enhance your digital footprint and drive sales. Limited seats available, early registration recommended.",
+        "date": "September 5, 2025",
+        "time": "9:00 AM - 4:00 PM EAT",
+        "location": "La Familia Training Center, Westlands",
+        "pricing": {
+            "non-member": 2500,
+            "club-member": 1800,
+            "directory-member": 1500,
+            "board-director": 0
+        },
+        "transportOptions": [
+            { "type": "None", "fee": 0 },
+            { "type": "La Familia Staff Bus", "fee": 400, "pickupPoints": ["Nairobi CBD", "Upper Hill", "Lavington"] }
+        ],
+        "snacksAvailable": [
+            { "name": "Sandwich Box", "price": 600 },
+            { "name": "Coffee & Tea", "price": 200 },
+            { "name": "Energy Bar", "price": 150 }
+        ],
+        "registrationRequired": true
+    },
+    {
+        "id": "leadership-innovation-summit",
+        "name": "Annual Leadership & Innovation Summit",
+        "image": "images/leadership-summit.webp",
+        "description": "Join top industry leaders and innovators for a day of insightful discussions, keynote speeches, and collaborative sessions on shaping the future of business in Kenya.",
+        "fullDescription": "Our premier annual event, bringing together thought leaders, policy makers, and entrepreneurs to discuss the latest trends in leadership, technology, and sustainable business practices. Features multiple breakout sessions and a gala dinner.",
+        "date": "October 15-16, 2025",
+        "time": "8:30 AM - 5:00 PM EAT (Day 1), 9:00 AM - 4:00 PM EAT (Day 2)",
+        "location": "Kenyatta International Convention Centre (KICC)",
+        "pricing": {
+            "non-member": 5000,
+            "club-member": 3500,
+            "directory-member": 3000,
+            "board-director": 0
+        },
+        "transportOptions": [
+            { "type": "None", "fee": 0 },
+            { "type": "La Familia Swift Cab", "fee": 1000 }
+        ],
+        "snacksAvailable": [
+            { "name": "Full Buffet Lunch", "price": 1200 },
+            { "name": "Assorted Drinks", "price": 300 }
+        ],
+        "registrationRequired": true
+    },
+    {
+        "id": "members-only-webinar",
+        "name": "Members-Only: Q3 Economic Outlook Webinar",
+        "image": "images/webinar.webp",
+        "description": "An exclusive webinar for members, providing insights into the Q3 economic forecast and its implications for local businesses.",
+        "fullDescription": "Join our chief economist for a deep dive into the current economic landscape, key indicators, and projections for the third quarter. This interactive session will include a Q&A segment. Access details will be sent to registered members.",
+        "date": "September 10, 2025",
+        "time": "10:00 AM - 11:30 AM EAT",
+        "location": "Online (Zoom)",
+        "pricing": {
+            "non-member": 0,
+            "club-member": 0,
+            "directory-member": 0,
+            "board-director": 0
+        },
+        "transportOptions": [ { "type": "None", "fee": 0 } ],
+        "snacksAvailable": [],
+        "registrationRequired": false
+    },
+    {
+        "id": "community-outreach-day",
+        "name": "Community Outreach & Volunteer Day",
+        "image": "images/community-outreach.webp",
+        "description": "Join La Familia members in a day of giving back to the community through various volunteer activities.",
+        "fullDescription": "We invite all members and their families to participate in our annual Community Outreach Day. Activities include park clean-up, visiting local schools, and supporting a food drive. Lunch will be provided. A great opportunity for team building and social responsibility.",
+        "date": "November 2, 2025",
+        "time": "9:00 AM - 3:00 PM EAT",
+        "location": "Various locations across Nairobi",
+        "pricing": {
+            "non-member": 0,
+            "club-member": 0,
+            "directory-member": 0,
+            "board-director": 0
+        },
+        "transportOptions": [
+            { "type": "None", "fee": 0 },
+            { "type": "La Familia Staff Bus", "fee": 0, "pickupPoints": ["Nairobi CBD", "Kibera", "Eastlands"] }
+        ],
+        "snacksAvailable": [
+            { "name": "Bottled Water", "price": 0 },
+            { "name": "Energy Bar", "price": 0 }
+        ],
+        "registrationRequired": true
+    }
+]

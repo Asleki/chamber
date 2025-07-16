@@ -1,0 +1,1176 @@
+[
+    {
+        "id": "duka-lako-supermart",
+        "imgSrc": "images/member_logos/duka-lako-supermart.webp",
+        "imgAlt": "Duka Lako Supermart Logo",
+        "name": "Duka Lako Supermart",
+        "description": "Your neighborhood supermarket, offering fresh produce, groceries, and household essentials.",
+        "fullDescription": "Duka Lako Supermart is committed to providing the freshest produce, highest quality groceries, and a wide array of household essentials to our community. We pride ourselves on friendly service and competitive prices, making your shopping experience enjoyable and convenient. Visit us today for all your daily needs!",
+        "category": "retail",
+        "location": "cbd",
+        "address": "Shop 10, Biashara Street, Nairobi CBD, Kenya",
+        "size": "medium",
+        "popularity": "high",
+        "foundingYear": 2018,
+        "contact": "info@dukalako.co.ke",
+        "phone": "+254722123456",
+        "website": "dukalako.co.ke",
+        "link": "dukalako.html",
+        "membershipLevel": "Silver",
+        "email": "dukalakosupermart@bizsolutions.com",
+        "business_tagline": "Your Neighborhood Source for Fresh Essentials.",
+        "awards": [
+            {
+                "year": 2020,
+                "name": "Best Neighbourhood Supermarket - Nairobi Business Awards",
+                "issuer": "Nairobi Chamber of Commerce"
+            },
+            {
+                "year": 2022,
+                "name": "Community Choice Award - Retail Excellence",
+                "issuer": "Local Residents Association"
+            },
+            {
+                "year": 2023,
+                "name": "Top Green Initiative Retailer",
+                "issuer": "Kenya Environmental Council"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Amina Hassan",
+                "role": "General Manager",
+                "description": "Oversees all daily operations and strategic planning.",
+                "image": "images/profiles/amina-hassan.webp"
+            },
+            {
+                "name": "David Ochieng",
+                "role": "Head of Fresh Produce",
+                "description": "Manages sourcing and quality control for all fresh produce.",
+                "image": "images/profiles/david-ochieng.webp"
+            },
+            {
+                "name": "Sarah Wanjiku",
+                "role": "Customer Relations Lead",
+                "description": "Ensures excellent customer service and handles inquiries.",
+                "image": "images/profiles/sarah-wanjiku.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Mercy K. (Customer)",
+                "text": "Duka Lako is my go-to! Always fresh produce and such friendly staff. Their prices are also very competitive. Highly recommend for daily shopping.",
+                "date": "2024-06-15",
+                "rating": 5
+            },
+            {
+                "author": "James M. (Local Business Owner)",
+                "text": "We often source our fresh ingredients from Duka Lako for our restaurant. The quality is consistent, and their bulk ordering service is very efficient.",
+                "date": "2024-05-20",
+                "rating": 4.5
+            },
+            {
+                "author": "Winnie A. (Community Member)",
+                "text": "Love the clean aisles and wide variety of products. The customer service team is always ready to assist. A true asset to our CBD community.",
+                "date": "2024-04-10",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": "afyacare-clinic",
+        "imgSrc": "images/member_logos/afyacare-clinic.webp",
+        "imgAlt": "AfyaCare Clinic Logo",
+        "name": "AfyaCare Clinic",
+        "description": "Comprehensive healthcare services for the whole family, from general check-ups to specialized treatments.",
+        "fullDescription": "AfyaCare Clinic is a state-of-the-art medical facility dedicated to offering comprehensive healthcare services. Our team of experienced doctors and nurses provides everything from routine check-ups and vaccinations to specialized treatments and emergency care, ensuring the well-being of your entire family. We are equipped with modern diagnostic tools to provide accurate and timely medical attention.",
+        "category": "health",
+        "location": "westlands",
+        "address": "Afya House, Mwanzi Road, Westlands, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "high",
+        "foundingYear": 2020,
+        "contact": "contact@afyacare.org",
+        "phone": "+254710234567",
+        "website": "afyacare.org",
+        "link": "afyacare.html",
+        "membershipLevel": "Member",
+        "email": "afyacareclinic@bizsolutions.com",
+        "business_tagline": "Comprehensive Care for Your Family's Health.",
+        "awards": [
+            {
+                "year": 2023,
+                "name": "Excellence in Patient Care - Nairobi Healthcare Awards",
+                "issuer": "Nairobi Health Board"
+            },
+            {
+                "year": 2024,
+                "name": "Top Family Clinic - Regional Recognition",
+                "issuer": "Kenya Medical Association"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Dr. John Mwangi",
+                "role": "Chief Medical Officer",
+                "description": "Leads our team of doctors and oversees medical standards.",
+                "image": "images/profiles/john-mwangi.webp"
+            },
+            {
+                "name": "Nurse Ann Njeri",
+                "role": "Head Nurse",
+                "description": "Manages nursing staff and patient care coordination.",
+                "image": "images/profiles/ann-njeri.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Peter K. (Patient)",
+                "text": "AfyaCare provides excellent service. Dr. Mwangi is very thorough, and the clinic is always clean and well-organized.",
+                "date": "2024-06-20",
+                "rating": 4.8
+            },
+            {
+                "author": "Gladys M. (Patient)",
+                "text": "Visited with my kids for their check-up. The staff were great with children, and we felt very comfortable throughout.",
+                "date": "2024-05-18",
+                "rating": 4.9
+            },
+            {
+                "author": "Sarah O. (Patient)",
+                "text": "Reliable and trustworthy. They go the extra mile to ensure patient comfort and clear communication.",
+                "date": "2024-04-25",
+                "rating": 4.7
+            }
+        ]
+    },
+    {
+        "id": "imall-e-commerce",
+        "imgSrc": "images/member_logos/imall-e-commerce.webp",
+        "imgAlt": "iMall E-commerce Logo",
+        "name": "iMall E-commerce",
+        "description": "Nairobi's leading online marketplace for electronics, fashion, and home goods with fast delivery.",
+        "fullDescription": "iMall E-commerce is Nairobi's premier online shopping destination, offering an extensive range of products including the latest electronics, trendy fashion apparel, and essential home goods. We prioritize customer satisfaction with a seamless shopping experience, secure payment options, and remarkably fast delivery services across the city. Discover convenience and quality at your fingertips.",
+        "category": "e-commerce",
+        "location": "kilimani",
+        "address": "Gate House, Ngong Road, Kilimani, Nairobi, Kenya",
+        "size": "large",
+        "popularity": "medium",
+        "foundingYear": 2017,
+        "contact": "support@imall.co.ke",
+        "phone": "+254733456789",
+        "website": "imall.co.ke",
+        "link": "imall.html",
+        "membershipLevel": "Gold",
+        "email": "imallecommerce@bizsolutions.com",
+        "business_tagline": "Nairobi's Online Market: Shop Smart, Get Fast.",
+        "awards": [
+            {
+                "year": 2022,
+                "name": "Best Online Marketplace - Digital Commerce Awards",
+                "issuer": "Kenya Tech Association"
+            },
+            {
+                "year": 2023,
+                "name": "Customer Favorite E-commerce Platform",
+                "issuer": "Online Shoppers Guild"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Michael Kimani",
+                "role": "CEO",
+                "description": "Visionary leader driving the company's growth and innovation.",
+                "image": "images/profiles/michael-kimani.webp"
+            },
+            {
+                "name": "Esther Moraa",
+                "role": "Head of Operations",
+                "description": "Manages logistics, customer support, and vendor relations.",
+                "image": "images/profiles/esther-moraa.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "David O. (Customer)",
+                "text": "iMall has become my preferred online store. Their delivery is super fast, and returns are hassle-free!",
+                "date": "2024-06-01",
+                "rating": 4.2
+            },
+            {
+                "author": "Grace N. (Customer)",
+                "text": "Found some unique fashion items here that I couldn't find anywhere else. Great quality and prices.",
+                "date": "2024-05-25",
+                "rating": 4.0
+            },
+            {
+                "author": "Vendor A (Seller)",
+                "text": "Partnering with iMall has boosted my small business sales significantly. Their platform is easy to use for sellers.",
+                "date": "2024-04-30",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "autogiant-motors",
+        "imgSrc": "images/member_logos/autogiant-motors.webp",
+        "imgAlt": "AutoGiant Motors Logo",
+        "name": "AutoGiant Motors",
+        "description": "New and pre-owned vehicles. Specializing in imports and local sales with financing options.",
+        "fullDescription": "AutoGiant Motors is your trusted partner for acquiring both new and quality pre-owned vehicles. We specialize in importing a diverse range of cars to meet every preference and budget, alongside a robust selection of locally sourced automobiles. Our dedicated team assists with flexible financing options, making your dream car more accessible. Drive away with confidence and exceptional service.",
+        "category": "automotive",
+        "location": "upper-hill",
+        "address": "Autobahn Complex, Uhuru Highway, Upper Hill, Nairobi, Kenya",
+        "size": "medium",
+        "popularity": "medium",
+        "foundingYear": 2015,
+        "contact": "sales@autogiant.com",
+        "phone": "+254720112233",
+        "website": "autogiant.com",
+        "link": "autogiant-motors.html",
+        "membershipLevel": "Silver",
+        "email": "autogiantmotors@bizsolutions.com",
+        "business_tagline": "Your Road to Quality Vehicles Starts Here.",
+        "awards": [
+            {
+                "year": 2021,
+                "name": "Best Used Car Dealership - Nairobi Motors Show",
+                "issuer": "Nairobi Automotive Association"
+            },
+            {
+                "year": 2023,
+                "name": "Excellence in Customer Service - Automotive Sector",
+                "issuer": "Kenya Consumer Council"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Ben Kiprop",
+                "role": "Sales Manager",
+                "description": "Leads the sales team and assists clients with vehicle selection.",
+                "image": "images/profiles/ben-kiprop.webp"
+            },
+            {
+                "name": "Mercy Adhiambo",
+                "role": "Finance Officer",
+                "description": "Handles all financing and loan applications for vehicle purchases.",
+                "image": "images/profiles/mercy-adhiambo.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Collins W. (Customer)",
+                "text": "Got a great deal on my new car at AutoGiant. Ben was very helpful and the financing process was smooth.",
+                "date": "2024-06-10",
+                "rating": 4.6
+            },
+            {
+                "author": "Fatuma A. (Customer)",
+                "text": "Excellent range of vehicles. I found exactly what I was looking for, and the team provided fantastic after-sales support.",
+                "date": "2024-05-05",
+                "rating": 4.7
+            },
+            {
+                "author": "Robert N. (Customer)",
+                "text": "Highly professional staff. They made the car buying experience stress-free and enjoyable.",
+                "date": "2024-04-15",
+                "rating": 4.8
+            }
+        ]
+    },
+    {
+        "id": "taste-of-africa-catering",
+        "imgSrc": "images/member_logos/taste-of-africa-catering.webp",
+        "imgAlt": "Taste of Africa Catering Logo",
+        "name": "Taste of Africa Catering",
+        "description": "Authentic African and international cuisine catering for events of all sizes.",
+        "fullDescription": "Taste of Africa Catering brings the rich, vibrant flavors of authentic African and exquisite international cuisine to your special events. Whether it’s a corporate gathering, a wedding, or a private party, our culinary experts craft bespoke menus that tantalize taste buds and leave a lasting impression. Experience the true essence of gourmet catering with us.",
+        "category": "catering",
+        "location": "langata",
+        "address": "The Hub, Karen-Langata Road, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "high",
+        "foundingYear": 2019,
+        "contact": "events@tasteofafrica.co.ke",
+        "phone": "+254701345678",
+        "website": "tasteofafrica.co.ke",
+        "link": "tasteofafrica.html",
+        "membershipLevel": "Member",
+        "email": "tasteofafricacatering@bizsolutions.com",
+        "business_tagline": "Authentic Flavors for Unforgettable Events.",
+        "awards": [
+            {
+                "year": 2022,
+                "name": "Best Event Caterer - East Africa Hospitality Awards",
+                "issuer": "East Africa Hospitality Group"
+            },
+            {
+                "year": 2023,
+                "name": "Culinary Innovator Award",
+                "issuer": "African Food Network"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Chef Maria Juma",
+                "role": "Executive Chef",
+                "description": "Leads the culinary team, developing menus and ensuring food quality.",
+                "image": "images/profiles/maria-juma.webp"
+            },
+            {
+                "name": "Kevin Mumo",
+                "role": "Events Coordinator",
+                "description": "Manages client bookings, event planning, and logistics.",
+                "image": "images/profiles/kevin-mumo.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Wedding Client (2023)",
+                "text": "The food was absolutely divine at our wedding! Everyone raved about the variety and authentic flavors. Truly a Taste of Africa!",
+                "date": "2023-12-01",
+                "rating": 5
+            },
+            {
+                "author": "Corporate Event Planner",
+                "text": "Taste of Africa Catering handled our annual corporate gala seamlessly. Professional service and exquisite presentation.",
+                "date": "2024-03-10",
+                "rating": 4.9
+            },
+            {
+                "author": "Local Food Critic",
+                "text": "A catering gem! Their ability to blend traditional African dishes with international flair is truly remarkable. A must-try.",
+                "date": "2024-01-25",
+                "rating": 4.7
+            }
+        ]
+    },
+    {
+        "id": "creative-canvas-studios",
+        "imgSrc": "images/member_logos/creative-canvas-studios.webp",
+        "imgAlt": "Creative Canvas Studios Logo",
+        "name": "Creative Canvas Studios",
+        "description": "Branding, graphic design, and web development services for businesses looking to make an impact.",
+        "fullDescription": "Creative Canvas Studios is a dynamic agency offering comprehensive branding, innovative graphic design, and cutting-edge web development services. We partner with businesses to craft compelling visual identities and robust online presences that truly resonate with their audience. Our goal is to transform your vision into impactful and memorable digital experiences that drive growth and engagement.",
+        "category": "brand-design",
+        "location": "lavington",
+        "address": "The Design Hub, Gitanga Road, Lavington, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "medium",
+        "foundingYear": 2021,
+        "contact": "hello@creativecanvas.com",
+        "phone": "+254727890123",
+        "website": "creativecanvas.com",
+        "link": "creativecanvas.html",
+        "membershipLevel": "Gold",
+        "email": "creativecanvasstudios@bizsolutions.com",
+        "business_tagline": "Transforming Ideas into Visual Masterpieces.",
+        "awards": [
+            {
+                "year": 2023,
+                "name": "Emerging Design Agency of the Year - Kenya Design Awards",
+                "issuer": "Designers Guild of Kenya"
+            },
+            {
+                "year": 2024,
+                "name": "Best Digital Branding Solution",
+                "issuer": "African Creative Summit"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Cynthia Mwangi",
+                "role": "Creative Director",
+                "description": "Leads the design team and creative strategy for all projects.",
+                "image": "images/profiles/cynthia-mwangi.webp"
+            },
+            {
+                "name": "Daniel Omondi",
+                "role": "Lead Web Developer",
+                "description": "Specializes in building robust and scalable web solutions.",
+                "image": "images/profiles/daniel-omondi.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Startup X (Client)",
+                "text": "Creative Canvas brought our brand to life! Their design work is exceptional, and the website they built is exactly what we envisioned.",
+                "date": "2024-06-05",
+                "rating": 4.8
+            },
+            {
+                "author": "ABC Ltd (Client)",
+                "text": "Professional, creative, and responsive. They delivered our branding project ahead of schedule and beyond expectations.",
+                "date": "2024-05-12",
+                "rating": 4.9
+            },
+            {
+                "author": "Tech Blogger",
+                "text": "Impressed by the sleek and user-friendly websites coming out of Creative Canvas. Definitely an agency to watch in Nairobi.",
+                "date": "2024-03-28",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "soko-properties",
+        "imgSrc": "images/member_logos/soko-properties.webp",
+        "imgAlt": "Soko Properties Logo",
+        "name": "Soko Properties",
+        "description": "Leading real estate agency in Nairobi, offering sales, rentals, and property management.",
+        "fullDescription": "Soko Properties stands as a leading real estate agency in Nairobi, providing unparalleled services in property sales, rentals, and comprehensive property management. Our expert team offers personalized guidance to clients navigating the dynamic real estate market, ensuring seamless transactions and optimal investment returns. Whether you’re buying, selling, or leasing, trust us to deliver exceptional results with integrity and professionalism.",
+        "category": "real-estate",
+        "location": "cbd",
+        "address": "Delta Corner, Waiyaki Way, Westlands, Nairobi, Kenya",
+        "size": "large",
+        "popularity": "high",
+        "foundingYear": 2010,
+        "contact": "info@sokoproperties.co.ke",
+        "phone": "+254700987654",
+        "website": "sokoproperties.co.ke",
+        "link": "sokoproperties.html",
+        "membershipLevel": "Silver",
+        "email": "info@sokoproperties.co.ke",
+        "business_tagline": "Your Trusted Partner in Real Estate.",
+        "awards": [
+            {
+                "year": 2021,
+                "name": "Top Real Estate Agency - Kenya Property Awards",
+                "issuer": "Real Estate Institute of Kenya"
+            },
+            {
+                "year": 2023,
+                "name": "Excellence in Property Management",
+                "issuer": "Property Owners Association"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Mark Otieno",
+                "role": "Head of Sales",
+                "description": "Leads the sales department, specializing in commercial and residential properties.",
+                "image": "images/profiles/mark-otieno.webp"
+            },
+            {
+                "name": "Joyce Wambui",
+                "role": "Property Manager",
+                "description": "Manages a diverse portfolio of rental properties for clients.",
+                "image": "images/profiles/joyce-wambui.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Investor (Client)",
+                "text": "Soko Properties found me the perfect investment property. Their market insights are invaluable.",
+                "date": "2024-06-18",
+                "rating": 4.7
+            },
+            {
+                "author": "Tenant (Client)",
+                "text": "Renting through Soko was a breeze. They are very responsive to maintenance requests.",
+                "date": "2024-05-01",
+                "rating": 4.3
+            },
+            {
+                "author": "Developer (Partner)",
+                "text": "A professional and reliable partner for property sales and marketing. Highly recommended.",
+                "date": "2024-04-22",
+                "rating": 4.6
+            }
+        ]
+    },
+    {
+        "id": "urban-edge-barbershop-spa",
+        "imgSrc": "images/member_logos/urban-edge-barbershop-spa.webp",
+        "imgAlt": "Urban Edge Barbershop & Spa Logo",
+        "name": "Urban Edge Barbershop & Spa",
+        "description": "Modern grooming and relaxation services for men and women.",
+        "fullDescription": "Urban Edge Barbershop & Spa offers a contemporary sanctuary for both men and women seeking top-tier grooming and relaxation services. From precision haircuts and traditional shaves to rejuvenating spa treatments and holistic therapies, our skilled professionals are dedicated to providing an unparalleled experience. Step into Urban Edge for a transformative journey of style and serenity, where every detail is crafted for your ultimate comfort and satisfaction.",
+        "category": "beauty-spa",
+        "location": "ruaka",
+        "address": "Two Rivers Mall, Limuru Road, Ruaka, Kiambu, Kenya",
+        "size": "small",
+        "popularity": "medium",
+        "foundingYear": 2022,
+        "contact": "book@urbanedge.ke",
+        "phone": "+254745678901",
+        "website": "urbanedge.ke",
+        "link": "urbanedge.html",
+        "membershipLevel": "Member",
+        "email": "info@urbanedge.ke",
+        "business_tagline": "Where Style Meets Serenity.",
+        "awards": [
+            {
+                "year": 2023,
+                "name": "Best New Barbershop & Spa - Nairobi Style Awards",
+                "issuer": "Nairobi Fashion & Beauty Council"
+            },
+            {
+                "year": 2024,
+                "name": "Client's Choice for Grooming Services",
+                "issuer": "Local Review Platform"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Collins Mburu",
+                "role": "Master Barber",
+                "description": "Specializes in modern haircuts and traditional shaves.",
+                "image": "images/profiles/collins-mburu.webp"
+            },
+            {
+                "name": "Brenda Chebet",
+                "role": "Spa Therapist",
+                "description": "Provides a range of relaxing spa treatments and therapies.",
+                "image": "images/profiles/brenda-chebet.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Male Client",
+                "text": "Urban Edge is my new favorite barbershop. The cut was perfect, and the hot towel shave was incredibly relaxing.",
+                "date": "2024-06-08",
+                "rating": 4.9
+            },
+            {
+                "author": "Female Client",
+                "text": "The spa services here are top-notch. Brenda is amazing, and I always leave feeling refreshed.",
+                "date": "2024-05-30",
+                "rating": 4.8
+            },
+            {
+                "author": "Google Reviewer",
+                "text": "Stylish interior, skilled staff, and great ambiance. Definitely worth a visit!",
+                "date": "2024-04-20",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "naija-cuisine-hub",
+        "imgSrc": "images/member_logos/naija-cuisine-hub.webp",
+        "imgAlt": "Naija Cuisine Hub Logo",
+        "name": "Naija Cuisine Hub",
+        "description": "Authentic Nigerian dishes in the heart of Nairobi. Experience a burst of flavors!",
+        "fullDescription": "Naija Cuisine Hub brings the vibrant and rich culinary traditions of Nigeria directly to Nairobi. Our chefs prepare authentic dishes like Jollof Rice, Egusi Soup, and Suya with fresh, high-quality ingredients, ensuring every bite is a journey to West Africa. Come and savor the true taste of Nigerian hospitality and flavor in a cozy, welcoming atmosphere.",
+        "category": "food-beverage",
+        "location": "kilimani",
+        "address": "Adlife Plaza, Ring Road Kilimani, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "medium",
+        "foundingYear": 2021,
+        "contact": "info@naijacuisinehub.com",
+        "phone": "+254718765432",
+        "website": "naijacuisinehub.com",
+        "link": "naijacuisine.html",
+        "membershipLevel": "Gold",
+        "email": "info@naijacuisinehub.com",
+        "business_tagline": "A Taste of Nigeria in Nairobi.",
+        "awards": [
+            {
+                "year": 2023,
+                "name": "Best African Restaurant - Nairobi Food Festival",
+                "issuer": "Nairobi Culinary Society"
+            },
+            {
+                "year": 2024,
+                "name": "Flavor Pioneer Award",
+                "issuer": "Taste of Africa Foundation"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Chef Chika Eke",
+                "role": "Head Chef",
+                "description": "Specializes in authentic Nigerian recipes and menu development.",
+                "image": "images/profiles/chika-eke.webp"
+            },
+            {
+                "name": "Joseph Mutua",
+                "role": "Restaurant Manager",
+                "description": "Oversees daily restaurant operations and customer experience.",
+                "image": "images/profiles/joseph-mutua.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Food Enthusiast",
+                "text": "The Jollof Rice here is divine! Truly authentic Nigerian taste, just like being in Lagos.",
+                "date": "2024-06-12",
+                "rating": 5
+            },
+            {
+                "author": "African Diaspora Community",
+                "text": "So happy to have a place that brings real Nigerian flavors to Nairobi. Highly recommended for a taste of home!",
+                "date": "2024-05-08",
+                "rating": 4.8
+            },
+            {
+                "author": "Local Diner",
+                "text": "Never tried Nigerian food before, but Naija Cuisine Hub made me a fan! The flavors are incredible.",
+                "date": "2024-04-28",
+                "rating": 4.6
+            }
+        ]
+    },
+    {
+        "id": "techsolutions-africa",
+        "imgSrc": "images/member_logos/techsolutions-africa.webp",
+        "imgAlt": "TechSolutions Africa Logo",
+        "name": "TechSolutions Africa",
+        "description": "IT consulting, software development, and network solutions for businesses of all sizes.",
+        "fullDescription": "TechSolutions Africa is a leading provider of comprehensive IT consulting, innovative software development, and robust network solutions tailored for businesses across the continent. We empower organizations to leverage technology for efficiency, growth, and competitive advantage. Our expert team delivers bespoke solutions, from custom applications to secure infrastructure, ensuring your digital landscape is optimized and future-ready.",
+        "category": "services",
+        "location": "cbd",
+        "address": "Britam Centre, Upper Hill Road, Nairobi, Kenya",
+        "size": "medium",
+        "popularity": "high",
+        "foundingYear": 2016,
+        "contact": "contact@techsolutions.africa",
+        "phone": "+254729000111",
+        "website": "techsolutions.africa",
+        "link": "techsolutions.html",
+        "membershipLevel": "Silver",
+        "email": "info@techsolutions.africa",
+        "business_tagline": "Empowering Businesses Through Technology.",
+        "awards": [
+            {
+                "year": 2022,
+                "name": "IT Consultancy of the Year - East Africa Tech Summit",
+                "issuer": "East Africa Tech Association"
+            },
+            {
+                "year": 2023,
+                "name": "Innovation in Software Development Award",
+                "issuer": "African Software Developers Network"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "David Ngugi",
+                "role": "CTO",
+                "description": "Drives technological strategy and oversees all development projects.",
+                "image": "images/profiles/david-ngugi.webp"
+            },
+            {
+                "name": "Sharon Adisa",
+                "role": "Client Solutions Lead",
+                "description": "Works closely with clients to design tailored IT solutions.",
+                "image": "images/profiles/sharon-adisa.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Corporate Client",
+                "text": "TechSolutions transformed our IT infrastructure. Their expertise and support are unparalleled.",
+                "date": "2024-06-25",
+                "rating": 4.9
+            },
+            {
+                "author": "SME Owner",
+                "text": "They developed a custom software for my business that greatly improved efficiency. Highly professional and effective.",
+                "date": "2024-05-15",
+                "rating": 4.7
+            },
+            {
+                "author": "Industry Analyst",
+                "text": "TechSolutions Africa is a key player in the regional tech scene, consistently delivering high-quality solutions.",
+                "date": "2024-04-05",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "eco-clean-services",
+        "imgSrc": "images/member_logos/eco-clean-services.webp",
+        "imgAlt": "Eco Clean Services Logo",
+        "name": "Eco Clean Services",
+        "description": "Eco-friendly cleaning solutions for homes and offices in Nairobi.",
+        "fullDescription": "Eco Clean Services is dedicated to providing top-tier, environmentally friendly cleaning solutions for both residential and commercial spaces in Nairobi. We use sustainable products and practices to ensure a sparkling clean environment without harmful chemicals. Our reliable and professional team is committed to delivering exceptional service, contributing to a healthier planet, one clean space at a time.",
+        "category": "services",
+        "location": "westlands",
+        "address": "Woodvale Grove, Westlands, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "low",
+        "foundingYear": 2022,
+        "contact": "info@ecoclean.co.ke",
+        "phone": "+254708543210",
+        "website": "ecoclean.co.ke",
+        "link": "ecoclean.html",
+        "membershipLevel": "Member",
+        "email": "info@ecoclean.co.ke",
+        "business_tagline": "Cleaning with a Conscience.",
+        "awards": [
+            {
+                "year": 2023,
+                "name": "Green Business Pioneer Award - Environmental Stewardship",
+                "issuer": "Kenya Green Initiative"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Gladys Ochieng",
+                "role": "Operations Manager",
+                "description": "Manages cleaning teams and client service delivery.",
+                "image": "images/profiles/gladys-ochieng.webp"
+            },
+            {
+                "name": "Moses Njoroge",
+                "role": "Client Relations",
+                "description": "Handles new client onboarding and customer satisfaction.",
+                "image": "images/profiles/moses-njoroge.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Homeowner",
+                "text": "Eco Clean provides thorough and reliable service. My home always feels fresh and clean after their visit.",
+                "date": "2024-06-10",
+                "rating": 4.4
+            },
+            {
+                "author": "Office Manager",
+                "text": "Their eco-friendly approach is a big plus for us. Professional and efficient cleaning for our office space.",
+                "date": "2024-05-01",
+                "rating": 4.2
+            },
+            {
+                "author": "Community Member",
+                "text": "Great to see a local business committed to sustainable practices. And they do a fantastic job!",
+                "date": "2024-04-18",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "fashion-finesse",
+        "imgSrc": "images/member_logos/fashion-finesse.webp",
+        "imgAlt": "Fashion Finesse Boutique Logo",
+        "name": "Fashion Finesse Boutique",
+        "description": "Trendy and elegant apparel for the modern Kenyan fashionista.",
+        "fullDescription": "Fashion Finesse Boutique is Nairobi's destination for the latest trends and timeless elegance in apparel. We curate a exquisite collection for the modern Kenyan fashionista, offering unique styles that embody sophistication and flair. Discover your next statement piece with us, where quality craftsmanship meets contemporary design, empowering you to express your individuality with confidence and grace.",
+        "category": "retail",
+        "location": "kilimani",
+        "address": "Yaya Centre, Argwings Kodhek Road, Kilimani, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "medium",
+        "foundingYear": 2019,
+        "contact": "sales@fashionfinesse.com",
+        "phone": "+254726123987",
+        "website": "fashionfinesse.com",
+        "link": "fashionfinesse.html",
+        "membershipLevel": "Gold",
+        "email": "info@fashionfinesse.com",
+        "business_tagline": "Where Style Meets Elegance.",
+        "awards": [
+            {
+                "year": 2022,
+                "name": "Most Stylish Boutique - Nairobi Fashion Week",
+                "issuer": "Nairobi Fashion Council"
+            },
+            {
+                "year": 2023,
+                "name": "Emerging Fashion Brand Award",
+                "issuer": "Kenya Retail Association"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Christine Achieng",
+                "role": "Boutique Manager",
+                "description": "Manages daily operations and curates fashion collections.",
+                "image": "images/profiles/christine-achieng.webp"
+            },
+            {
+                "name": "Sharon Mwende",
+                "role": "Personal Stylist",
+                "description": "Provides personalized styling advice to clients.",
+                "image": "images/profiles/sharon-mwende.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Fashion Blogger",
+                "text": "Fashion Finesse always has the most on-trend pieces. It's my secret weapon for stylish outfits!",
+                "date": "2024-06-01",
+                "rating": 4.7
+            },
+            {
+                "author": "Regular Customer",
+                "text": "Love the personalized service! Christine helped me pick out the perfect dress for an event.",
+                "date": "2024-05-20",
+                "rating": 4.9
+            },
+            {
+                "author": "Online Shopper",
+                "text": "Their website is easy to navigate, and the clothes are even better in person. Fast delivery too!",
+                "date": "2024-04-15",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "apex-innovations",
+        "imgSrc": "images/member_logos/apex-innovations.webp",
+        "imgAlt": "Apex Innovations Logo",
+        "name": "Apex Innovations",
+        "description": "Leading the future with cutting-edge technology and innovative solutions.",
+        "fullDescription": "Apex Innovations is a dynamic technology firm dedicated to delivering groundbreaking solutions that empower businesses to thrive in the digital age. We specialize in custom software development, AI integration, and digital transformation strategies, helping our clients achieve unparalleled efficiency and competitive advantage. Our team of visionary engineers and strategists is committed to pushing the boundaries of what's possible, turning complex challenges into innovative opportunities.",
+        "category": "technology",
+        "location": "westlands",
+        "address": "Sanlam Tower, Waiyaki Way, Westlands, Nairobi, Kenya",
+        "size": "medium",
+        "popularity": "high",
+        "foundingYear": 2017,
+        "contact": "info@apexinnovations.co.ke",
+        "website": "apexinnovations.co.ke",
+        "link": "apex-innovations.html",
+        "phone": "+254 711 987 654",
+        "operatingHours": "Mon-Fri: 9:00 AM - 6:00 PM",
+        "membershipLevel": "Silver",
+        "email": "info@apexinnovations.co.ke",
+        "business_tagline": "Innovating Tomorrow, Today.",
+        "awards": [
+            {
+                "year": 2021,
+                "name": "Technology Innovator of the Year - East Africa Tech Awards",
+                "issuer": "East Africa Technology Summit"
+            },
+            {
+                "year": 2023,
+                "name": "Excellence in AI Solutions",
+                "issuer": "AI Africa Forum"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Dr. Evans Mutua",
+                "role": "Head of Research & Development",
+                "description": "Leads new technology exploration and AI development.",
+                "image": "images/profiles/evans-mutua.webp"
+            },
+            {
+                "name": "Grace Wambui",
+                "role": "Project Lead",
+                "description": "Manages key client projects from conception to deployment.",
+                "image": "images/profiles/grace-wambui.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Global Tech Co.",
+                "text": "Apex Innovations delivered a robust AI solution that significantly improved our operational efficiency. Their team is world-class.",
+                "date": "2024-06-20",
+                "rating": 5
+            },
+            {
+                "author": "Local Bank (Client)",
+                "text": "Their digital transformation strategy was a game-changer for our services. Highly recommend their IT consulting.",
+                "date": "2024-05-10",
+                "rating": 4.8
+            },
+            {
+                "author": "Tech Magazine",
+                "text": "A true leader in African tech. Their innovations are setting new benchmarks for the industry.",
+                "date": "2024-04-01",
+                "rating": 4.6
+            }
+        ]
+    },
+    {
+        "id": "green-thumb-landscaping",
+        "imgSrc": "images/member_logos/green-thumb-landscaping.webp",
+        "imgAlt": "Green Thumb Landscaping Logo",
+        "name": "Green Thumb Landscaping",
+        "description": "Professional landscaping and garden maintenance services.",
+        "fullDescription": "Green Thumb Landscaping specializes in creating and maintaining beautiful outdoor spaces. From initial design and softscaping to irrigation and ongoing garden maintenance, our team of experts transforms ordinary yards into lush, vibrant landscapes. We are passionate about greenery and dedicated to enhancing the aesthetic appeal and value of your property with sustainable and artistic designs.",
+        "category": "services",
+        "location": "lavington",
+        "address": "Hatheru Road, Lavington, Nairobi, Kenya",
+        "size": "small",
+        "popularity": "medium",
+        "foundingYear": 2018,
+        "contact": "design@greenthumb.co.ke",
+        "phone": "+254707654321",
+        "website": "greenthumb.co.ke",
+        "link": "greenthumb.html",
+        "membershipLevel": "Member",
+        "email": "info@greenthumb.co.ke",
+        "business_tagline": "Cultivating Beauty, One Garden at a Time.",
+        "awards": [
+            {
+                "year": 2022,
+                "name": "Best Urban Landscaping Project - Green City Awards",
+                "issuer": "Nairobi Urban Development"
+            },
+            {
+                "year": 2023,
+                "name": "Sustainable Design Excellence",
+                "issuer": "Kenya Landscape Architects"
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Esther Njeri",
+                "role": "Lead Landscape Designer",
+                "description": "Specializes in creating custom landscape designs and garden layouts.",
+                "image": "images/profiles/esther-njeri.webp"
+            },
+            {
+                "name": "Samson Kiptoo",
+                "role": "Site Supervisor",
+                "description": "Oversees on-site project execution and quality control.",
+                "image": "images/profiles/samson-kiptoo.webp"
+            }
+        ],
+        "reviews": [
+            {
+                "author": "Homeowner, Karen",
+                "text": "Green Thumb transformed my garden into a beautiful oasis. Their design was innovative, and the team was very professional.",
+                "date": "2024-06-15",
+                "rating": 4.7
+            },
+            {
+                "author": "Property Developer",
+                "text": "Reliable and creative. They handled the landscaping for our new residential project flawlessly.",
+                "date": "2024-05-01",
+                "rating": 4.5
+            },
+            {
+                "author": "Horticulture Enthusiast",
+                "text": "Their commitment to sustainable landscaping is truly commendable. A fantastic service for green spaces!",
+                "date": "2024-04-20",
+                "rating": 4.6
+            }
+        ]
+    },
+    {
+    "id": "peak-performance-gym",
+    "imgSrc": "images/member_logos/peak-performance-gym.webp",
+    "imgAlt": "Peak Performance Gym Logo",
+    "name": "Peak Performance Gym",
+    "description": "State-of-the-art fitness center with personalized training programs.",
+    "fullDescription": "Peak Performance Gym is a premium fitness facility offering a wide range of equipment, group classes, and personalized training programs designed to help individuals achieve their health and fitness goals. With certified trainers and a motivating environment, they cater to all fitness levels, from beginners to elite athletes.",
+    "category": "health-wellness",
+    "location": "lavington",
+    "address": "James Gichuru Road, Lavington, Nairobi, Kenya",
+    "size": "medium",
+    "popularity": "high",
+    "foundingYear": 2018,
+    "contact": "info@peakperformancegym.co.ke",
+    "phone": "+254700112233",
+    "website": "peakperformancegym.co.ke",
+    "link": "peakperformancegym.html",
+    "membershipLevel": "Silver",
+    "email": "info@peakperformancegym.co.ke",
+    "business_tagline": "Elevate Your Fitness Journey.",
+    "awards": [
+      {
+        "year": 2023,
+        "name": "Best Fitness Center Nairobi",
+        "issuer": "Kenya Fitness Awards"
+      }
+    ],
+    "ourTeam": [
+      {
+        "name": "Coach Mark Mutua",
+        "role": "Head Trainer",
+        "description": "Designs personalized workout plans and provides expert coaching.",
+        "image": "images/profiles/coach-mark-mutua.webp"
+      },
+      {
+        "name": "Brenda Chepkirui",
+        "role": "Nutritionist",
+        "description": "Offers dietary guidance to complement fitness routines.",
+        "image": "images/profiles/brenda-chepkirui.webp"
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Gym Member",
+        "text": "The trainers are highly motivating, and the facilities are always clean and well-maintained.",
+        "date": "2025-05-20",
+        "rating": 4.9
+      },
+      {
+        "author": "Athlete",
+        "text": "Great equipment for strength training and excellent group classes.",
+        "date": "2024-11-01",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "id": "royal-safaris-tours",
+    "imgSrc": "images/member_logos/royal-safaris-tours.webp",
+    "imgAlt": "Royal Safaris & Tours Logo",
+    "name": "Royal Safaris & Tours",
+    "description": "Premium tour operator offering bespoke wildlife safaris and cultural experiences.",
+    "fullDescription": "Royal Safaris & Tours curates unforgettable travel experiences across Kenya and East Africa. Specializing in luxury wildlife safaris, cultural tours, and adventure packages, they provide personalized itineraries, expert guides, and comfortable accommodations, ensuring every journey is seamless and enriching.",
+    "category": "travel-tourism",
+    "location": "Karen",
+    "address": "Karen Road, Nairobi, Kenya",
+    "size": "medium",
+    "popularity": "high",
+    "foundingYear": 2005,
+    "contact": "info@royalsafaris.co.ke",
+    "phone": "+254700998877",
+    "website": "royalsafaris.co.ke",
+    "link": "royalsafaris.html",
+    "membershipLevel": "Gold",
+    "email": "info@royalsafaris.co.ke",
+    "business_tagline": "Explore the Wild with Royal Comfort.",
+    "awards": [
+      {
+        "year": 2024,
+        "name": "Best Luxury Safari Operator",
+        "issuer": "African Travel Awards"
+      },
+      {
+        "year": 2023,
+        "name": "Excellence in Ecotourism",
+        "issuer": "Kenya Tourism Board"
+      }
+    ],
+    "ourTeam": [
+      {
+        "name": "David Mbugua",
+        "role": "Lead Safari Guide",
+        "description": "Experienced guide with extensive knowledge of wildlife and local cultures.",
+        "image": "images/profiles/david-mbugua.webp"
+      },
+      {
+        "name": "Sophia Nanjala",
+        "role": "Tour Operations Manager",
+        "description": "Coordinates all tour logistics, ensuring smooth and memorable trips.",
+        "image": "images/profiles/sophia-nanjala.webp"
+      }
+    ],
+    "reviews": [
+      {
+        "author": "International Traveler",
+        "text": "The safari was beyond amazing! Our guide was incredibly knowledgeable and passionate.",
+        "date": "2025-06-10",
+        "rating": 5.0
+      },
+      {
+        "author": "Couple from USA",
+        "text": "Every detail was perfectly handled, from accommodation to game drives. Highly recommend!",
+        "date": "2024-11-25",
+        "rating": 4.9
+      }
+    ]
+  },
+  {
+    "id": "secure-guard-insurance",
+    "imgSrc": "images/member_logos/secure-guard-insurance.webp",
+    "imgAlt": "Secure Guard Insurance Logo",
+    "name": "Secure Guard Insurance",
+    "description": "Comprehensive life and general insurance solutions with digital convenience.",
+    "fullDescription": "Secure Guard Insurance has been providing reliable and customizable insurance plans across Kenya since 1995. Specializing in health, motor, and property insurance, Secure Guard leverages advanced technology to deliver quick claims processing and personalized customer service, empowering individuals and businesses to protect their futures effectively.",
+    "category": "finance-insurance",
+    "location": "upper-hill",
+    "address": "Kilimani Towers, Upper Hill, Nairobi, Kenya",
+    "size": "medium",
+    "popularity": "high",
+    "foundingYear": 1995,
+    "contact": "info@secureguard.co.ke",
+    "phone": "+254701234567",
+    "website": "secureguard.co.ke",
+    "link": "secureguardinsurance.html",
+    "membershipLevel": "Silver",
+    "email": "info@secureguard.co.ke",
+    "business_tagline": "Your Shield Against Uncertainty.",
+    "awards": [
+      {
+        "year": 2023,
+        "name": "Best Customer Service Award",
+        "issuer": "Kenya Insurance Awards"
+      }
+    ],
+    "ourTeam": [
+      {
+        "name": "Jane Mwangi",
+        "role": "Chief Executive Officer",
+        "description": "Leads operations and strategic vision with over 20 years in insurance.",
+        "image": "images/profiles/jane-mwangi.webp"
+      },
+      {
+        "name": "David Otieno",
+        "role": "Head of Claims",
+        "description": "Ensures swift and fair claims processing.",
+        "image": "images/profiles/david-otieno.webp"
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Corporate Client",
+        "text": "Excellent coverage options and very responsive customer care.",
+        "date": "2025-01-10",
+        "rating": 4.8
+      },
+      {
+        "author": "Individual Policyholder",
+        "text": "Easy online claims and great value for money.",
+        "date": "2024-12-05",
+        "rating": 4.6
+      }
+    ]
+  },
+  {
+    "id": "red-fire-responders",
+    "imgSrc": "images/member_logos/red-fire-responders.webp",
+    "imgAlt": "Red Fire Responders Logo",
+    "name": "Red Fire Responders",
+    "description": "Professional emergency fire and safety response services.",
+    "fullDescription": "Red Fire Responders is a private firefighting and emergency safety services provider delivering rapid response, fire safety audits, and training to commercial, residential, and industrial clients. With expertly trained personnel and state-of-the-art equipment, Red Fire Responders is redefining proactive fire safety for Nairobi County and beyond.",
+    "category": "safety-security",
+    "location": "nairobi-county",
+    "address": "Enterprise Road, Industrial Area, Nairobi, Kenya",
+    "size": "medium",
+    "popularity": "medium",
+    "foundingYear": 2018,
+    "contact": "response@redfire.co.ke",
+    "phone": "+254780010010",
+    "website": "redfire.co.ke",
+    "link": "redfireresponders.html",
+    "membershipLevel": "Member",
+    "email": "info@redfire.co.ke",
+    "business_tagline": "Your Safety, Our Priority.",
+    "awards": [
+      {
+        "year": 2024,
+        "name": "Excellence in Fire Safety Solutions",
+        "issuer": "Kenya Safety Summit"
+      }
+    ],
+    "ourTeam": [
+      {
+        "name": "Samuel Mburu",
+        "role": "Operations Manager",
+        "description": "Coordinates emergency teams and safety outreach programs.",
+        "image": "images/profiles/samuel-mburu.webp"
+      },
+      {
+        "name": "Faith Chebet",
+        "role": "Senior Fire Officer",
+        "description": "Experienced emergency responder and certified fire trainer.",
+        "image": "images/profiles/faith-chebet.webp"
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Commercial Client",
+        "text": "Prompt response and thorough safety checks for our premises.",
+        "date": "2025-05-12",
+        "rating": 4.7
+      },
+      {
+        "author": "Resident, Nairobi",
+        "text": "Red Fire Responders conducted fire drills that made our staff more aware and prepared.",
+        "date": "2025-04-25",
+        "rating": 4.6
+      }
+    ]
+  }
+]

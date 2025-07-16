@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Apply to join the La Familia Chamber of Commerce in Nairobi, Kenya. Empowering growth and fostering connections in the heart of Kenya's capital.">
+    <meta name="author" content="Alex Malunda">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Join Us | La Familia Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/social_share_image.jpg">
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/join.html">
+    <meta property="og:description" content="Apply to join the La Familia Chamber of Commerce in Nairobi, Kenya. Empowering growth and fostering connections in the heart of Kenya's capital.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/join.css">
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <div class="site-branding">
+                <a href="index.html">
+                    <img src="images/lafamilialogo.webp" alt="La Familia Chambers Logo" class="logo">
+                    <h1>La Familia Chambers</h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <button id="search-toggle" aria-label="Toggle Search Bar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button id="hamburger-menu" aria-label="Open Mobile Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="discover.html" class="nav-link">Discover Nairobi</a></li>
+                <li><a href="directory.html" class="nav-link">Member Directory</a></li>
+                <li><a href="join.html" class="nav-link">Join La Familia</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="board.html">Board of Directors</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Members <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="awards.html">Awards & Recognition</a></li>
+                        <li><a href="clubs.html">Member Clubs</a></li>
+                        <li><a href="reviews.html">Member Reviews</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Business Blog</a></li>
+                        <li><a href="events.html">Events Calendar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="search-bar-container" class="search-bar-hidden">
+            <div class="search-input-wrapper">
+                <input type="search" id="site-search" placeholder="Search members, events, news..." aria-label="Site Search">
+                <button id="search-submit-btn" class="search-control-btn" aria-label="Submit Global Search"><i class="fas fa-search"></i></button>
+                <button id="search-clear-btn" class="search-control-btn" aria-label="Clear Search Input"><i class="fas fa-times"></i></button>
+                <button id="search-mic-btn" class="search-control-btn" aria-label="Search with Voice"><i class="fas fa-microphone"></i></button>
+            </div>
+            <div class="search-filters">
+                <select id="search-type-filter" aria-label="Filter by Type">
+                    <option value="">All Types</option>
+                    <option value="member">Members</option>
+                    <option value="event">Events</option>
+                    <option value="news">News</option>
+                    <option value="blog">Blog Posts</option>
+                </select>
+                <select id="search-location-filter" aria-label="Filter by Location">
+                    <option value="">All Locations</option>
+                    <option value="nairobi">Nairobi</option>
+                    <option value="thika">Thika</option>
+                    <option value="mombasa">Mombasa</option>
+                </select>
+            </div>
+            <div id="search-suggestions" class="search-suggestions"></div>
+            <div id="search-history" class="search-history"></div>
+        </div>
+    </header>
+
+    <main class="join-main">
+        <h1>Membership Application</h1>
+        <p>Please fill out the form below to apply for membership with the La Familia Chamber of Commerce.</p>
+
+        <div class="join-content-wrapper">
+            <form method="get" action="thankyou.html" class="membership-form">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+
+                    <label for="fname">First Name:*
+                        <input type="text" id="fname" name="fname" required title="Applicant's first name" autocomplete="given-name">
+                    </label>
+
+                    <label for="lname">Last Name:*
+                        <input type="text" id="lname" name="lname" required title="Applicant's last name" autocomplete="family-name">
+                    </label>
+
+                    <label for="orgtitle">Organizational Title:
+                        <input type="text" id="orgtitle" name="orgtitle" title="Applicant's organizational title" autocomplete="organization-title" pattern="^[a-zA-Z\s-]{7,}$">
+                        <small>Min. 7 alpha characters, hyphens, or spaces.</small>
+                    </label>
+
+                    <label for="email">Email:*
+                        <input type="email" id="email" name="email" required title="Applicant's email address" autocomplete="email" placeholder="example@email.com">
+                    </label>
+
+                    <label for="phone">Mobile Phone:*
+                        <input type="tel" id="phone" name="phone" required title="Applicant's mobile phone number" autocomplete="tel">
+                    </label>
+
+                    <label for="bizname">Business/Organization Name:*
+                        <input type="text" id="bizname" name="bizname" required title="Business or organization name" autocomplete="organization">
+                    </label>
+                </fieldset>
+
+                <fieldset class="membership-level-selection">
+                    <legend>Membership Level</legend>
+                    <p>Select your desired membership level:</p>
+
+                    <div class="membership-options">
+                        <label>
+                            <input type="radio" id="np-membership" name="membershipLevel" value="NP Membership" required>
+                            NP Membership (No Fee)
+                        </label>
+                        <label>
+                            <input type="radio" id="bronze-membership" name="membershipLevel" value="Bronze Membership">
+                            Bronze Membership ($50/year)
+                        </label>
+                        <label>
+                            <input type="radio" id="silver-membership" name="membershipLevel" value="Silver Membership">
+                            Silver Membership ($100/year)
+                        </label>
+                        <label>
+                            <input type="radio" id="gold-membership" name="membershipLevel" value="Gold Membership">
+                            Gold Membership ($200/year)
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Business Description</legend>
+                    <label for="bizdesc">Business/Organization Description:
+                        <textarea id="bizdesc" name="bizdesc" title="Business or organization description" rows="5"></textarea>
+                    </label>
+                </fieldset>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <button type="submit">Join the Chamber</button>
+            </form>
+
+            <section class="membership-cards-section">
+                <h2>Our Membership Tiers</h2>
+                <div class="membership-cards-grid">
+                    <div class="membership-card initial-hidden" data-level="NP Membership">
+                        <h3>NP Membership</h3>
+                        <p class="fee">No Fee</p>
+                        <button class="learn-more-btn" data-level="NP Membership">Learn More</button>
+                    </div>
+                    <div class="membership-card initial-hidden" data-level="Bronze Membership">
+                        <h3>Bronze Membership</h3>
+                        <p class="fee">$50/year</p>
+                        <button class="learn-more-btn" data-level="Bronze Membership">Learn More</button>
+                    </div>
+                    <div class="membership-card initial-hidden" data-level="Silver Membership">
+                        <h3>Silver Membership</h3>
+                        <p class="fee">$100/year</p>
+                        <button class="learn-more-btn" data-level="Silver Membership">Learn More</button>
+                    </div>
+                    <div class="membership-card initial-hidden" data-level="Gold Membership">
+                        <h3>Gold Membership</h3>
+                        <p class="fee">$200/year</p>
+                        <button class="learn-more-btn" data-level="Gold Membership">Learn More</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="modal-np-membership" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>NP Membership Benefits</h3>
+                <p>Designed for non-profit organizations. Benefits include:</p>
+                <ul>
+                    <li>Access to basic chamber events</li>
+                    <li>Listing in the chamber directory</li>
+                    <li>Networking opportunities</li>
+                </ul>
+                <a href="membership-levels-details.html" class="modal-link">See all membership details</a>
+            </div>
+        </div>
+        <div id="modal-bronze-membership" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Bronze Membership Benefits</h3>
+                <p>Perfect for startups and small businesses. Benefits include:</p>
+                <ul>
+                    <li>All NP Membership benefits</li>
+                    <li>Discounts on selected training workshops</li>
+                    <li>Access to exclusive online resources</li>
+                    <li>Basic advertising opportunities</li>
+                </ul>
+                <a href="membership-levels-details.html" class="modal-link">See all membership details</a>
+            </div>
+        </div>
+        <div id="modal-silver-membership" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Silver Membership Benefits</h3>
+                <p>Ideal for growing businesses. Benefits include:</p>
+                <ul>
+                    <li>All Bronze Membership benefits</li>
+                    <li>Discounted rates for all chamber events</li>
+                    <li>Priority access to advanced training programs</li>
+                    <li>Enhanced advertising options (e.g., newsletter mentions)</li>
+                    <li>Invitations to special member-only gatherings</li>
+                </ul>
+                <a href="membership-levels-details.html" class="modal-link">See all membership details</a>
+            </div>
+        </div>
+        <div id="modal-gold-membership" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Gold Membership Benefits</h3>
+                <p>Our premium tier for established enterprises. Benefits include:</p>
+                <ul>
+                    <li>All Silver Membership benefits</li>
+                    <li>Complimentary access to all chamber events</li>
+                    <li>Featured spotlight on the home page</li>
+                    <li>Opportunity to host chamber events</li>
+                    <li>Dedicated business advisory support</li>
+                    <li>Exclusive access to leadership forums</li>
+                </ul>
+                <a href="membership-levels-details.html" class="modal-link">See all membership details</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-contact">
+                <h4>Contact La Familia</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Chambers Lane, Westlands, Nairobi, Kenya</p>
+                <p><i class="fas fa-phone"></i> +254 707 176 595</p>
+                <p><i class="fas fa-envelope"></i> info@lafamiliachambers.co.ke</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/icons%26logos/facebook_24dp.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/icons%26logos/instagram_24dp.svg" alt="Instagram"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/icons%26logos/linkedin_24dp.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Twitter"><img src="images/icons%26logos/twitter_24dp.svg" alt="Twitter"></a>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Notice</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-about">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About La Familia</a></li>
+                    <li><a href="developer.html">About the Developer</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    
+    <script src="js/join.js"></script> </body>
+</html>

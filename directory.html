@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Directory | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Browse the official member directory of the La Familia Chamber of Commerce in Nairobi, Kenya. Find local businesses and services.">
+    <meta name="author" content="Alex Malunda">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Member Directory | La Familia Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://asleki.github.io/wdd231/chamber/images/social_share_image.jpg">
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Browse the official member directory of the La Familia Chamber of Commerce in Nairobi, Kenya. Find local businesses and services.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/directory.css">
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <div class="site-branding">
+                <a href="index.html">
+                    <img src="images/lafamilialogo.webp" alt="La Familia Chambers Logo" class="logo">
+                    <h1>La Familia Chambers</h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <button id="search-toggle" aria-label="Toggle Search Bar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button id="hamburger-menu" aria-label="Open Mobile Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="discover.html" class="nav-link">Discover Nairobi</a></li>
+                <li><a href="directory.html" class="nav-link active">Member Directory</a></li>
+                <li><a href="join.html" class="nav-link">Join La Familia</a></li> <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="board.html">Board of Directors</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li> </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Members <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="awards.html">Awards & Recognition</a></li>
+                        <li><a href="clubs.html">Member Clubs</a></li>
+                        <li><a href="reviews.html">Member Reviews</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Business Blog</a></li>
+                        <li><a href="events.html">Events Calendar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="search-bar-container" class="search-bar-hidden">
+            <div class="search-input-wrapper">
+                <input type="search" id="site-search" placeholder="Search members, events, news..." aria-label="Site Search">
+                <button id="search-submit-btn" class="search-control-btn" aria-label="Submit Global Search"><i class="fas fa-search"></i></button>
+                <button id="search-clear-btn" class="search-control-btn" aria-label="Clear Search Input"><i class="fas fa-times"></i></button>
+                <button id="search-mic-btn" class="search-control-btn" aria-label="Search with Voice"><i class="fas fa-microphone"></i></button>
+            </div>
+            <div class="search-filters">
+                <select id="search-type-filter" aria-label="Filter by Type">
+                    <option value="">All Types</option>
+                    <option value="member">Members</option>
+                    <option value="event">Events</option>
+                    <option value="news">News</option>
+                    <option value="blog">Blog Posts</option>
+                </select>
+                <select id="search-location-filter" aria-label="Filter by Location">
+                    <option value="">All Locations</option>
+                    <option value="nairobi">Nairobi</option>
+                    <option value="thika">Thika</option>
+                    <option value="mombasa">Mombasa</option>
+                </select>
+            </div>
+            <div id="search-suggestions" class="search-suggestions"></div>
+            <div id="search-history" class="search-history"></div>
+        </div>
+    </header>
+
+    <main class="container directory-page-content">
+        <section class="hero-small">
+            <h2>Our Members & Business Directory</h2>
+            <p>Connect with a diverse network of businesses, entrepreneurs, and services thriving in Nairobi.</p>
+        </section>
+
+        <section class="directory-insights">
+            <h3>Directory Insights</h3>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Total Members</h4>
+                    <p><span id="total-members-count">0</span>+ Businesses Listed</p>
+                </div>
+                <div class="insight-card">
+                    <i class="fas fa-industry"></i>
+                    <h4>Diverse Industries</h4>
+                    <p><span id="unique-industries-count">0</span>+ Categories Represented</p>
+                </div>
+                <div class="insight-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Growth & Innovation</h4>
+                    <p>Connecting businesses for mutual growth and opportunity.</p>
+                </div>
+                <div class="insight-card">
+                    <i class="fas fa-trophy"></i>
+                    <h4>Featured Businesses</h4>
+                    <p>Highlighting excellence and success within our community.</p>
+                </div>
+            </div>
+            <div class="cta-banner">
+                <p>Are you a Nairobi business? <a href="join.html">Join our directory today!</a></p>
+            </div>
+        </section>
+
+        <section class="directory-controls-section">
+            <div id="directory-search-controls" class="directory-controls">
+                <div class="search-input-group">
+                    <input type="search" id="directory-site-search" placeholder="Search by business name or keyword..." aria-label="Search directory">
+                    <button id="directory-search-submit" class="search-submit" aria-label="Search Directory"><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="filters-group">
+                    <label for="directory-filter-category">Category:</label>
+                    <select id="directory-filter-category">
+                        <option value="">All Categories</option>
+                        <option value="retail">Retail</option>
+                        <option value="health">Health & Wellness</option>
+                        <option value="e-commerce">E-commerce</option>
+                        <option value="automotive">Automotive</option>
+                        <option value="food-beverage">Food & Beverage</option>
+                        <option value="services">Professional Services</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="catering">Catering</option>
+                        <option value="beauty-spa">Barbershop & Spa</option>
+                        <option value="brand-design">Brand & Design</option>
+                    </select>
+
+                    <label for="directory-filter-location">Location:</label>
+                    <select id="directory-filter-location">
+                        <option value="">All Locations</option>
+                        <option value="cbd">CBD</option>
+                        <option value="westlands">Westlands</option>
+                        <option value="kilimani">Kilimani</option>
+                        <option value="upper-hill">Upper Hill</option>
+                        <option value="langata">Langata</option>
+                        <option value="lavington">Lavington</option>
+                        <option value="ruaka">Ruaka</option>
+                    </select>
+
+                    <label for="directory-filter-size">Business Size:</label>
+                    <select id="directory-filter-size">
+                        <option value="">Any Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+
+                    <label for="directory-sort-by">Sort By:</label>
+                    <select id="directory-sort-by" aria-label="Sort directory results">
+                        <option value="popularity-desc">Popularity (High to Low)</option>
+                        <option value="popularity-asc">Popularity (Low to High)</option>
+                        <option value="alphabetical-asc">Alphabetical (A-Z)</option>
+                        <option value="alphabetical-desc">Alphabetical (Z-A)</option>
+                        <option value="newest">Newest Members</option>
+                        <option value="membership-asc">Membership Level (Bronze to Gold)</option>
+                        <option value="membership-desc">Membership Level (Gold to Bronze)</option>
+                    </select>
+                    <button id="directory-reset-filters" class="btn btn-secondary">Reset Filters</button>
+                </div>
+
+                <div class="view-toggle-buttons">
+                    <button id="grid-view" class="view-btn active" aria-label="Switch to Grid View">
+                        <i class="fas fa-th-large"></i> Grid
+                    </button>
+                    <button id="list-view" class="view-btn" aria-label="Switch to List View">
+                        <i class="fas fa-list"></i> List
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="directory-listings">
+            <h3>Directory Results <span id="member-count">(Showing 0 Members)</span></h3>
+            <div id="members-display" class="member-grid">
+            </div>
+            <div class="load-more-container">
+                <button id="load-more-members" class="btn btn-primary">Load More Members</button>
+            </div>
+        </section>
+
+        <div id="member-detail-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div id="member-detail-body">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-contact">
+                <h4>Contact La Familia</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Chambers Lane, Westlands, Nairobi, Kenya</p>
+                <p><i class="fas fa-phone"></i> +254 707 176 595</p>
+                <p><i class="fas fa-envelope"></i> info@lafamiliachambers.co.ke</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/icons%26logos/facebook_24dp.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/icons%26logos/instagram_24dp.svg" alt="Instagram"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/icons%26logos/linkedin_24dp.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Twitter"><img src="images/icons%26logos/twitter_24dp.svg" alt="Twitter"></a>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Notice</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-about">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About La Familia</a></li>
+                    <li><a href="developer.html">About the Developer</a></li> </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+    <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/directory.js"></script>
+</body>
+</html>

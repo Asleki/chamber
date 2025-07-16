@@ -1,0 +1,127 @@
+[
+    {
+        "id": "tech-innovators-club",
+        "name": "Tech Innovators Club",
+        "description": "A vibrant community for tech entrepreneurs and professionals to share insights, collaborate on projects, and discuss emerging technologies.",
+        "image": "images/tech-innovators.webp",
+        "details": {
+            "membersCount": 45,
+            "frequency": "Monthly Meetings",
+            "location": "Online & Westlands"
+        },
+        "joiningFees": {
+            "non-member": 5000,
+            "club-member": 3000,
+            "directory-member": 2000,
+            "board-director": 1000
+        },
+        "clubMembers": [
+            { "memberId": "apex-innovations", "name": "Apex Innovations" },
+            { "memberId": "tech-hub-co-working", "name": "Tech Hub Co-working Space" },
+            { "memberId": "future-fintech-inc", "name": "Future Fintech Inc." }
+        ]
+    },
+    {
+        "id": "finance-professionals-network",
+        "name": "Finance Professionals Network",
+        "description": "Dedicated to finance experts, this club offers discussions on market trends, investment strategies, and regulatory changes, fostering professional development.",
+        "image": "images/finance-network.webp",
+        "details": {
+            "membersCount": 30,
+            "frequency": "Bi-Monthly Meetups",
+            "location": "Nairobi CBD"
+        },
+        "joiningFees": {
+            "non-member": 4500,
+            "club-member": 2800,
+            "directory-member": 1800,
+            "board-director": 900
+        },
+        "clubMembers": [
+            { "memberId": "duka-lako-supermart", "name": "Duka Lako Supermart" }
+        ]
+    },
+    {
+        "id": "sustainable-business-alliance",
+        "name": "Sustainable Business Alliance",
+        "description": "For businesses committed to environmental responsibility and sustainable practices. Share eco-friendly innovations and green strategies.",
+        "image": "images/green-business.webp",
+        "details": {
+            "membersCount": 28,
+            "frequency": "Quarterly Workshops",
+            "location": "Various Locations"
+        },
+        "joiningFees": {
+            "non-member": 4000,
+            "club-member": 2500,
+            "directory-member": 1500,
+            "board-director": 750
+        },
+        "clubMembers": [
+            { "memberId": "eco-clean-services", "name": "Eco Clean Services" },
+            { "memberId": "golden-harvest-farm", "name": "Golden Harvest Farm" }
+        ]
+    },
+    {
+        "id": "marketing-minds-circle",
+        "name": "Marketing Minds Circle",
+        "description": "A creative hub for marketing professionals to exchange ideas, discuss campaigns, and explore new digital marketing trends and tools.",
+        "image": "images/marketing-minds.webp",
+        "details": {
+            "membersCount": 38,
+            "frequency": "Monthly Brainstorms",
+            "location": "Online"
+        },
+        "joiningFees": {
+            "non-member": 4800,
+            "club-member": 3100,
+            "directory-member": 2100,
+            "board-director": 1050
+        },
+        "clubMembers": [
+            { "memberId": "creative-designs-studio", "name": "Creative Designs Studio" },
+            { "memberId": "fashion-finesse-boutique", "name": "Fashion Finesse Boutique" }
+        ]
+    },
+    {
+        "id": "healthcare-innovators-forum",
+        "name": "Healthcare Innovators Forum",
+        "description": "Bringing together healthcare professionals and innovators to discuss advancements, challenges, and opportunities in the medical sector.",
+        "image": "images/healthcare-innovators.webp",
+        "details": {
+            "membersCount": 22,
+            "frequency": "Bi-Monthly Webinars",
+            "location": "Online"
+        },
+        "joiningFees": {
+            "non-member": 5200,
+            "club-member": 3500,
+            "directory-member": 2500,
+            "board-director": 1250
+        },
+        "clubMembers": [
+            { "memberId": "afyacare-clinic", "name": "AfyaCare Clinic" },
+            { "memberId": "wellness-haven-spa", "name": "Wellness Haven Spa" }
+        ]
+    },
+    {
+        "id": "real-estate-investors-group",
+        "name": "Real Estate Investors Group",
+        "description": "For members interested in real estate, offering insights into property markets, investment opportunities, and development projects.",
+        "image": "images/real-estate-investors.webp",
+        "details": {
+            "membersCount": 55,
+            "frequency": "Monthly Property Tours",
+            "location": "Nairobi & Environs"
+        },
+        "joiningFees": {
+            "non-member": 6000,
+            "club-member": 4000,
+            "directory-member": 3000,
+            "board-director": 1500
+        },
+        "clubMembers": [
+            { "memberId": "soko-properties", "name": "Soko Properties" }
+        ]
+    }
+]

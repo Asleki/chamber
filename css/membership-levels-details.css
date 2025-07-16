@@ -1,0 +1,216 @@
+/* chamber/css/membership-details.css */
+
+/* --- Main Page Layout --- */
+.membership-details-main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.membership-details-main h1 {
+    color: var(--primary-color); /* Your primary brand color */
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.membership-details-main .intro-text {
+    font-size: 1.1em;
+    color: var(--text-color); /* General text color */
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* --- Section for General Overview --- */
+.membership-overview {
+    background-color: var(--light-background); /* A light background for sections */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    margin-bottom: 40px;
+    text-align: left;
+    color: var(--text-color);
+    line-height: 1.6;
+    border: 1px solid var(--border-color); /* Light border */
+}
+
+/* --- Membership Tiers Grid --- */
+.membership-tiers-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default for mobile */
+    gap: 30px; /* Space between cards */
+    margin-bottom: 50px;
+}
+
+/* --- Individual Tier Card Styles --- */
+.tier-card {
+    background-color: var(--white); /* White background for cards */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More prominent shadow for cards */
+    border: 1px solid var(--border-color);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the "Join Now" button to the bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.tier-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.tier-card h2 {
+    color: var(--secondary-color); /* A secondary brand color for headings */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.tier-card .fee {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--dark-text-color); /* Darker text for emphasis */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tier-card .benefits-list {
+    flex-grow: 1; /* Allows the list to take up available vertical space */
+    margin-bottom: 20px; /* Space before the button */
+}
+
+.tier-card .benefits-list h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.tier-card .benefits-list ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.tier-card .benefits-list li {
+    margin-bottom: 8px;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 25px; /* Space for the custom checkmark bullet */
+    line-height: 1.4;
+}
+
+.tier-card .benefits-list li::before {
+    content: "\2713"; /* Unicode checkmark symbol */
+    color: var(--accent-color); /* Your accent color for the checkmark */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* --- Call to Action Buttons within Cards --- */
+.tier-card .cta-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--accent-color); /* Your accent color */
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.tier-card .cta-button:hover {
+    background-color: var(--dark-accent-color); /* A darker shade for hover */
+}
+
+/* --- Specific Styling for NP Membership (optional subtle distinction) --- */
+.tier-card.np-membership {
+    border-color: var(--subtle-text-color); /* A lighter, more subtle border */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Slightly less prominent shadow */
+}
+.tier-card.np-membership .cta-button {
+    background-color: var(--subtle-text-color); /* A more subdued button color */
+}
+.tier-card.np-membership .cta-button:hover {
+    background-color: #555; /* A darker grey for hover on NP button */
+}
+
+
+/* --- Bottom Call to Action Section --- */
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.main-cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.main-cta-button:hover {
+    background-color: var(--dark-accent-color);
+}
+
+
+/* --- Responsive Design with Media Queries --- */
+
+/* For tablets and larger phones (e.g., 768px and up) */
+@media (min-width: 768px) {
+    .membership-tiers-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for cards */
+    }
+
+    .tier-card {
+        padding: 25px; /* Slightly adjust padding for more compact look */
+    }
+}
+
+/* For desktops and larger screens (e.g., 1024px and up) */
+@media (min-width: 1024px) {
+    .membership-tiers-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Four columns for cards */
+    }
+
+    .membership-details-main h1 {
+        font-size: 3em;
+    }
+
+    .membership-details-main .intro-text {
+        font-size: 1.2em;
+    }
+}
+
+/* For very large screens, you might want to increase max-width in main.css
+   or directly on .membership-details-main if it's the only large content area */

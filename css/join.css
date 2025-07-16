@@ -1,0 +1,297 @@
+/* Styling for join.html */
+
+.join-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.join-main h1 {
+    color: var(--primary-color); /* Assuming primary-color is defined in main.css */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.join-main p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Assuming text-color is defined in main.css */
+}
+
+.join-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    gap: 30px;
+    align-items: flex-start; /* Align items to the start in column layout */
+}
+
+/* Form Styling */
+.membership-form {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    background-color: var(--light-background); /* Assuming light-background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color); /* Assuming border-color */
+}
+
+.membership-form fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: var(--white); /* Assuming white */
+}
+
+.membership-form legend {
+    font-weight: bold;
+    color: var(--secondary-color); /* Assuming secondary-color */
+    padding: 0 10px;
+}
+
+.membership-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.membership-form input[type="text"],
+.membership-form input[type="email"],
+.membership-form input[type="tel"],
+.membership-form textarea {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.membership-form input[type="text"]:focus,
+.membership-form input[type="email"]:focus,
+.membership-form input[type="tel"]:focus,
+.membership-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.3); /* Assuming primary-color-rgb */
+}
+
+.membership-form small {
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    color: var(--subtle-text-color); /* Assuming subtle-text-color */
+    font-size: 0.85em;
+}
+
+/* Membership Level Radio Buttons */
+.membership-options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.membership-options input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.membership-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--accent-color); /* Assuming accent-color */
+    color: var(--white); /* Assuming white */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership-form button[type="submit"]:hover {
+    background-color: var(--dark-accent-color); /* Assuming dark-accent-color */
+}
+
+/* Membership Cards Section */
+.membership-cards-section {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.membership-cards-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.membership-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 20px;
+}
+
+.membership-card {
+    background-color: var(--light-background);
+    padding: 20px;
+    border-radius: 12px; /* Border radius for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateY(20px); /* Slightly moved down for animation */
+}
+
+/* ... (previous CSS code) ... */
+
+.membership-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    /* Increased transition duration to support the longer stagger */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Set to a value greater than the individual staggerDelay */
+}
+
+/* ... (rest of your CSS code) ... */
+
+.membership-card h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.membership-card .fee {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--dark-text-color); /* Assuming dark-text-color */
+    margin-bottom: 15px;
+}
+
+.membership-card .learn-more-btn {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership-card .learn-more-btn:hover {
+    background-color: var(--dark-primary-color); /* Assuming dark-primary-color */
+}
+
+/* Modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: lightslategray;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.close-button {
+    color: var(--text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.modal-content h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.modal-content ul li {
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.modal-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.modal-link:hover {
+    background-color: var(--dark-primary-color);
+}
+
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    .join-content-wrapper {
+        flex-direction: row; /* Row layout for larger screens */
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .membership-form {
+        flex: 2; /* Give more space to the form */
+        max-width: 65%; /* Adjust as needed */
+    }
+
+    .membership-cards-section {
+        flex: 1; /* Less space for cards */
+        max-width: 30%; /* Adjust as needed */
+    }
+
+    .membership-cards-grid {
+        grid-template-columns: 1fr; /* Still single column, but vertically stacked on the side */
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .membership-cards-grid {
+        grid-template-columns: 1fr; /* Keep single column for cards */
+    }
+}
