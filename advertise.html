@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertise with La Familia Chambers | Grow Your Business</title>
+    <meta name="description" content="Advertise your products and services with La Familia Chambers. Explore our flexible advertising packages and reach a wider audience.">
+    <meta name="keywords" content="La Familia Chambers advertising, online ads, digital marketing, product promotion, sponsored content, banner ads">
+    <meta name="author" content="La Familia Chambers">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/advertise.html">
+    <meta property="og:title" content="Advertise with La Familia Chambers | Grow Your Business">
+    <meta property="og:description" content="Advertise your products and services with La Familia Chambers. Explore our flexible advertising packages and reach a wider audience.">
+    <meta property="og:image" content="https://asleki.github.io/wdd231/chamber/images/lafamilialogo.webp">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://asleki.github.io/wdd231/chamber/advertise.html">
+    <meta property="twitter:title" content="Advertise with La Familia Chambers | Grow Your Business">
+    <meta property="twitter:description" content="Advertise your products and services with La Familia Chambers. Explore our flexible advertising packages and reach a wider audience.">
+    <meta property="twitter:image" content="https://asleki.github.io/wdd231/chamber/images/lafamilialogo.webp">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Your Custom CSS Files -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/advertise.css">
+
+    <style>
+        /* These styles are specific to this HTML file and not part of advertise.css */
+        .ad-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .ad-card-header {
+            min-height: 80px;
+        }
+        .ad-card-features li {
+            margin-bottom: 0.5rem;
+        }
+        .ad-card-features li:last-child {
+            margin-bottom: 0;
+        }
+        .modal-stepper span {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .modal-stepper span.active {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        .modal-stepper span.completed {
+            border-color: #10b981;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .modal-stepper span:not(:last-child)::after {
+            content: '---';
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            color: #d1d5db;
+            font-weight: normal;
+        }
+        .modal-stepper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .modal-stepper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #d1d5db;
+            z-index: -1;
+            transform: translateY(-50%);
+        }
+        .modal-stepper span:not(:first-child) {
+            margin-left: 0.5rem;
+        }
+        .modal-stepper span:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+        /* Adjusted modal height to prevent overlap with sticky header */
+        #ad-modal > div {
+            max-height: 85vh; /* Reduced from 90vh */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <div class="site-branding">
+                <a href="index.html">
+                    <img src="images/lafamilialogo.webp" alt="La Familia Chambers Logo" class="logo">
+                    <h1>La Familia Chambers</h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <button id="search-toggle" aria-label="Toggle Search Bar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button id="hamburger-menu" aria-label="Open Mobile Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="discover.html" class="nav-link">Discover Nairobi</a></li>
+                <li><a href="directory.html" class="nav-link">Member Directory</a></li>
+                <li><a href="join.html" class="nav-link">Join La Familia</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="board.html">Board of Directors</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Members <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="awards.html">Awards & Recognition</a></li>
+                        <li><a href="clubs.html">Member Clubs</a></li>
+                        <li><a href="reviews.html">Member Reviews</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Business Blog</a></li>
+                        <li><a href="events.html">Events Calendar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="search-bar-container" class="search-bar-hidden">
+            <div class="search-input-wrapper">
+                <input type="search" id="site-search" placeholder="Search members, events, news..." aria-label="Site Search">
+                <button id="search-submit-btn" class="search-control-btn" aria-label="Submit Global Search"><i class="fas fa-search"></i></button>
+                <button id="search-clear-btn" class="search-control-btn" aria-label="Clear Search Input"><i class="fas fa-times"></i></button>
+                <button id="search-mic-btn" class="search-control-btn" aria-label="Search with Voice"><i class="fas fa-microphone"></i></button>
+            </div>
+            <div class="search-filters">
+                <select id="search-type-filter" aria-label="Filter by Type">
+                    <option value="">All Types</option>
+                    <option value="member">Members</option>
+                    <option value="event">Events</option>
+                    <option value="news">News</option>
+                    <option value="blog">Blog Posts</option>
+                </select>
+                <select id="search-location-filter" aria-label="Filter by Location">
+                    <option value="">All Locations</option>
+                    <option value="nairobi">Nairobi</option>
+                    <option value="thika">Thika</option>
+                    <option value="mombasa">Mombasa</option>
+                </select>
+            </div>
+            <div id="search-suggestions" class="search-suggestions"></div>
+            <div id="search-history" class="search-history"></div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6 bg-white rounded-lg shadow-md my-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Advertise Your Business with La Familia Chambers</h1>
+        <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">Reach thousands of potential customers daily through our platform. Choose the perfect advertising package that suits your needs and budget.</p>
+
+        <div id="ad-pricing-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <p class="col-span-full text-center text-gray-500 py-8" id="loading-message">Loading advertising packages...</p>
+        </div>
+    </main>
+
+    <!-- Ad Submission Modal -->
+    <div id="ad-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-2/3 lg:w-1/2 p-6 relative max-h-[85vh] overflow-y-auto">
+            <!-- Close Button - Moved to top-left -->
+            <button id="close-ad-modal-btn" class="absolute top-4 left-4 text-gray-500 hover:text-gray-700 text-4xl font-bold p-2 leading-none rounded-full hover:bg-gray-200 transition-colors duration-200" aria-label="Close Ad Submission Form">
+                &times;
+            </button>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Ad Submission</h2>
+
+            <!-- Stepper Navigation -->
+            <div class="modal-stepper mb-8 text-lg font-semibold text-gray-500">
+                <span id="ad-step-details" class="active">1. Details</span>
+                <span id="ad-step-consent">2. Consent</span>
+                <span id="ad-step-payment">3. Payment</span>
+                <span id="ad-step-summary">4. Summary</span>
+            </div>
+
+            <!-- Ad Submission Form -->
+            <form id="ad-submission-form">
+                <!-- Step 1: Ad Details (Split into two sub-steps managed by JS) -->
+                <div id="ad-step-1" class="ad-modal-step">
+                    <!-- Sub-step 1.1: Confirmation of Auto-selected Details -->
+                    <div id="ad-step-1-confirm">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Confirm Ad Package Details</h3>
+                        <div class="mb-4">
+                            <label for="ad-type-confirm" class="block text-gray-700 text-sm font-bold mb-2">Ad Type:</label>
+                            <input type="text" id="ad-type-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
+                        </div>
+                        <div class="mb-4">
+                            <label for="ad-runtime-confirm" class="block text-gray-700 text-sm font-bold mb-2">Runtime:</label>
+                            <input type="text" id="ad-runtime-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
+                        </div>
+                        <div class="mb-4">
+                            <label for="ad-details-level-confirm" class="block text-gray-700 text-sm font-bold mb-2">Details Level:</label>
+                            <input type="text" id="ad-details-level-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
+                        </div>
+                        <div class="mb-6">
+                            <label for="ad-price-confirm" class="block text-gray-700 text-sm font-bold mb-2">Calculated Price:</label>
+                            <input type="text" id="ad-price-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 font-bold text-lg cursor-not-allowed" readonly>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" id="confirm-ad-details-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Confirm & Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Sub-step 1.2: User Input Fields -->
+                    <div id="ad-step-1-input" class="hidden">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Enter Your Ad Content</h3>
+                        <div class="mb-4">
+                            <label for="ad-title" class="block text-gray-700 text-sm font-bold mb-2">Ad Title <span class="text-red-500">*</span>:</label>
+                            <input type="text" id="ad-title" name="adTitle" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="ad-description" class="block text-gray-700 text-sm font-bold mb-2">Ad Description <span class="text-red-500">*</span>:</label>
+                            <textarea id="ad-description" name="adDescription" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="ad-target-url" class="block text-gray-700 text-sm font-bold mb-2">Target URL <span class="text-red-500">*</span>:</label>
+                            <input type="url" id="ad-target-url" name="adTargetUrl" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://yourwebsite.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="ad-image-url" class="block text-gray-700 text-sm font-bold mb-2">Ad Image URL (Optional):</label>
+                            <input type="url" id="ad-image-url" name="adImageUrl" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <div class="flex justify-between">
+                            <button type="button" id="prev-ad-substep-2-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
+                            <button type="button" id="next-ad-step-1-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Consent Agreement -->
+                <div id="ad-step-2" class="ad-modal-step hidden">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Consent Agreement</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 max-h-64 overflow-y-auto text-gray-700 text-sm">
+                        <h4 class="font-bold text-base mb-2">La Familia Chambers Advertising Terms and Conditions</h4>
+                        <p class="mb-2">By proceeding, you agree to the following terms:</p>
+                        <ul class="list-disc list-inside ml-4 mb-4">
+                            <li>All ad content must be truthful, accurate, and not misleading.</li>
+                            <li>Ads must comply with all applicable laws and regulations.</li>
+                            <li>La Familia Chambers reserves the right to review and reject any ad content that violates our policies or is deemed inappropriate.</li>
+                            <li>Payment is required in full before ad placement.</li>
+                            <li>Ad runtime begins upon approval and successful payment.</li>
+                            <li>No refunds will be issued for ads that have commenced their runtime.</li>
+                            <li>You are responsible for the intellectual property rights of all content submitted.</li>
+                            <li>La Familia Chambers is not responsible for the performance or results of your advertisement.</li>
+                        </ul>
+                        <p class="font-bold">Please read carefully before agreeing.</p>
+                    </div>
+                    <div class="mb-6">
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" id="consent-agreement" name="consentAgreement" class="form-checkbox text-blue-600 h-5 w-5">
+                            <span class="ml-2 text-gray-700">I have read and agree to the terms and conditions.</span>
+                        </label>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" id="prev-ad-step-2-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
+                        <button type="button" id="next-ad-step-2-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div id="ad-step-3" class="ad-modal-step hidden">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Payment Method</h3>
+                    <div class="mb-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="adPaymentMethod" value="credit-card" class="form-radio text-blue-600 h-5 w-5" checked>
+                            <span class="ml-2 text-gray-700">Credit Card</span>
+                        </label>
+                    </div>
+                    <div class="mb-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="adPaymentMethod" value="mpesa" class="form-radio text-blue-600 h-5 w-5">
+                            <span class="ml-2 text-gray-700">M-Pesa</span>
+                        </label>
+                    </div>
+                    <div class="mb-6">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="adPaymentMethod" value="paypal" class="form-radio text-blue-600 h-5 w-5">
+                            <span class="ml-2 text-gray-700">PayPal</span>
+                        </label>
+                    </div>
+                    <div class="text-xl font-bold text-gray-900 mb-6">
+                        Total Amount: <span id="ad-final-total">$0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" id="prev-ad-step-3-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
+                        <button type="button" id="next-ad-step-3-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Summary & Submit -->
+                <div id="ad-step-4" class="ad-modal-step hidden">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Review Your Ad</h3>
+                    <div id="ad-summary-content" class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 text-gray-700">
+                        <p>No ad data to display. Please go back and fill the form.</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" id="prev-ad-step-4-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
+                        <button type="submit" id="submit-ad-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300">Place Ad Order</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-contact">
+                <h4>Contact La Familia</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Chambers Lane, Westlands, Nairobi, Kenya</p>
+                <p><i class="fas fa-phone"></i> +254 707 176 595</p>
+                <p><i class="fas fa-envelope"></i> info@lafamiliachambers.co.ke</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/icons%26logos/facebook_24dp.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/icons%26logos/instagram_24dp.svg" alt="Instagram"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/icons%26logos/linkedin_24dp.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Twitter"><img src="images/icons%26logos/twitter_24dp.svg" alt="Twitter"></a>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Notice</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-about">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About La Familia</a></li>
+                    <li><a href="developer.html">About the Developer</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/advertise.js"></script>
+</body>
+</html>

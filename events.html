@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Details | La Familia Chamber of Commerce</title>
-    <meta name="description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <title>Events Calendar | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Explore upcoming business networking events, workshops, and community gatherings hosted by the La Familia Chamber of Commerce in Nairobi, Kenya.">
     <meta name="author" content="Alex Malunda">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="Membership Details | La Familia Chamber of Commerce">
+    <meta property="og:title" content="Events Calendar | La Familia Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/social_share_image.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/membership-levels-details.html">
-    <meta property="og:description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <meta property="og:image" content="images/social_share_events.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/events.html">
+    <meta property="og:description" content="Explore upcoming business networking events, workshops, and community gatherings hosted by the La Familia Chamber of Commerce in Nairobi, Kenya.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/membership-levels-details.css">
-</head>
+    <link rel="stylesheet" href="css/events.css"> </head>
 <body>
-        <header class="sticky-header">
+
+    <header class="sticky-header">
         <div class="header-top">
             <div class="site-branding">
                 <a href="index.html">
@@ -75,7 +75,7 @@
                     <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="blog.html">Business Blog</a></li>
-                        <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="events.html" class="active">Events Calendar</a></li> <li><a href="news.html">Chamber News</a></li>
                     </ul>
                 </li>
             </ul>
@@ -107,76 +107,33 @@
             <div id="search-history" class="search-history"></div>
         </div>
     </header>
-    <main>
-    <div class="membership-tiers-container">
-        <section class="membership-card membership-np">
-            <h2>NP Membership</h2>
-            <p class="membership-fee">No Fee</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>Access to basic chamber events and general meetings.</li>
-                    <li>Standard listing in the online chamber directory.</li>
-                    <li>Essential networking opportunities with other members.</li>
-                    <li>Receive general chamber communications and updates.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
 
-        <section class="membership-card membership-bronze">
-            <h2>Bronze Membership</h2>
-            <p class="membership-fee">$50/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All NP Membership benefits.</li>
-                    <li>Discounts on selected training workshops and seminars.</li>
-                    <li>Access to exclusive online resources (e.g., business templates, articles).</li>
-                    <li>Basic advertising opportunities (e.g., small ad in newsletter).</li>
-                    <li>Opportunity to submit member news for inclusion on the website.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+    <main class="container">
+        <section id="events-calendar-section" class="page-section">
+            <h1 class="page-title">Upcoming Chamber Events</h1>
+            <p class="section-description">Browse our calendar for networking mixers, workshops, and community initiatives designed to benefit your business and foster connections in Nairobi.</p>
 
-        <section class="membership-card membership-silver">
-            <h2>Silver Membership</h2>
-            <p class="membership-fee">$100/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Bronze Membership benefits.</li>
-                    <li>Discounted rates for all chamber events, including premium ones.</li>
-                    <li>Priority access to advanced training programs and leadership workshops.</li>
-                    <li>Enhanced advertising options (e.g., larger newsletter mentions, social media shout-outs).</li>
-                    <li>Invitations to special member-only gatherings and executive luncheons.</li>
-                    <li>Opportunity to serve on chamber committees.</li>
-                </ul>
+            <div class="event-filters">
+                <input type="text" id="event-search" placeholder="Search events by name or keyword..." aria-label="Search events">
+                <select id="event-type-filter" aria-label="Filter events by type">
+                    <option value="">All Types</option>
+                    <option value="Networking">Networking</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Summit">Summit</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Community">Community</option>
+                </select>
             </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
 
-        <section class="membership-card membership-gold">
-            <h2>Gold Membership</h2>
-            <p class="membership-fee">$200/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Silver Membership benefits.</li>
-                    <li>Complimentary access to all chamber events and premium workshops.</li>
-                    <li>Featured spotlight on the chamber's homepage and in prominent publications.</li>
-                    <li>Opportunity to host chamber events at your business location.</li>
-                    <li>Dedicated business advisory support from chamber leadership.</li>
-                    <li>Exclusive access to leadership forums and roundtables.</li>
-                    <li>Priority consideration for speaking engagements at chamber events.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
+            <div id="events-loading-message" class="loading-message">Loading events calendar...</div>
+            <div id="events-error-message" class="error-message hidden">Failed to load events. Please try again later. 😟</div>
+            <div id="events-container" class="events-grid">
+                </div>
+            <p id="no-events-message" class="loading-message hidden">No events match your search/filter criteria.</p>
         </section>
-    </div>
-</main>
-            <footer>
+    </main>
+
+    <footer>
         <div class="footer-content-wrapper">
             <div class="footer-contact">
                 <h4>Contact La Familia</h4>
@@ -215,10 +172,7 @@
             <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
-
-    
-</body>
+    <script src="js/events.js"></script> </body>
 </html>
-
-    

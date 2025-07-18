@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Details | La Familia Chamber of Commerce</title>
-    <meta name="description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
-    <meta name="author" content="Alex Malunda">
+    <title id="blog-detail-title">Blog Post | La Familia Chamber of Commerce</title>
+    <meta name="description" id="blog-detail-description" content="Read an insightful article from La Familia Chamber of Commerce's business blog.">
+    <meta name="author" id="blog-detail-author" content="La Familia Chamber of Commerce">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="Membership Details | La Familia Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/social_share_image.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/membership-levels-details.html">
-    <meta property="og:description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <meta property="og:title" id="og-title" content="Blog Post | La Familia Chamber of Commerce">
+    <meta property="og:type" content="article">
+    <meta property="og:image" id="og-image" content="images/social_share_blog.jpg">
+    <meta property="og:url" id="og-url" content="https://asleki.github.io/wdd231/chamber/blog-post-detail.html">
+    <meta property="og:description" id="og-description" content="Read an insightful article from La Familia Chamber of Commerce's business blog.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +22,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/membership-levels-details.css">
-</head>
+    <link rel="stylesheet" href="css/blog-post-detail.css"> </head>
 <body>
-        <header class="sticky-header">
+
+    <header class="sticky-header">
         <div class="header-top">
             <div class="site-branding">
                 <a href="index.html">
@@ -74,8 +75,8 @@
                 <li class="nav-dropdown">
                     <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="blog.html">Business Blog</a></li>
-                        <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="blog.html" class="active">Business Blog</a></li> <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="news.html">Chamber News</a></li>
                     </ul>
                 </li>
             </ul>
@@ -107,76 +108,39 @@
             <div id="search-history" class="search-history"></div>
         </div>
     </header>
-    <main>
-    <div class="membership-tiers-container">
-        <section class="membership-card membership-np">
-            <h2>NP Membership</h2>
-            <p class="membership-fee">No Fee</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>Access to basic chamber events and general meetings.</li>
-                    <li>Standard listing in the online chamber directory.</li>
-                    <li>Essential networking opportunities with other members.</li>
-                    <li>Receive general chamber communications and updates.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
 
-        <section class="membership-card membership-bronze">
-            <h2>Bronze Membership</h2>
-            <p class="membership-fee">$50/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All NP Membership benefits.</li>
-                    <li>Discounts on selected training workshops and seminars.</li>
-                    <li>Access to exclusive online resources (e.g., business templates, articles).</li>
-                    <li>Basic advertising opportunities (e.g., small ad in newsletter).</li>
-                    <li>Opportunity to submit member news for inclusion on the website.</li>
-                </ul>
+    <main class="container">
+        <section id="blog-post-detail-section" class="page-section">
+            <div id="detail-loading-message" class="loading-message">Loading blog post...</div>
+            <div id="detail-error-message" class="error-message hidden">
+                <p>Failed to load blog post. The post you are looking for might not exist or an error occurred.</p>
+                <p><a href="blog.html" class="cta-button primary-cta">Back to Blog</a></p>
             </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
 
-        <section class="membership-card membership-silver">
-            <h2>Silver Membership</h2>
-            <p class="membership-fee">$100/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Bronze Membership benefits.</li>
-                    <li>Discounted rates for all chamber events, including premium ones.</li>
-                    <li>Priority access to advanced training programs and leadership workshops.</li>
-                    <li>Enhanced advertising options (e.g., larger newsletter mentions, social media shout-outs).</li>
-                    <li>Invitations to special member-only gatherings and executive luncheons.</li>
-                    <li>Opportunity to serve on chamber committees.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
+            <article id="blog-post-content-area" class="blog-post-full hidden">
+                <h1 id="post-title" class="post-title"></h1>
+                <p class="post-meta">
+                    By <span id="post-author"></span> | <time id="post-date" datetime=""></time>
+                    <span id="post-category" class="post-category-tag"></span>
+                </p>
+                <img id="post-image" src="" alt="" class="post-image">
+                <div id="post-full-content" class="post-body">
+                    </div>
+                <div class="post-actions">
+                    <a href="blog.html" class="cta-button secondary-cta">Back to All Blog Posts</a>
+                    <a href="#" id="share-button" class="cta-button primary-cta"><i class="fas fa-share-alt"></i> Share This Post</a>
+                </div>
+                <div id="share-options" class="share-options hidden">
+                    <a href="#" class="share-icon facebook" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-icon twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="share-icon linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="share-icon whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </article>
         </section>
+    </main>
 
-        <section class="membership-card membership-gold">
-            <h2>Gold Membership</h2>
-            <p class="membership-fee">$200/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Silver Membership benefits.</li>
-                    <li>Complimentary access to all chamber events and premium workshops.</li>
-                    <li>Featured spotlight on the chamber's homepage and in prominent publications.</li>
-                    <li>Opportunity to host chamber events at your business location.</li>
-                    <li>Dedicated business advisory support from chamber leadership.</li>
-                    <li>Exclusive access to leadership forums and roundtables.</li>
-                    <li>Priority consideration for speaking engagements at chamber events.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
-    </div>
-</main>
-            <footer>
+    <footer>
         <div class="footer-content-wrapper">
             <div class="footer-contact">
                 <h4>Contact La Familia</h4>
@@ -215,10 +179,7 @@
             <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
-
-    
-</body>
+    <script src="js/blog-post-detail.js"></script> </body>
 </html>
-
-    

@@ -1,0 +1,16 @@
+/* css/imall-category.css */
+
+/* Add any specific styles for the category page layout here if needed.
+   For example, if you add a sidebar filter, you'd define its layout here. */
+
+/* Example: Basic padding for the main content area if not already defined */
+#imall-category-main-content {
+    padding: 1.5rem; /* Or adjust as per your main.css container */
+}
+
+/* You can adjust the product grid column count for this specific page if desired */
+/* @media (min-width: 1024px) {
+    #product-list-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+} */

@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Details | La Familia Chamber of Commerce</title>
-    <meta name="description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <title>News Article: Tech Innovation Hub Launches Community Programs | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Read about the new Tech Innovation Hub in Nairobi launching free tech workshops and community programs.">
     <meta name="author" content="Alex Malunda">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="Membership Details | La Familia Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/social_share_image.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/membership-levels-details.html">
-    <meta property="og:description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <meta property="og:title" content="Tech Innovation Hub Launches Community Programs | La Familia Chamber of Commerce">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="images/tech-innovation-hub-hero.jpg">
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/news-article-tech-innovation-hub.html">
+    <meta property="og:description" content="The newly established 'Innovation Hub' in Nairobi is set to launch a series of free tech workshops and mentorship programs.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +22,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/membership-levels-details.css">
+    <link rel="stylesheet" href="css/news.css">
 </head>
 <body>
-        <header class="sticky-header">
+
+    <header class="sticky-header">
         <div class="header-top">
             <div class="site-branding">
                 <a href="index.html">
@@ -72,10 +74,11 @@
                 </li>
 
                 <li class="nav-dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <a href="#" class="nav-link dropdown-toggle active" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="blog.html">Business Blog</a></li>
                         <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="news.html">Chamber News</a></li>
                     </ul>
                 </li>
             </ul>
@@ -107,76 +110,40 @@
             <div id="search-history" class="search-history"></div>
         </div>
     </header>
-    <main>
-    <div class="membership-tiers-container">
-        <section class="membership-card membership-np">
-            <h2>NP Membership</h2>
-            <p class="membership-fee">No Fee</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>Access to basic chamber events and general meetings.</li>
-                    <li>Standard listing in the online chamber directory.</li>
-                    <li>Essential networking opportunities with other members.</li>
-                    <li>Receive general chamber communications and updates.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+    <main class="container article-page-main">
+        <article class="news-full-article">
+            <h1 class="article-title">Tech Innovation Hub Launches Community Programs</h1>
+            <p class="article-meta">Published on <time datetime="2024-07-12">July 12, 2024</time> by Chamber News Team</p>
 
-        <section class="membership-card membership-bronze">
-            <h2>Bronze Membership</h2>
-            <p class="membership-fee">$50/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All NP Membership benefits.</li>
-                    <li>Discounts on selected training workshops and seminars.</li>
-                    <li>Access to exclusive online resources (e.g., business templates, articles).</li>
-                    <li>Basic advertising opportunities (e.g., small ad in newsletter).</li>
-                    <li>Opportunity to submit member news for inclusion on the website.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+            <img src="images/tech-innovation-hub-hero.jpg" alt="Group of people collaborating in a modern tech hub setting" class="article-hero-image">
 
-        <section class="membership-card membership-silver">
-            <h2>Silver Membership</h2>
-            <p class="membership-fee">$100/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Bronze Membership benefits.</li>
-                    <li>Discounted rates for all chamber events, including premium ones.</li>
-                    <li>Priority access to advanced training programs and leadership workshops.</li>
-                    <li>Enhanced advertising options (e.g., larger newsletter mentions, social media shout-outs).</li>
-                    <li>Invitations to special member-only gatherings and executive luncheons.</li>
-                    <li>Opportunity to serve on chamber committees.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+            <p><strong>NAIROBI, KENYA</strong> – The newly established "Innovation Hub" in Nairobi is set to launch a series of free tech workshops and mentorship programs aimed at empowering the local community and fostering the next generation of tech talent. Located in the bustling Kilimani area, the hub's initiative is a significant step towards bridging the digital skills gap in the region.</p>
 
-        <section class="membership-card membership-gold">
-            <h2>Gold Membership</h2>
-            <p class="membership-fee">$200/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Silver Membership benefits.</li>
-                    <li>Complimentary access to all chamber events and premium workshops.</li>
-                    <li>Featured spotlight on the chamber's homepage and in prominent publications.</li>
-                    <li>Opportunity to host chamber events at your business location.</li>
-                    <li>Dedicated business advisory support from chamber leadership.</li>
-                    <li>Exclusive access to leadership forums and roundtables.</li>
-                    <li>Priority consideration for speaking engagements at chamber events.</li>
-                </ul>
+            <p>Founded by a consortium of tech entrepreneurs and supported by angel investors, the Innovation Hub provides state-of-the-art facilities, including co-working spaces, high-speed internet, and dedicated project rooms. "Our mission is to democratize access to technology education and provide a fertile ground for innovation," says Dr. Aisha Khan, CEO of the Innovation Hub. "We believe that talent is equally distributed, but opportunity is not. These programs are designed to change that."</p>
+
+            <h3>Upcoming Programs at the Innovation Hub:</h3>
+            <ul>
+                <li><strong>Coding Bootcamps (Python, JavaScript)</strong>: Intensive courses for beginners and intermediate learners.</li>
+                <li><strong>Digital Marketing Workshops</strong>: Essential skills for small businesses and startups.</li>
+                <li><strong>AI & Machine Learning Seminars</strong>: Introduction to cutting-edge technologies.</li>
+                <li><strong>Startup Mentorship Sessions</strong>: Guidance from experienced entrepreneurs and investors.</li>
+                <li><strong>Women in Tech Initiatives</strong>: Programs specifically designed to support and empower women in the tech sector.</li>
+            </ul>
+
+            <img src="images/tech-innovation-hub-interior.jpg" alt="People attending a workshop in a tech hub classroom" class="article-image">
+            <p class="image-caption">Participants engaged in a coding workshop at the new Innovation Hub.</p>
+
+            <p>The <strong>La Familia Chamber of Commerce</strong> proudly supports the Innovation Hub's efforts. "This initiative aligns perfectly with our goal of fostering economic growth and innovation within Nairobi," commented Maria Wanjiku, Vice President of the Chamber. "Providing accessible tech education is vital for our city's future prosperity, and we encourage all aspiring tech enthusiasts and entrepreneurs to take advantage of these incredible resources."</p>
+
+            <p>Registration for the first series of workshops is now open. Interested individuals can find more information and sign up on their website at <a href="http://www.innovationhubnairobi.co.ke" target="_blank" rel="noopener noreferrer">www.innovationhubnairobi.co.ke</a> or by calling <strong><a href="tel:+254723456789">+254 723 456789</a></strong>.</p>
+
+            <div class="back-link">
+                <a href="news.html" class="cta-button primary-cta">← Back to All News</a>
             </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
-    </div>
-</main>
-            <footer>
+        </article>
+    </main>
+
+    <footer>
         <div class="footer-content-wrapper">
             <div class="footer-contact">
                 <h4>Contact La Familia</h4>
@@ -216,9 +183,5 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-
-    
 </body>
 </html>
-
-    

@@ -1,0 +1,284 @@
+/* awards.css */
+
+/* Main content area for the awards */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Awards Section Heading & Intro */
+.awards-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.awards-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.awards-section p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filters and Sorting Controls Container */
+.awards-filters-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align items to the bottom, useful for labels above inputs */
+    gap: 20px; /* Space between filter groups */
+    background-color: #eef5ff; /* Light blue background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column; /* Stack label above input */
+    align-items: flex-start; /* Align label/input to the start */
+    min-width: 150px; /* Ensure filters have minimum width */
+}
+
+.filter-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.filter-group select,
+.filter-group input[type="text"] {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+    width: 100%; /* Make inputs take full width of their group */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.filter-group select:hover,
+.filter-group select:focus,
+.filter-group input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Specific styling for the search group */
+.search-group {
+    position: relative; /* For positioning suggestions */
+    flex-grow: 1; /* Allow search to take more space if available */
+    max-width: 300px; /* Max width for search input */
+}
+
+#award-search {
+    width: 100%;
+}
+
+.search-suggestions-awards {
+    position: absolute;
+    top: 100%; /* Position below the input */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Ensure it's above other content */
+    max-height: 200px; /* Scroll if too many suggestions */
+    overflow-y: auto;
+}
+
+.search-suggestions-awards div {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.search-suggestions-awards div:last-child {
+    border-bottom: none;
+}
+
+.search-suggestions-awards div:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Awards Grid */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Individual Award Card */
+.award-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.award-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.member-logo-award {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #007bff; /* Primary color border for member logo */
+    background-color: white;
+    padding: 3px;
+}
+
+.award-card h3 {
+    font-size: 1.4em;
+    color: #0056b3; /* Member name color */
+    margin-bottom: 10px;
+}
+
+.award-card .award-details {
+    margin-top: 10px;
+    flex-grow: 1; /* Pushes meta to bottom if content varies */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to bottom */
+}
+
+.award-card .award-icon {
+    font-size: 2.5em; /* Large trophy icon */
+    color: #ffc107; /* Gold color for trophy */
+    margin-bottom: 10px;
+}
+
+.award-card .award-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.award-card .award-year,
+.award-card .award-issuer {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.award-card .award-issuer {
+    font-style: italic;
+}
+
+/* Loading and Error Message Styling */
+#awards-loading-message,
+#awards-error-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+#awards-loading-message {
+    color: #007bff;
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+}
+
+#awards-error-message {
+    color: #dc3545;
+    background-color: #ffe6e6;
+    border: 1px solid #ffb3b3;
+}
+
+/* Utility Class */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Load More Button */
+#load-more-awards-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#load-more-awards-btn:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .awards-filters-container {
+        justify-content: flex-start; /* Align filters to the left on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .awards-filters-container {
+        flex-direction: column; /* Stack filters vertically */
+        align-items: stretch; /* Stretch to full width */
+    }
+
+    .filter-group {
+        min-width: unset; /* Remove min-width on small screens */
+        width: 100%; /* Make filter groups take full width */
+    }
+
+    .awards-grid {
+        grid-template-columns: 1fr; /* Stack awards on smaller screens */
+    }
+
+    .awards-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .awards-section h2 {
+        font-size: 1.8em;
+    }
+
+    .awards-section p {
+        font-size: 1em;
+    }
+}

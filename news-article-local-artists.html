@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Details | La Familia Chamber of Commerce</title>
-    <meta name="description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <title>News Article: Local Artists Showcase Work at Annual Fair | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Read about the successful annual Community Art Fair in Nairobi, featuring diverse works from local artists.">
     <meta name="author" content="Alex Malunda">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="Membership Details | La Familia Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/social_share_image.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/membership-levels-details.html">
-    <meta property="og:description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <meta property="og:title" content="Local Artists Showcase Work at Annual Fair | La Familia Chamber of Commerce">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="images/local-artists-fair-hero.jpg">
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/news-article-local-artists.html">
+    <meta property="og:description" content="The annual 'Community Art Fair' in Nairobi was a resounding success, featuring diverse works from talented local artists.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +22,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/membership-levels-details.css">
+    <link rel="stylesheet" href="css/news.css">
 </head>
 <body>
-        <header class="sticky-header">
+
+    <header class="sticky-header">
         <div class="header-top">
             <div class="site-branding">
                 <a href="index.html">
@@ -72,10 +74,11 @@
                 </li>
 
                 <li class="nav-dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <a href="#" class="nav-link dropdown-toggle active" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="blog.html">Business Blog</a></li>
                         <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="news.html">Chamber News</a></li>
                     </ul>
                 </li>
             </ul>
@@ -107,76 +110,40 @@
             <div id="search-history" class="search-history"></div>
         </div>
     </header>
-    <main>
-    <div class="membership-tiers-container">
-        <section class="membership-card membership-np">
-            <h2>NP Membership</h2>
-            <p class="membership-fee">No Fee</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>Access to basic chamber events and general meetings.</li>
-                    <li>Standard listing in the online chamber directory.</li>
-                    <li>Essential networking opportunities with other members.</li>
-                    <li>Receive general chamber communications and updates.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+    <main class="container article-page-main">
+        <article class="news-full-article">
+            <h1 class="article-title">Local Artists Showcase Work at Annual Fair</h1>
+            <p class="article-meta">Published on <time datetime="2024-07-08">July 08, 2024</time> by Chamber News Team</p>
 
-        <section class="membership-card membership-bronze">
-            <h2>Bronze Membership</h2>
-            <p class="membership-fee">$50/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All NP Membership benefits.</li>
-                    <li>Discounts on selected training workshops and seminars.</li>
-                    <li>Access to exclusive online resources (e.g., business templates, articles).</li>
-                    <li>Basic advertising opportunities (e.g., small ad in newsletter).</li>
-                    <li>Opportunity to submit member news for inclusion on the website.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+            <img src="images/local-artists-fair-hero.jpg" alt="Vibrant artwork displayed at an outdoor art fair" class="article-hero-image">
 
-        <section class="membership-card membership-silver">
-            <h2>Silver Membership</h2>
-            <p class="membership-fee">$100/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Bronze Membership benefits.</li>
-                    <li>Discounted rates for all chamber events, including premium ones.</li>
-                    <li>Priority access to advanced training programs and leadership workshops.</li>
-                    <li>Enhanced advertising options (e.g., larger newsletter mentions, social media shout-outs).</li>
-                    <li>Invitations to special member-only gatherings and executive luncheons.</li>
-                    <li>Opportunity to serve on chamber committees.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+            <p><strong>NAIROBI, KENYA</strong> – The annual "Community Art Fair" held last weekend in Nairobi's Central Park was a resounding success, drawing thousands of art enthusiasts and collectors. The fair featured diverse works from over 100 talented local artists, showcasing the rich cultural tapestry and creative spirit thriving within the city.</p>
 
-        <section class="membership-card membership-gold">
-            <h2>Gold Membership</h2>
-            <p class="membership-fee">$200/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Silver Membership benefits.</li>
-                    <li>Complimentary access to all chamber events and premium workshops.</li>
-                    <li>Featured spotlight on the chamber's homepage and in prominent publications.</li>
-                    <li>Opportunity to host chamber events at your business location.</li>
-                    <li>Dedicated business advisory support from chamber leadership.</li>
-                    <li>Exclusive access to leadership forums and roundtables.</li>
-                    <li>Priority consideration for speaking engagements at chamber events.</li>
-                </ul>
+            <p>Organized by the Nairobi Arts Council in partnership with local galleries, the event provided a crucial platform for emerging and established artists to exhibit their paintings, sculptures, photography, and mixed-media creations. "It's truly inspiring to see the community come together to celebrate local talent," said Ms. Grace Wambui, Director of the Nairobi Arts Council. "This fair not only boosts our artists but also enriches the cultural landscape of our city."</p>
+
+            <h3>Highlights from the Community Art Fair:</h3>
+            <ul>
+                <li><strong>A diverse range of artistic styles</strong>, from traditional African motifs to contemporary abstract pieces.</li>
+                <li><strong>Live demonstrations</strong> by painters and sculptors, offering insights into their creative process.</li>
+                <li><strong>Interactive workshops</strong> for children and adults, fostering new artistic skills.</li>
+                <li>A <strong>special exhibition</strong> dedicated to sustainable art, featuring works made from recycled materials.</li>
+                <li><strong>Networking opportunities</strong> for artists to connect with gallerists and art buyers.</li>
+            </ul>
+
+            <img src="images/local-artists-fair-interior.jpg" alt="Artist speaking to visitors at their booth at an art fair" class="article-image">
+            <p class="image-caption">A local artist discusses their work with visitors at their booth during the fair.</p>
+
+            <p>The <strong>La Familia Chamber of Commerce</strong> commends the organizers and participating artists for a truly remarkable event. "Supporting the arts is integral to a vibrant economy and community," stated David Kimani, Board Member of the Chamber. "The success of the Community Art Fair highlights Nairobi's potential as a creative hub and its ability to attract both local and international attention."</p>
+
+            <p>Plans are already underway for next year's fair, promising even more artists and expanded attractions. For more information on local art initiatives and future events, visit the Nairobi Arts Council website at <a href="http://www.nairobiartscouncil.co.ke" target="_blank" rel="noopener noreferrer">www.nairobiartscouncil.co.ke</a> or contact them at <strong><a href="tel:+254734567890">+254 734 567890</a></strong>.</p>
+
+            <div class="back-link">
+                <a href="news.html" class="cta-button primary-cta">← Back to All News</a>
             </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
-    </div>
-</main>
-            <footer>
+        </article>
+    </main>
+
+    <footer>
         <div class="footer-content-wrapper">
             <div class="footer-contact">
                 <h4>Contact La Familia</h4>
@@ -216,9 +183,5 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-
-    
 </body>
 </html>
-
-    

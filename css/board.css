@@ -1,0 +1,217 @@
+/* css/board.css */
+
+/* General Section Styling */
+.board-section,
+.executive-section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.board-section h2,
+.executive-section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color); /* Assuming you have a CSS variable for your primary color */
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.board-section h2::after,
+.executive-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color); /* Assuming an accent color variable */
+    border-radius: 2px;
+}
+
+.board-section p,
+.executive-section p {
+    font-size: 1.1em;
+    color: var(--text-color-light); /* Lighter text for descriptions */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Loading and Error Messages */
+#overall-board-loading-message {
+    color: var(--primary-color);
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+#overall-board-error-message {
+    color: var(--error-color); /* Define an error color, e.g., red */
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Member Grid Container */
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Individual Member Card Styling */
+.member-card {
+    background-color: var(--card-background); /* Card background color */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin: 1rem auto 0.5rem auto; 
+}
+
+.member-name {
+    font-size: 1.7em;
+    color: var(--heading-color); /* Darker color for names */
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.member-title {
+    font-size: 1.1em;
+    color: var(--secondary-color); /* Complementary color for titles */
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.member-bio {
+    font-size: 0.95em;
+    color: var(--text-color); /* Standard text color */
+    line-height: 1.5;
+    padding: 0 1.5rem 1.5rem; /* More padding for bio */
+    flex-grow: 1; /* Allows bio to take up available space */
+}
+
+.member-social {
+    margin-top: auto; /* Pushes social links to the bottom */
+    padding: 1rem;
+    background-color: var(--social-bg-color); /* Light background for social links area */
+    border-top: 1px solid var(--border-color);
+}
+
+.member-social a {
+    color: var(--social-icon-color); /* Icon color */
+    font-size: 1.5em;
+    margin: 0 0.7rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allows transform to work */
+}
+
+.member-social a:hover {
+    color: var(--accent-color); /* Hover color for icons */
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .board-section h2,
+    .executive-section h2 {
+        font-size: 2em;
+    }
+
+    .board-section p,
+    .executive-section p {
+        font-size: 1em;
+    }
+
+    .member-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        padding: 0.5rem;
+    }
+
+    .member-card {
+        margin: 0 auto; /* Center cards in single column layout */
+        max-width: 400px; /* Limit width of single cards */
+    }
+
+    .member-name {
+        font-size: 1.5em;
+    }
+
+    .member-title {
+        font-size: 1em;
+    }
+
+    .member-bio {
+        font-size: 0.9em;
+        padding: 0 1rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-section,
+    .executive-section {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .member-image {
+        height: 200px;
+    }
+}
+
+/* Assumed CSS Variables from main.css or a dedicated variables file */
+/* These should be defined in a higher-level CSS file or :root */
+/*
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #007bff;
+    --accent-color: #28a745;
+    --text-color: #333;
+    --text-color-light: #555;
+    --heading-color: #222;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --border-color: #eee;
+    --social-bg-color: #f8f8f8;
+    --social-icon-color: #666;
+    --error-color: #dc3545;
+}
+
+[data-theme="dark"] {
+    --primary-color: #4CAF50;
+    --secondary-color: #81C784;
+    --accent-color: #FFC107;
+    --text-color: #e0e0e0;
+    --text-color-light: #bbbbbb;
+    --heading-color: #ffffff;
+    --background-color: #1a1a1a;
+    --card-background: #2a2a2a;
+    --border-color: #333;
+    --social-bg-color: #3a3a3a;
+    --social-icon-color: #aaaaaa;
+    --error-color: #dc3545;
+}
+*/

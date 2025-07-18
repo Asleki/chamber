@@ -1,0 +1,215 @@
+/* General styles for the reviews page container */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Reviews Section Styling */
+.reviews-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.reviews-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* Reviews Grid (where review cards are displayed) */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Individual Review Card */
+.review-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.member-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #007bff; /* Example accent color */
+}
+
+.member-info h3 {
+    font-size: 1.3em;
+    color: #0056b3;
+    margin: 0;
+}
+
+.review-content {
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.review-meta {
+    font-size: 0.9em;
+    color: #777;
+    text-align: right;
+    margin-top: auto; /* Pushes meta and rating to the bottom */
+}
+
+.review-author {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.review-date {
+    font-size: 0.85em;
+}
+
+/* Star Rating Styling (Crucial for Font Awesome) */
+.review-rating {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.review-rating .fas, /* Solid stars */
+.review-rating .far   /* Regular (outline) stars */ {
+    color: #ffc107; /* Gold color for stars */
+    font-size: 1.2em; /* Adjust star size */
+    margin-right: 2px; /* Small space between stars */
+}
+
+/* Loading and Error Message Styling */
+#reviews-loading-message,
+#reviews-error-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+#reviews-loading-message {
+    color: #007bff; /* Blue for loading */
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+}
+
+#reviews-error-message {
+    color: #dc3545; /* Red for error */
+    background-color: #ffe6e6;
+    border: 1px solid #ffb3b3;
+}
+
+/* Utility Class (Crucial for JavaScript hiding/showing) */
+.hidden {
+    display: none !important; /* Use !important to override other display properties */
+    visibility: hidden; /* Redundant but good for certainty */
+    opacity: 0; /* Can be used for transitions if needed */
+}
+
+/* Load More Button Styling */
+#load-more-btn {
+    display: block; /* Make it a block element to center it */
+    margin: 30px auto 0 auto; /* Center button below reviews */
+    padding: 12px 25px;
+    background-color: #28a745; /* Green for action button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#load-more-btn:hover {
+    background-color: #218838;
+}
+
+/* Submit Review Section */
+.submit-review-section {
+    text-align: center;
+    background-color: #e9f7ef;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin-top: 40px;
+}
+
+.submit-review-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.submit-review-section p {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.submit-review-section .cta-button {
+    background-color: #007bff; /* Blue for primary call to action */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Allows padding and margin */
+}
+
+.submit-review-section .cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Basic Responsive Adjustments (add more as needed for your main.css) */
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr; /* Stack reviews on smaller screens */
+    }
+
+    .reviews-section, .submit-review-section {
+        padding: 20px;
+    }
+
+    .member-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .member-info h3 {
+        font-size: 1.1em;
+    }
+}

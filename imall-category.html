@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMall - Products - Your One-Stop Online Shop in Kenya</title>
+    <meta name="description" content="Explore a wide range of products at iMall. Find electronics, fashion, home goods, and more. Fast delivery and secure payments in Kenya.">
+    <meta name="keywords" content="iMall products, online shopping Kenya, electronics, home appliances, fashion, deals, new arrivals, best prices, Kenya shopping, category products, brand products">
+    <meta name="author" content="iMall Online Shop">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/imall-category.html"> <meta property="og:title" content="iMall - Products">
+    <meta property="og:description" content="Explore a wide range of products at iMall. Find electronics, fashion, home goods, and more. Fast delivery and secure payments in Kenya.">
+    <meta property="og:image" content="https://asleki.github.io/wdd231/chamber/images/imall-logo.webp"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://asleki.github.io/wdd231/chamber/imall-category.html"> <meta property="twitter:title" content="iMall - Products">
+    <meta property="twitter:description" content="Explore a wide range of products at iMall. Find electronics, fashion, home goods, and more. Fast delivery and secure payments in Kenya.">
+    <meta property="twitter:image" content="https://asleki.github.io/wdd231/chamber/images/imall-logo.webp"> <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/imall.css"> <link rel="stylesheet" href="css/imall-category.css"> </head>
+<body class="bg-gray-100">
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <div class="site-branding">
+                <a href="index.html">
+                    <img src="images/lafamilialogo.webp" alt="La Familia Chambers Logo" class="logo">
+                    <h1>La Familia Chambers</h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <button id="search-toggle" aria-label="Toggle Search Bar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button id="hamburger-menu" aria-label="Open Mobile Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="discover.html" class="nav-link">Discover Nairobi</a></li>
+                <li><a href="directory.html" class="nav-link">Member Directory</a></li>
+                <li><a href="join.html" class="nav-link">Join La Familia</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="board.html">Board of Directors</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" >Members <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="awards.html">Awards & Recognition</a></li>
+                        <li><a href="clubs.html">Member Clubs</a></li>
+                        <li><a href="reviews.html">Member Reviews</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Business Blog</a></li>
+                        <li><a href="events.html">Events Calendar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="search-bar-container" class="search-bar-hidden">
+            <div class="search-input-wrapper">
+                <input type="search" id="site-search" placeholder="Search members, events, news..." aria-label="Site Search">
+                <button id="search-submit-btn" class="search-control-btn" aria-label="Submit Global Search"><i class="fas fa-search"></i></button>
+                <button id="search-clear-btn" class="search-control-btn" aria-label="Clear Search Input"><i class="fas fa-times"></i></button>
+                <button id="search-mic-btn" class="search-control-btn" aria-label="Search with Voice"><i class="fas fa-microphone"></i></button>
+            </div>
+            <div class="search-filters">
+                <select id="search-type-filter" aria-label="Filter by Type">
+                    <option value="">All Types</option>
+                    <option value="member">Members</option>
+                    <option value="event">Events</option>
+                    <option value="news">News</option>
+                    <option value="blog">Blog Posts</option>
+                </select>
+                <select id="search-location-filter" aria-label="Filter by Location">
+                    <option value="">All Locations</option>
+                    <option value="nairobi">Nairobi</option>
+                    <option value="thika">Thika</option>
+                    <option value="mombasa">Mombasa</option>
+                </select>
+            </div>
+            <div id="search-suggestions" class="search-suggestions"></div>
+            <div id="search-history" class="search-history"></div>
+        </div>
+    </header>
+    <nav id="imall-subheader" class="bg-white shadow-md py-3 px-6 rounded-b-lg">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="/imall.html" class="flex items-center space-x-2 flex-shrink-0">
+                <img src="images/member_logos/imall-e-commerce.webp" alt="iMall Logo" class="h-10 w-10 rounded-full">
+                <span class="text-2xl font-extrabold text-gray-800">iMall</span>
+            </a>
+
+            <div class="relative w-full md:w-auto flex-grow md:flex-grow-0 max-w-lg flex items-center">
+                <input type="text" id="imall-search-input" placeholder="Search products or brands..." class="w-full pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-700">
+                <svg class="absolute left-3 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <button id="imall-search-button" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                    Search
+                </button>
+                <div id="imall-search-suggestions" class="search-suggestions-container">
+                    </div>
+            </div>
+
+            <div class="flex items-center space-x-6 text-lg font-medium">
+                <div class="relative group">
+                    <a href="#" id="categories-nav-link" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 block py-1">Categories</a>
+                    <div id="categories-dropdown" class="dropdown-content categories-dropdown">
+                        <a href="./imall-category.html?category=all" class="font-bold">All Categories</a>
+                        </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="#" id="brands-nav-link" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 block py-1">Brands</a>
+                    <div id="brands-dropdown" class="dropdown-content brands-dropdown">
+                        <a href="./imall-category.html?section=brands" class="font-bold">All Brands</a>
+                        </div>
+                </div>
+
+                <a href="./imall-category.html?section=deals" id="deals-nav-link" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 block py-1">Deals</a>
+                <a href="./imall-category.html?section=new-arrivals" id="new-arrivals-nav-link" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 block py-1">New Arrivals</a>
+
+                <a href="./imall-my-activity.html" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </a>
+
+                <a href="./imall-my-activity.html" class="relative text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-7 w-7"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5H1m4 8v.01M17 13v.01M17 18H9.01M17 18l-2.68-2.68c-.29-.29-.77-.29-1.06 0L10 18m-4 0h8"
+                        />
+                    </svg>
+                    <span id="cart-item-count" class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">
+                        0
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="notification-message" class="fixed top-32 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 opacity-0 transition-opacity duration-300">
+        </div>
+
+    <main id="imall-category-main-content" class="container mx-auto p-6">
+        <h1 id="category-page-title" class="text-4xl font-extrabold text-gray-900 text-center mb-8">Loading Products...</h1>
+
+        <div id="product-list-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            <p class="col-span-full text-center text-gray-600" id="no-products-message">No products found matching your criteria.</p>
+        </div>
+    </main>
+
+<footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-contact">
+                <h4>Contact La Familia</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Chambers Lane, Westlands, Nairobi, Kenya</p>
+                <p><i class="fas fa-phone"></i> +254 707 176 595</p>
+                <p><i class="fas fa-envelope"></i> info@lafamiliachambers.co.ke</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/icons%26logos/facebook_24dp.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/icons%26logos/instagram_24dp.svg" alt="Instagram"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/icons%26logos/linkedin_24dp.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Twitter"><img src="images/icons%26logos/twitter_24dp.svg" alt="Twitter"></a>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Notice</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-about">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About La Familia</a></li>
+                    <li><a href="developer.html">About the Developer</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/imall-dropdown.js"></script> <script src="js/imall-category.js"></script> </body>
+</html>

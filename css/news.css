@@ -1,0 +1,329 @@
+/* ==========================================================================
+    News-Specific Styles (for Homepage widget and Full News Pages)
+    ========================================================================== */
+
+/* Styles for the News Updates widget on the homepage */
+.news-updates {
+    display: flex; /* Use flexbox for internal layout of news items and button */
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom if content is short */
+}
+
+/* Container for dynamically loaded news items on homepage */
+#homepage-news-container {
+    margin-bottom: 1.5rem; /* Space between news items and "View All News" button */
+    flex-grow: 1; /* Allows news content to take available space */
+}
+
+/* Individual News Item (on homepage) */
+.news-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left; /* Align text inside news items to the left */
+}
+
+.news-item:last-of-type {
+    border-bottom: none; /* No border for the last item */
+}
+
+.news-item-title {
+    font-size: 1.3em; /* Slightly smaller for the compact news section */
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+
+.news-item-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.news-item-title a:hover {
+    color: var(--accent-color); /* Matches your design */
+}
+
+.news-item-summary {
+    font-size: 0.95em;
+    color: var(--text-color-light); /* Lighter text for summary */
+    line-height: 1.5;
+}
+
+/* Styles for the "View All News" button on the homepage */
+.news-updates .view-all-news-button {
+    margin-top: 15px; /* Adjust spacing from news items */
+    display: block; /* Make it a block element to control its width and centering */
+    width: fit-content; /* Make the button only as wide as its content */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+    background-color: var(--primary-color); /* Maintain primary style */
+    color: var(--background-color-white);
+    border: 2px solid var(--primary-color);
+}
+
+.news-updates .view-all-news-button:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    color: var(--background-color-white);
+}
+
+/* Loading and Error Messages for news content */
+.loading-message,
+.error-message {
+    text-align: center;
+    font-size: 1em;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.loading-message {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-style: italic;
+}
+
+.error-message {
+    color: var(--error-color);
+    background-color: #ffe6e6; /* Light red background for error */
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important; /* Important to ensure it overrides other styles */
+}
+
+/* Styles for Full News Article Pages (e.g., news-article-gourmet-bistro.html) */
+.article-page-main {
+    padding-top: 2rem; /* Adjust based on your header height */
+    padding-bottom: 3rem;
+}
+
+.news-full-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.news-full-article h1 {
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+.news-full-article .article-meta {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.news-full-article .article-hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.news-full-article p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.news-full-article h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.news-full-article ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.news-full-article ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.news-full-article a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-full-article a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.news-full-article .back-link {
+    text-align: center;
+    margin-top: 3rem;
+}
+/* Read More Button styling (re-added for clarity, if not in main.css) */
+.read-more-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: var(--secondary-color); /* Use your theme's secondary color */
+    color: var(--background-color); /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: var(--primary-color); /* Darker on hover */
+}
+
+/* Specific style for news items that trigger a modal */
+.news-item .news-modal-trigger {
+    cursor: pointer; /* Indicate it's clickable */
+    color: var(--heading-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.news-item .news-modal-trigger:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Modal Styling */
+.news-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of everything */
+    overflow-y: auto; /* Allow scrolling for long content */
+    padding: 20px;
+}
+
+.news-modal.hidden {
+    display: none;
+}
+
+.news-modal-content {
+    background-color: rgb(211, 216, 244);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px; /* Max width for the modal content */
+    width: 95%; /* Responsive width */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 90vh; /* Max height to fit viewport */
+    overflow-y: auto; /* Scroll content if it's too long */
+    animation: fadeInScale 0.3s ease-out forwards; /* Simple animation */
+}
+
+.news-modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.news-modal-close-button:hover {
+    color: var(--error-color);
+}
+
+.news-modal-content h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+.modal-article-body p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.modal-article-date {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Utility class to prevent body scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Animation for modal */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ensure images within modal scale correctly */
+.modal-article-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+/* Media Queries for News (apply to both homepage widget and full articles if relevant) */
+@media (max-width: 768px) {
+    /* Ensure button centering on mobile for homepage news as well */
+    .news-updates .view-all-news-button {
+        width: 100%; /* Make button full width on mobile */
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Responsive adjustments for full news article */
+    .news-full-article {
+        padding: 1.5rem;
+    }
+    .news-full-article h1 {
+        font-size: 2em;
+    }
+    .news-full-article h3 {
+        font-size: 1.5em;
+    }
+    .news-full-article p,
+    .news-full-article ul li {
+        font-size: 1em;
+    }
+}
+

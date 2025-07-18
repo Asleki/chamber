@@ -1,0 +1,301 @@
+/* join-club.css */
+
+/* Main content area */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Section containing club details and form */
+.join-club-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.join-club-section h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.join-club-section .club-intro-text {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Club Details Display */
+.club-details-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #eef5ff; /* Light blue background for details */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.2); /* Inner shadow */
+}
+
+.club-details-display img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff5722; /* Club accent color border */
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.club-details-display .details-content {
+    text-align: left;
+    max-width: 600px;
+}
+
+.club-details-display .club-description-full {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.club-details-display .club-meta-full {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #333;
+}
+
+.club-details-display .club-meta-full div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f0f8ff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #cce0ff;
+}
+
+.club-details-display .club-meta-full i {
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+.joining-fees {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.joining-fees h4 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.joining-fees p {
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #333;
+}
+
+.joining-fees p strong {
+    color: #000;
+}
+
+
+/* Form Styling */
+.join-club-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.join-club-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.join-club-form legend {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #28a745; /* Green for form legends */
+    padding: 0 10px;
+    margin-left: -10px;
+}
+
+.join-club-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.join-club-form input[type="text"],
+.join-club-form input[type="email"],
+.join-club-form input[type="tel"],
+.join-club-form select,
+.join-club-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.join-club-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.join-club-form input:focus,
+.join-club-form select:focus,
+.join-club-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.estimated-fee-display {
+    background-color: #f0f8ff;
+    border: 1px solid #cce0ff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #007bff;
+    text-align: center;
+}
+
+.estimated-fee-display strong {
+    font-size: 1.2em;
+    color: #0056b3;
+}
+
+
+/* Submit Button */
+.cta-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+    width: auto;
+    min-width: 150px;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Loading and Error Messages */
+#club-loading-message,
+#club-error-message,
+#form-message {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#club-loading-message {
+    color: #007bff;
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+}
+
+#club-error-message {
+    color: #dc3545;
+    background-color: #ffe6e6;
+    border: 1px solid #ffb3b3;
+}
+
+#form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Utility Class */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .join-club-section {
+        padding: 20px;
+    }
+
+    .club-details-display {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .club-details-display .details-content {
+        text-align: center;
+    }
+
+    .club-details-display .club-meta-full {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .join-club-form fieldset {
+        padding: 15px;
+    }
+
+    .join-club-form input[type="text"],
+    .join-club-form input[type="email"],
+    .join-club-form input[type="tel"],
+    .join-club-form select,
+    .join-club-form textarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-club-section h2 {
+        font-size: 1.8em;
+    }
+
+    .join-club-section .club-intro-text {
+        font-size: 1em;
+    }
+}

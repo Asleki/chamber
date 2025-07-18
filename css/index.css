@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Homepage-Specific Styles 
-   ========================================================================== */
+    Homepage-Specific Styles
+    ========================================================================== */
 
 /* --- General Main Container --- */
 .container {
@@ -287,18 +287,20 @@
     line-height: 1.6;
 }
 
-/* --- Weather and News --- */
+/* --- Weather and News (General Container) --- */
+/* This section styles the overall layout of the weather and news widgets side-by-side */
 .weather-and-news {
-    display: flex;
+    display: flex; /* Reverted to original flex layout */
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 40px;
 }
 
+/* Base styles for individual widgets within weather-and-news */
 .weather-widget,
 .news-updates {
-    flex: 1;
-    min-width: 300px;
+    flex: 1; /* Allows them to grow and shrink */
+    min-width: 300px; /* Minimum width before wrapping */
     background-color: var(--background-color-white);
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--shadow-color);
@@ -312,9 +314,10 @@
     color: var(--heading-color);
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
+    text-align: center; /* Centered titles for both widgets */
 }
 
-/* Weather Widget Overall */
+/* Weather Widget Specific Styles (keep these in index.css as they are weather-specific) */
 .weather-widget {
     background-color: #ffffff;
     border-radius: 12px;
@@ -339,7 +342,6 @@
     gap: 20px;
 }
 
-/* Current Day Weather Card */
 .current-weather-card {
     background-color: #f0f8ff;
     border-radius: 10px;
@@ -379,7 +381,6 @@
     text-transform: capitalize;
 }
 
-/* Forecast Cards Wrapper (for horizontal layout) */
 .forecast-cards-wrapper {
     display: flex;
     justify-content: center;
@@ -388,7 +389,6 @@
     width: 100%;
 }
 
-/* Individual Forecast Day Card (Minor Card) */
 .forecast-day-card {
     background-color: #f7f7f7;
     border-radius: 8px;
@@ -422,53 +422,6 @@
     font-weight: 700;
     color: #333;
     line-height: 1;
-}
-
-.news-updates article {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed var(--border-color-light);
-}
-
-.news-updates article:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.news-updates article h4 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.news-updates article h4 a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.news-updates article h4 a:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
-}
-
-.news-updates article p {
-    font-size: 0.95rem;
-    color: var(--text-color-secondary);
-    line-height: 1.5;
-}
-
-.news-updates .secondary-cta {
-    margin-top: 15px;
-    float: right;
-    background-color: var(--primary-color);
-    color: var(--background-color-white);
-    border: 2px solid var(--primary-color);
-}
-
-.news-updates .secondary-cta:hover {
-    background-color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
-    color: var(--background-color-white);
 }
 
 /* --- Business Dictionary --- */
@@ -538,7 +491,6 @@ body.dark-mode .business-dictionary {
     max-width: 600px;
 }
 
-/* Styling for Quote Text */
 #dictionary-display .quote-text {
     font-size: 1.8em;
     font-weight: 500;
@@ -547,7 +499,6 @@ body.dark-mode .business-dictionary {
     line-height: 1.4;
 }
 
-/* Styling for Author Name */
 #dictionary-display .quote-author {
     font-size: 1.1em;
     color: #555;
@@ -555,7 +506,6 @@ body.dark-mode .business-dictionary {
     margin-top: 5px;
 }
 
-/* Styling for Dictionary Term and Definition */
 #dictionary-display .term-text {
     font-size: 1.6em;
     color: #003366;
@@ -594,7 +544,6 @@ body.dark-mode .business-dictionary {
     padding-bottom: 15px;
 }
 
-/* Hide scrollbar for aesthetic purposes, but keep functionality */
 .spotlight-carousel::-webkit-scrollbar {
     display: none;
 }
@@ -603,7 +552,6 @@ body.dark-mode .business-dictionary {
     scrollbar-width: none;
 }
 
-/* Individual member spotlight card styles */
 .member-spotlight-card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -708,11 +656,7 @@ body.dark-mode .business-dictionary {
         font-size: 1rem;
     }
 
-    .news-updates .secondary-cta {
-        float: none;
-        width: 100%;
-        text-align: center;
-    }
+    /* news-updates .secondary-cta is now handled in news.css */
 
     .business-dictionary .carousel-btn {
         font-size: 2rem;
@@ -750,4 +694,5 @@ body.dark-mode .business-dictionary {
     .hero-text h2 {
         font-size: 3rem;
     }
+    /* weather-and-news layout handled by its base styles; no specific override needed here unless you want to force 2 columns earlier */
 }

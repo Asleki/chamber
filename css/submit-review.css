@@ -1,0 +1,181 @@
+
+
+/* Main content area for the form */
+main {
+    padding: 20px;
+    max-width: 800px; /* Limit width for better readability */
+    margin: 20px auto; /* Center the content */
+    font-family: 'Roboto', sans-serif; /* Consistent font */
+}
+
+/* Section containing the form */
+.review-form-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the heading and paragraph */
+}
+
+.review-form-section h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.review-form-section p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* The Form itself */
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between fieldsets */
+    text-align: left; /* Align form elements to the left */
+}
+
+/* Fieldset styling */
+.review-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.review-form legend {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #007bff; /* Primary color for legends */
+    padding: 0 10px;
+    margin-left: -10px; /* Adjust to align with fieldset border */
+}
+
+/* Label and Input Styling */
+.review-form label {
+    display: block; /* Make labels take full width */
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.review-form input[type="text"],
+.review-form input[type="email"],
+.review-form select,
+.review-form textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.review-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 100px; /* Minimum height for textarea */
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; /* Remove default outline */
+}
+
+/* Rating Stars Container */
+.rating-stars {
+    margin-bottom: 15px;
+    font-size: 1.8em; /* Size of the stars */
+    color: #ccc; /* Default color for unselected stars */
+    cursor: pointer;
+    display: flex; /* Arrange stars in a row */
+    gap: 5px; /* Space between stars */
+}
+
+.rating-stars .fas.fa-star { /* Styles for filled stars */
+    color: #ffc107; /* Gold color */
+}
+
+.rating-stars .far.fa-star:hover, /* Hover effect for outline stars */
+.rating-stars .far.fa-star:hover ~ .far.fa-star { /* Hover effect for subsequent outline stars */
+    color: #ffda6a; /* Lighter gold on hover */
+}
+
+
+/* Submit Button */
+.cta-button {
+    background-color: #28a745; /* Green */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center; /* Center the button in the flex container */
+    width: auto; /* Button width adjusts to content */
+    min-width: 150px;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Form message (success/error) */
+#form-message {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Utility Class (from main.css, ensure it's here too or in main.css) */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .review-form-section {
+        padding: 20px;
+    }
+
+    .review-form fieldset {
+        padding: 15px;
+    }
+
+    .review-form input[type="text"],
+    .review-form input[type="email"],
+    .review-form select,
+    .review-form textarea {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .rating-stars {
+        justify-content: center; /* Center stars on small screens */
+        font-size: 1.5em;
+    }
+}

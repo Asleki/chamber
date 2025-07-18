@@ -1,0 +1,257 @@
+/* css/register.css */
+
+/* Registration Form Section */
+#event-registration-section {
+    padding: 30px 20px;
+    background-color: var(--section-bg-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#event-registration-section .page-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+#event-registration-section .page-title span {
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+    color: var(--heading-color);
+    margin-top: 5px;
+}
+
+/* Form Styling */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.registration-form fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 0; /* Override default fieldset margin */
+    background-color: var(--card-bg-color);
+    box-shadow: var(--shadow-extra-small);
+}
+
+.registration-form legend {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0 10px;
+    margin-left: -10px; /* Adjust to align with fieldset padding */
+}
+
+/* Event Summary within Form */
+.event-details-summary p {
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+.event-details-summary p strong {
+    color: var(--heading-color);
+}
+
+#event-description-summary {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--light-text-color);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 1em;
+}
+
+.form-group label .required {
+    color: var(--error-color);
+    margin-left: 3px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--secondary-color-rgb), 0.2); /* Assuming you have RGB variable */
+}
+
+/* Radio/Checkbox options */
+#registration-type-options,
+#transport-options,
+#snacks-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#registration-type-options label,
+#transport-options label,
+#snacks-options label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#registration-type-options input[type="radio"],
+#transport-options input[type="radio"],
+#snacks-options input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto; /* Override 100% width */
+    transform: scale(1.1); /* Slightly larger */
+}
+
+/* Total Cost Summary */
+.total-cost-summary {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+.total-cost-summary strong {
+    color: #fff; /* Ensure strong tag also white */
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions .cta-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Utility for hidden elements */
+.hidden {
+    display: none !important;
+}
+Success Message Styling */
+.registration-success-message {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: var(--shadow-small);
+    opacity: 0; /* Start hidden for fade-in */
+    transform: translateY(20px); /* Start slightly below for slide-up effect */
+    animation: fadeInSlideUp 0.5s ease-out forwards;
+}
+
+.registration-success-message.hidden {
+    display: none;
+}
+
+.registration-success-message .success-icon {
+    font-size: 4em;
+    color: #28a745; /* Brighter green icon */
+    margin-bottom: 20px;
+}
+
+.registration-success-message h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #155724;
+}
+
+.registration-success-message p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.registration-success-message strong {
+    color: #0c4d16; /* Even darker green for emphasis */
+}
+
+.registration-success-message .success-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-success-message .cta-button {
+    min-width: 250px; /* Make buttons a bit wider */
+    text-align: center;
+}
+
+/* Animation for success message */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Utility for hidden elements */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive adjustments for success message buttons */
+@media (min-width: 600px) {
+    .registration-success-message .success-actions {
+        flex-direction: row; /* Arrange buttons side-by-side */
+    }
+}
+/* Responsive adjustments */
+@media (min-width: 600px) {
+    .registration-form fieldset {
+        padding: 30px;
+    }
+}

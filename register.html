@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Details | La Familia Chamber of Commerce</title>
-    <meta name="description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <title>Event Registration | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Register for an upcoming event hosted by the La Familia Chamber of Commerce. Secure your spot for networking events, workshops, and summits in Nairobi.">
     <meta name="author" content="Alex Malunda">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="Membership Details | La Familia Chamber of Commerce">
+    <meta property="og:title" content="Event Registration | La Familia Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/social_share_image.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/membership-levels-details.html">
-    <meta property="og:description" content="Detailed breakdown of membership levels, benefits, and pricing for the La Familia Chamber of Commerce.">
+    <meta property="og:image" content="images/social_share_register.jpg"> <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/register.html">
+    <meta property="og:description" content="Register for an upcoming event hosted by the La Familia Chamber of Commerce. Secure your spot for networking events, workshops, and summits in Nairobi.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/membership-levels-details.css">
-</head>
+    <link rel="stylesheet" href="css/register.css"> </head>
 <body>
-        <header class="sticky-header">
+
+    <header class="sticky-header">
         <div class="header-top">
             <div class="site-branding">
                 <a href="index.html">
@@ -75,7 +75,7 @@
                     <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="blog.html">Business Blog</a></li>
-                        <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="events.html" class="active">Events Calendar</a></li> <li><a href="news.html">Chamber News</a></li>
                     </ul>
                 </li>
             </ul>
@@ -107,76 +107,80 @@
             <div id="search-history" class="search-history"></div>
         </div>
     </header>
-    <main>
-    <div class="membership-tiers-container">
-        <section class="membership-card membership-np">
-            <h2>NP Membership</h2>
-            <p class="membership-fee">No Fee</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>Access to basic chamber events and general meetings.</li>
-                    <li>Standard listing in the online chamber directory.</li>
-                    <li>Essential networking opportunities with other members.</li>
-                    <li>Receive general chamber communications and updates.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
 
-        <section class="membership-card membership-bronze">
-            <h2>Bronze Membership</h2>
-            <p class="membership-fee">$50/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All NP Membership benefits.</li>
-                    <li>Discounts on selected training workshops and seminars.</li>
-                    <li>Access to exclusive online resources (e.g., business templates, articles).</li>
-                    <li>Basic advertising opportunities (e.g., small ad in newsletter).</li>
-                    <li>Opportunity to submit member news for inclusion on the website.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+    <main class="container">
+        <section id="event-registration-section" class="page-section">
+            <h1 class="page-title">Register for Event: <span id="event-name-display">Loading...</span></h1>
+            <div id="registration-loading-message" class="loading-message">Loading event details...</div>
+            <div id="registration-error-message" class="error-message hidden">Failed to load event details. Please return to the <a href="events.html">Events Calendar</a> and try again.</div>
 
-        <section class="membership-card membership-silver">
-            <h2>Silver Membership</h2>
-            <p class="membership-fee">$100/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Bronze Membership benefits.</li>
-                    <li>Discounted rates for all chamber events, including premium ones.</li>
-                    <li>Priority access to advanced training programs and leadership workshops.</li>
-                    <li>Enhanced advertising options (e.g., larger newsletter mentions, social media shout-outs).</li>
-                    <li>Invitations to special member-only gatherings and executive luncheons.</li>
-                    <li>Opportunity to serve on chamber committees.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
-        </section>
+            <form id="event-registration-form" class="registration-form hidden">
+                <input type="hidden" id="event-id" name="event_id">
 
-        <section class="membership-card membership-gold">
-            <h2>Gold Membership</h2>
-            <p class="membership-fee">$200/year</p>
-            <div class="membership-benefits-list">
-                <h3>Key Benefits:</h3>
-                <ul>
-                    <li>All Silver Membership benefits.</li>
-                    <li>Complimentary access to all chamber events and premium workshops.</li>
-                    <li>Featured spotlight on the chamber's homepage and in prominent publications.</li>
-                    <li>Opportunity to host chamber events at your business location.</li>
-                    <li>Dedicated business advisory support from chamber leadership.</li>
-                    <li>Exclusive access to leadership forums and roundtables.</li>
-                    <li>Priority consideration for speaking engagements at chamber events.</li>
-                </ul>
-            </div>
-            <a href="join.html" class="membership-cta-button">Join Now</a>
+                <fieldset class="event-details-summary">
+                    <legend>Event Details</legend>
+                    <p><strong>Name:</strong> <span id="form-event-name"></span></p>
+                    <p><strong>Date:</strong> <span id="form-event-date"></span></p>
+                    <p><strong>Time:</strong> <span id="form-event-time"></span></p>
+                    <p><strong>Location:</strong> <span id="form-event-location"></span></p>
+                    <p id="event-description-summary"></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Information</legend>
+                    <div class="form-group">
+                        <label for="full-name">Full Name: <span class="required">*</span></label>
+                        <input type="text" id="full-name" name="full_name" required pattern="[A-Za-z ]{3,}" title="Please enter your full name (minimum 3 characters, letters and spaces only).">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization (Optional):</label>
+                        <input type="text" id="organization" name="organization">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Registration Type <span class="required">*</span></legend>
+                    <div id="registration-type-options">
+                        </div>
+                </fieldset>
+
+                <fieldset id="transport-fieldset" class="hidden">
+                    <legend>Transport Options</legend>
+                    <div id="transport-options">
+                        </div>
+                </fieldset>
+
+                <fieldset id="snacks-fieldset" class="hidden">
+                    <legend>Snacks & Refreshments</legend>
+                    <div id="snacks-options">
+                        </div>
+                </fieldset>
+
+                <div class="total-cost-summary">
+                    <p>Total Estimated Cost: <strong>KES <span id="total-cost">0.00</span></strong></p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="cta-button primary-cta">Register Now</button>
+                    <button type="reset" class="cta-button secondary-cta">Reset Form</button>
+                </div>
+            </form>
+
+            <div id="registration-success-message" class="registration-success-message hidden">
+                </div>
+
         </section>
-    </div>
-</main>
-            <footer>
+    </main>
+
+    <footer>
         <div class="footer-content-wrapper">
             <div class="footer-contact">
                 <h4>Contact La Familia</h4>
@@ -215,10 +219,7 @@
             <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
-
-    
-</body>
+    <script src="js/register.js"></script> </body>
 </html>
-
-    

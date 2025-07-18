@@ -4,7 +4,7 @@
             "id": "zawadi-mzuri",
             "name": "Zawadi Mzuri",
             "title": "Chairperson",
-            "image": "images/team/zawadi_mzuri.webp",
+            "image": "https://images.pexels.com/photos/13882494/pexels-photo-13882494.jpeg",
             "bio": "Zawadi Mzuri is a seasoned entrepreneur and advocate for sustainable business practices. With over 20 years of experience in the manufacturing sector, she brings a wealth of knowledge in strategic leadership and community development. Her vision for La Familia Chambers is to foster an inclusive and innovative business ecosystem.",
             "social": {
                 "linkedin": "https://linkedin.com/in/zawadi-mzuri",
@@ -15,7 +15,7 @@
             "id": "david-kimani",
             "name": "David Kimani",
             "title": "Vice-Chairperson",
-            "image": "images/team/david_kimani.webp",
+            "image": "https://images.pexels.com/photos/5082976/pexels-photo-5082976.jpeg",
             "bio": "David Kimani is a legal expert specializing in corporate law and governance. He provides invaluable legal counsel and strategic guidance to the Board, ensuring compliance and ethical operations. David is passionate about creating fair opportunities for all businesses.",
             "social": {
                 "linkedin": "https://linkedin.com/in/david-kimani",
@@ -26,7 +26,7 @@
             "id": "dr-aisha-hassan",
             "name": "Dr. Aisha Hassan",
             "title": "Secretary",
-            "image": "images/team/aisha_hassan.webp",
+            "image": "https://images.pexels.com/photos/764529/pexels-photo-764529.jpeg",
             "bio": "Dr. Aisha Hassan is an accomplished academic and researcher with a focus on economic development. As Secretary, she meticulously manages board communications and documentation, contributing her analytical skills to policy formulation and strategic planning.",
             "social": {
                 "linkedin": "https://linkedin.com/in/aisha-hassan",
@@ -37,7 +37,7 @@
             "id": "robert-ngugi",
             "name": "Robert Ngugi",
             "title": "Treasurer",
-            "image": "images/team/robert_ngugi.webp",
+            "image": "https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg",
             "bio": "Robert Ngugi is a certified public accountant with extensive experience in financial management and auditing. He oversees the Chamber's financial health, ensuring transparency and fiscal responsibility. Robert is committed to maximizing resource utilization for member benefits.",
             "social": {
                 "linkedin": "https://linkedin.com/in/robert-ngugi",
@@ -48,7 +48,7 @@
             "id": "sarah-ochieng",
             "name": "Sarah Ochieng",
             "title": "Board Member",
-            "image": "images/team/sarah_ochieng.webp",
+            "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
             "bio": "Sarah Ochieng is a dynamic marketing professional with a proven track record in brand building and digital strategy. She brings fresh perspectives on member engagement and outreach, helping the Chamber connect with a wider audience and enhance its value proposition.",
             "social": {
                 "linkedin": "https://linkedin.com/in/sarah-ochieng",
@@ -59,7 +59,7 @@
             "id": "michael-mutua",
             "name": "Michael Mutua",
             "title": "Board Member",
-            "image": "images/team/michael_mutua.webp",
+            "image": "https://images.pexels.com/photos/10319812/pexels-photo-10319812.jpeg",
             "bio": "Michael Mutua is a technology innovator and founder of a successful tech startup. His expertise in emerging technologies and digital transformation is crucial for guiding the Chamber's initiatives to support tech-driven businesses and foster a vibrant innovation ecosystem.",
             "social": {
                 "linkedin": "https://linkedin.com/in/michael-mutua",
@@ -72,7 +72,7 @@
             "id": "grace-wanjiku",
             "name": "Grace Wanjiku",
             "title": "Chief Executive Officer (CEO)",
-            "image": "images/team/grace_wanjiku.webp",
+            "image": "https://images.pexels.com/photos/9048323/pexels-photo-9048323.jpeg",
             "bio": "Grace Wanjiku leads the day-to-day operations of La Familia Chambers, driving strategic initiatives and ensuring the Chamber's mission is achieved. With a background in organizational leadership and non-profit management, she is dedicated to fostering a thriving business community.",
             "social": {
                 "linkedin": "https://linkedin.com/in/grace-wanjiku",
@@ -83,7 +83,7 @@
             "id": "peter-mwangi",
             "name": "Peter Mwangi",
             "title": "Operations Manager",
-            "image": "images/team/peter_mwangi.webp",
+            "image": "https://images.pexels.com/photos/30779874/pexels-photo-30779874.jpeg",
             "bio": "Peter Mwangi oversees all operational aspects of the Chamber, ensuring smooth execution of programs and events. His meticulous planning and logistical expertise are vital for delivering high-quality services to members.",
             "social": {
                 "linkedin": "https://linkedin.com/in/peter-mwangi",
@@ -94,7 +94,7 @@
             "id": "esther-njeri",
             "name": "Esther Njeri",
             "title": "Membership Coordinator",
-            "image": "images/team/esther_njeri.webp",
+            "image": "https://images.pexels.com/photos/6311046/pexels-photo-6311046.jpeg",
             "bio": "Esther Njeri is the primary point of contact for new and existing members, dedicated to ensuring their needs are met and they fully benefit from Chamber resources. She plays a key role in member retention and recruitment.",
             "social": {
                 "linkedin": "https://linkedin.com/in/esther-njeri",
@@ -105,7 +105,7 @@
             "id": "collins-omondi",
             "name": "Collins Omondi",
             "title": "Events Manager",
-            "image": "images/team/collins_omondi.webp",
+            "image": "https://images.pexels.com/photos/19098114/pexels-photo-19098114.jpeg",
             "bio": "Collins Omondi is responsible for conceptualizing, planning, and executing all Chamber events, from large-scale summits to intimate networking sessions. His creativity and organizational skills ensure memorable and impactful experiences.",
             "social": {
                 "linkedin": "https://linkedin.com/in/collins-omondi",
@@ -116,7 +116,7 @@
             "id": "faith-chebet",
             "name": "Faith Chebet",
             "title": "Communications Manager",
-            "image": "images/team/faith_chebet.webp",
+            "image": "https://images.pexels.com/photos/5615665/pexels-photo-5615665.jpeg",
             "bio": "Faith Chebet manages all internal and external communications for La Familia Chambers, including press releases, newsletters, and social media. She ensures that the Chamber's message is clear, consistent, and reaches its target audience effectively.",
             "social": {
                 "linkedin": "https://linkedin.com/in/faith-chebet",
