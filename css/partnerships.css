@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Partnerships Page Styles for La Familia Chambers
+   ========================================================================== */
+
+/* Hero Section Specific Styles */
+.partnerships-hero-section .hero-image-slider img {
+    /* The hero-image-slider and hero-image classes are from your index.css/main.css */
+    /* Ensure this image is prominent for the partnerships page */
+    object-position: center center; /* Adjust as needed for your specific image */
+}
+
+.partnerships-hero-section .hero-text h2 {
+    font-size: 3.5em; /* Larger heading for impact */
+    margin-bottom: 20px;
+    color: var(--background-color-white); /* Assuming white text on hero overlay */
+}
+
+.partnerships-hero-section .hero-text p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+    color: var(--background-color-white);
+}
+
+/* Common Section Styles (re-using .page-section from main.css) */
+.page-section {
+    padding: 3rem 0; /* Consistent vertical padding */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Backgrounds */
+.bg-light-gray {
+    background-color: var(--background-color-light); /* Assuming this variable exists or define a light grey */
+}
+
+/* About Our Partnerships Section */
+.partnerships-about .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.partnerships-about .about-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 0.75rem; /* Rounded corners */
+    box-shadow: var(--shadow-light); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partnerships-about .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover); /* Enhanced shadow on hover */
+}
+
+.partnerships-about .about-card i {
+    font-size: 3em;
+    color: var(--accent-color); /* Use your accent color for icons */
+    margin-bottom: 20px;
+}
+
+.partnerships-about .about-card h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.partnerships-about .about-card p {
+    font-size: 1em;
+    color: var(--text-color-light);
+    line-height: 1.5;
+}
+
+/* Benefits of Partnering Section - UPDATED */
+.partnerships-benefits .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.partnerships-benefits .benefit-item {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-light);
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text */
+}
+
+.partnerships-benefits .benefit-item i {
+    font-size: 2em;
+    color: var(--secondary-color); /* Use your secondary color for icons */
+    margin-bottom: 15px; /* Space between icon and heading */
+}
+
+.partnerships-benefits .benefit-item h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 8px; /* Space between heading and paragraph */
+}
+
+.partnerships-benefits .benefit-item p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* Partnership Tiers Section */
+.partnership-tiers .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.partnership-tiers .tier-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.partnership-tiers .tier-card.featured-tier {
+    border-color: var(--accent-color); /* Highlight for featured tier */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px); /* Lift slightly */
+}
+
+.partnership-tiers .tier-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.partnership-tiers .tier-card.featured-tier h3 {
+    color: var(--accent-color);
+}
+
+.partnership-tiers .tier-card ul {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.partnership-tiers .tier-card ul li {
+    font-size: 1.05em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: flex; /* For icon and text alignment */
+    align-items: center;
+}
+
+.partnership-tiers .tier-card ul li i {
+    color: var(--success-color); /* Green checkmark for benefits */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.partnership-tiers .tier-card p {
+    font-size: 0.95em;
+    color: var(--text-color-light);
+    line-height: 1.5;
+    min-height: 45px; /* Ensures consistent height for descriptive text below list */
+}
+
+/* Get Started Section (Call to Action) - UPDATED */
+.partnerships-get-started.cta-section {
+    background-color: var(--primary-color-dark); /* Dark background for CTA */
+    color: var(--background-color-white); /* White text on dark background */
+    padding: 3rem 2rem; /* Ample padding */
+    margin: 3rem auto; /* Center the block horizontally with vertical margin */
+    max-width: 900px; /* Limit its width to make the border-radius more apparent */
+    border-radius: 25px; /* Broader radius */
+    box-shadow: var(--shadow-medium); /* Add a shadow */
+    text-align: center; /* Center the content inside */
+}
+
+.partnerships-get-started .cta-content h2 {
+    color: var(--background-color-white);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.partnerships-get-started .cta-content p {
+    font-size: 1.2em;
+    color: var(--background-color-white);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* Ensure the CTA button within this section is centered */
+.partnerships-get-started .cta-button {
+    display: block; /* Make it a block element */
+    margin: 0 auto; /* Center it horizontally */
+    width: fit-content; /* Make it only as wide as its content */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .partnerships-hero-section .hero-text h2 {
+        font-size: 2.8em;
+    }
+
+    .partnerships-hero-section .hero-text p {
+        font-size: 1.1em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .section-description {
+        font-size: 1em;
+    }
+
+    .partnerships-about .about-grid,
+    .partnerships-benefits .benefits-grid,
+    .partnership-tiers .tiers-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .partnerships-about .about-card,
+    .partnerships-benefits .benefit-item,
+    .partnership-tiers .tier-card {
+        padding: 25px;
+    }
+
+    .partnerships-get-started.cta-section {
+        margin: 2rem 1rem; /* Adjust margin for smaller screens */
+        border-radius: 15px; /* Slightly smaller radius on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .partnerships-hero-section .hero-text h2 {
+        font-size: 2.2em;
+    }
+
+    .partnerships-hero-section .hero-text p {
+        font-size: 1em;
+    }
+
+    .page-section {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .section-description {
+        margin-bottom: 2rem;
+    }
+
+    .partnerships-get-started .cta-content h2 {
+        font-size: 2em;
+    }
+
+    .partnerships-get-started .cta-content p {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Discover Page Styles for La Familia Chambers
+   ========================================================================== */
+
+/* Main container for the discover page content */
+.discover-main {
+    padding-top: 2rem; /* Adjust based on header height */
+    padding-bottom: 3rem;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.8em;
+    color: var(--heading-color);
+    margin-bottom: 0.8rem;
+}
+
+.page-description {
+    text-align: center;
+    font-size: 1.1em;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* --- Grid Container for Discover Items and Visit Message --- */
+.discover-grid-container {
+    display: grid; /* This will be a single column grid for its direct children (message and items grid) */
+    gap: 20px; /* Space between grid items */
+    padding: 1rem; /* Padding around the grid */
+    background-color: var(--background-color-light); /* Light background for the grid area */
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    /* Default for small/medium/large now: message then items, both full width */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "message"
+        "items";
+}
+
+/* --- Visit Message Card --- */
+.visit-message-card {
+    background-color: var(--accent-color); /* Use accent color for visibility */
+    color: blue;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    position: relative;
+    box-shadow: var(--shadow-medium);
+    grid-area: message; /* Assign to message area */
+    margin-bottom: 20px; /* Space between message and items grid */
+    position: static; /* Ensure it's static by default, not sticky */
+    top: auto; /* Reset top */
+}
+
+.visit-message-card .close-message-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: blue;
+    font-size: 1.5em;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.visit-message-card .close-message-btn:hover {
+    background-color: rgba(179, 31, 31, 0.2);
+}
+
+/* --- Discover Items Grid --- */
+.discover-items-grid {
+    display: grid;
+    gap: 20px; /* Space between cards */
+    grid-area: items; /* Assign to items area */
+}
+
+/* Individual Discover Item Card */
+.discover-item-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Center content within the card */
+    transition: transform 0.2s ease-in-out;
+}
+
+.discover-item-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+.discover-item-card h2 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin: 1rem 1rem 0.5rem 1rem; /* Top margin, horizontal padding, bottom margin */
+}
+
+.discover-item-card figure {
+    margin: 0; /* Remove default figure margin */
+    padding: 0;
+    overflow: hidden; /* For image hover effect */
+}
+
+.discover-item-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.3s ease-in-out; /* For hover effect */
+}
+
+.discover-item-card address {
+    font-style: normal; /* Remove default italic */
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin: 0 1rem 0.5rem 1rem;
+}
+
+.discover-item-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.5;
+    flex-grow: 1; /* Allow description to take available space */
+    padding: 0 1rem; /* Horizontal padding */
+    margin-bottom: 1rem; /* Space before button */
+}
+
+.discover-item-card .learn-more-btn {
+    display: inline-block; /* Allows padding and margin */
+    padding: 8px 15px;
+    background-color: var(--secondary-color);
+    color: var(--background-color-white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem; /* Space below button */
+}
+
+.discover-item-card .learn-more-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* --- Grid Layouts --- */
+
+/* Small Screens (320px to 640px) - Single column for both message and items */
+@media (min-width: 320px) and (max-width: 640px) {
+    /* discover-grid-container defaults to "message" then "items", 1fr column */
+    /* visit-message-card defaults to static */
+
+    .discover-items-grid {
+        grid-template-columns: 1fr; /* Single column for items */
+    }
+
+    /* Disable hover effect on images for mobile */
+    .discover-item-card img {
+        transition: none; /* Remove transition */
+        transform: none; /* Ensure no transform is applied */
+    }
+}
+
+/* Medium Screens (641px to 1024px) - Message at top, items in 2 columns */
+@media (min-width: 641px) and (max-width: 1024px) {
+    /* discover-grid-container defaults to "message" then "items", 1fr column */
+    /* visit-message-card defaults to static */
+
+    .discover-items-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for items */
+    }
+
+    /* Image hover effect for medium screens */
+    .discover-item-card img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+}
+
+/* Large Screens (1025px and above) - Message at top, items in 2 columns, full width */
+@media (min-width: 1025px) {
+    /* discover-grid-container defaults to "message" then "items", 1fr column */
+    /* visit-message-card defaults to static */
+
+    .discover-items-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for items, spanning full width */
+    }
+
+    /* Image hover effect for large screens */
+    .discover-item-card img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+}

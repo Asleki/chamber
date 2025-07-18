@@ -694,5 +694,5 @@ body.dark-mode .business-dictionary {
     .hero-text h2 {
         font-size: 3rem;
     }
-    /* weather-and-news layout handled by its base styles; no specific override needed here unless you want to force 2 columns earlier */
+
 }

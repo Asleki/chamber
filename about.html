@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | La Familia Chamber of Commerce</title>
-    <meta name="description" content="Welcome to the official website of the La Familia Chamber of Commerce in Nairobi, Kenya. Empowering growth and fostering connections in the heart of Kenya's capital.">
+    <title>About Us | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Learn more about La Familia Chamber of Commerce, our mission, vision, values, and our commitment to empowering businesses in Nairobi, Kenya.">
     <meta name="author" content="Alex Malunda">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="Home | La Familia Chamber of Commerce">
+    <meta property="og:title" content="About Us | La Familia Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/social_share_image.jpg">
-    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/index.html">
-    <meta property="og:description" content="Welcome to the official website of the La Familia Chamber of Commerce in Nairobi, Kenya. Empowering growth and fostering connections in the heart of Kenya's capital.">
+    <meta property="og:image" content="images/social_share_about.jpg"> <!-- Consider creating this image -->
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/about.html">
+    <meta property="og:description" content="Learn more about La Familia Chamber of Commerce, our mission, vision, values, and our commitment to empowering businesses in Nairobi, Kenya.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/index.css"> <!-- For general styles like cta-button, container etc. -->
+    <link rel="stylesheet" href="css/about.css"> 
 </head>
 <body>
 
@@ -52,14 +52,14 @@
 
         <nav id="main-nav" class="main-nav">
             <ul class="nav-list">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="discover.html" class="nav-link">Discover Nairobi</a></li>
                 <li><a href="directory.html" class="nav-link">Member Directory</a></li>
                 <li><a href="join.html" class="nav-link">Join La Familia</a></li>
                 <li class="nav-dropdown">
                     <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html" class="active">About Us</a></li>
                         <li><a href="board.html">Board of Directors</a></li>
                         <li><a href="partnerships.html">Partnerships</a></li>
                     </ul>
@@ -112,121 +112,93 @@
     </header>
 
     <main class="container">
-        <section class="hero-section">
+        <!-- Hero Section for About Us -->
+        <section class="hero-section about-hero-section">
             <div class="hero-image-slider">
-                <img src="images/hero-images/nairobi-hero1.webp" alt="Nairobi city skyline at dusk" class="hero-image active-slide">
-                <img src="images/hero-images/nairobi-hero2.webp" alt="Vibrant Nairobi market scene" class="hero-image">
-                <img src="images/hero-images/nairobi-hero4.webp" alt="Modern business district in Nairobi" class="hero-image">
+                <img src="images/image_141447.png" alt="Diverse group of business professionals collaborating" class="hero-image active-slide">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-text">
-                <h2>For Nairobi. For Business.</h2>
-                <p>Empowering growth and fostering connections in the heart of Kenya's capital.</p>
+                <h2>About La Familia Chambers</h2>
+                <p>Empowering Nairobi's businesses for a brighter, more connected future.</p>
+            </div>
+        </section>
+
+        <!-- Our Story / Mission Section -->
+        <section class="about-story page-section">
+            <h2 class="section-title">Our Story & Mission</h2>
+            <div class="story-content">
+                <p>Founded with a vision to unite and uplift the business community of Nairobi, La Familia Chambers has grown into a cornerstone for economic development and entrepreneurial support. We understand the unique challenges and vast opportunities within the Kenyan market, and our commitment is to provide a platform where businesses of all sizes can thrive.</p>
+                <p>Our mission is to <strong>foster a vibrant and sustainable business environment in Nairobi by advocating for our members, providing valuable resources, and facilitating impactful connections.</strong> We believe that by working together, we can achieve collective prosperity and contribute significantly to the growth of Kenya's capital.</p>
+                <blockquote class="quote-block">
+                    "Alone, we can do so little; together, we can do so much." <br> - Helen Keller
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Vision & Values Section -->
+        <section class="about-vision-values page-section bg-light-gray">
+            <h2 class="section-title">Our Vision & Core Values</h2>
+            <p class="section-description">Our work is guided by a clear vision for Nairobi's future and a set of unwavering values.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Vision</h3>
+                    <p>To be the leading voice and catalyst for business excellence and sustainable economic growth in Nairobi.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users-line"></i>
+                    <h3>Community</h3>
+                    <p>Building strong, inclusive relationships and fostering a supportive network for all members.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake-angle"></i>
+                    <h3>Integrity</h3>
+                    <p>Operating with transparency, honesty, and accountability in all our endeavors.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>Encouraging forward-thinking ideas and embracing new technologies to drive progress.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-scale-balanced"></i>
+                    <h3>Advocacy</h3>
+                    <p>Representing the interests of businesses and influencing policies that promote a favorable economic climate.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Sustainability</h3>
+                    <p>Promoting practices that ensure long-term economic, social, and environmental well-being.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do / Impact Section -->
+        <section class="about-impact page-section">
+            <h2 class="section-title">What We Do & Our Impact</h2>
+            <div class="impact-content">
+                <p>La Familia Chambers actively works to create opportunities for its members and the broader Nairobi business community through:</p>
+                <ul>
+                    <li><strong>Networking Events:</strong> Facilitating connections through regular meetups, workshops, and conferences.</li>
+                    <li><strong>Business Advocacy:</strong> Lobbying local and national governments on behalf of businesses to create a conducive operating environment.</li>
+                    <li><strong>Resource Provision:</strong> Offering access to training, mentorship, market insights, and business development tools.</li>
+                    <li><strong>Community Engagement:</strong> Initiating and supporting projects that benefit the wider Nairobi community.</li>
+                    <li><strong>Promotional Opportunities:</strong> Providing platforms for members to showcase their products and services.</li>
+                </ul>
+                <p>Our efforts translate into tangible benefits: increased trade, job creation, enhanced business skills, and a stronger, more resilient local economy.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="about-cta cta-section">
+            <div class="cta-content">
+                <h2>Ready to Join Our Familia?</h2>
+                <p>Become a part of Nairobi's most dynamic business network and start your journey towards greater success.</p>
                 <a href="join.html" class="cta-button primary-cta">Become a Member Today!</a>
             </div>
         </section>
 
-        <section class="quick-links-section container">
-            <h3>Explore Our Community</h3>
-            <div class="quick-links-grid">
-                <div class="quick-link-card">
-                    <a href="events.html">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Upcoming Events</h3>
-                        <p>Don't miss out on networking and learning opportunities.</p>
-                    </a>
-                </div>
-                <div class="quick-link-card">
-                    <a href="directory.html">
-                        <i class="fas fa-building"></i>
-                        <h3>Member Directory</h3>
-                        <p>Find local businesses and support our community.</p>
-                    </a>
-                </div>
-                <div class="quick-link-card">
-                    <a href="rewards.html">
-                        <i class="fas fa-gift"></i>
-                        <h3>Referral Programs & Rewards</h3>
-                        <p>Grow with us and enjoy exclusive benefits.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="ad-space">
-            <h3>Support Local, Discover New Opportunities!</h3>
-            <div class="ad-container">
-                <img src="images/hero-images/imall-ad.webp" alt="Advertisement for Local Business 1" class="ad-image active-ad">
-                <img src="images/hero-images/insuarance-ad.webp" alt="Advertisement for Local Business 2" class="ad-image">
-                <img src="images/hero-images/cleanin-ad.webp" alt="Advertisement for Local Business 3" class="ad-image">
-                <div class="ad-overlay">
-                    <p>Discover exciting offers from our valued members. <br>Your business could be featured here!</p>
-                    <a href="advertise.html" class="cta-button secondary-cta">Advertise With Us</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="community-overview container">
-            <h3>Why Nairobi?</h3>
-            <div class="overview-grid">
-                <article>
-                    <img src="images/nairobieconomycityscape.webp" alt="Nairobi economy cityscape">
-                    <h4>Economic Powerhouse</h4>
-                    <p>Nairobi is East Africa's leading economic hub, offering unparalleled growth potential and a dynamic market.</p>
-                </article>
-                <article>
-                    <img src="images/diversenairobicommunitysmilingfaces.webp" alt="Diverse Nairobi community smiling faces">
-                    <h4>Diverse & Vibrant Community</h4>
-                    <p>Our city thrives on its rich cultural diversity and a spirit of innovation and entrepreneurship.</p>
-                </article>
-                <article>
-                    <img src="images/networking.webp" alt="People networking at a La Familia event">
-                    <h4>Unrivaled Connectivity</h4>
-                    <p>La Familia Chambers connects you to key stakeholders, resources, and a network essential for success.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="weather-and-news">
-            <div class="weather-widget">
-                <h3>Nairobi Weather</h3>
-                <div id="weather-display">
-                    <p>Loading current weather and forecast for Nairobi...</p>
-                </div>
-            </div>
-            <div class="news-updates">
-                <h3>Latest Chamber News</h3>
-                <div class="news-carousel-container" id="homepage-news-carousel-container">
-                    <div id="homepage-news-carousel-slides" class="carousel-slides">
-                        <p id="homepage-news-loading-message" class="loading-message">Loading latest news...</p>
-                        <p id="homepage-news-error-message" class="error-message hidden">Failed to load news. Please try again later. 😟</p>
-                        <!-- Dynamic news slides will go here -->
-                    </div>
-                    <div id="homepage-news-carousel-pagination" class="carousel-pagination">
-                        <!-- Dynamic pagination dots will go here -->
-                    </div>
-                </div>
-                <a href="news.html" class="cta-button secondary-cta view-all-news-button">View All News</a>
-            </div>
-        </section>
-
-        <section class="business-dictionary container">
-            <h3 id="dictionary-quote-heading">Business Dictionary</h3>
-            <div class="dictionary-content-wrapper">
-                <button id="prev-dict-item" class="carousel-btn prev-btn" aria-label="Previous Item"><i class="fas fa-chevron-left"></i></button>
-                <div id="dictionary-display" class="dictionary-grid">
-                    <p>Loading content...</p>
-                </div>
-                <button id="next-dict-item" class="carousel-btn next-btn" aria-label="Next Item"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section class="member-spotlights container">
-            <h3>Featured Members</h3>
-            <div class="spotlight-carousel">
-                <p>Loading featured members...</p>
-            </div>
-        </section>
     </main>
 
     <footer>
@@ -271,6 +243,5 @@
     <script src="js/imageSlider.js"></script>
     <script src="js/dictquotes.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/news.js"></script>
 </body>
 </html>

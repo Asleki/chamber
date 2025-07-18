@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnerships | La Familia Chamber of Commerce</title>
+    <meta name="description" content="Explore partnership opportunities with La Familia Chamber of Commerce. Collaborate with us to strengthen the Nairobi business community.">
+    <meta name="author" content="Alex Malunda">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Partnerships | La Familia Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/social_share_partnerships.jpg"> <!-- Consider creating this image -->
+    <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/partnerships.html">
+    <meta property="og:description" content="Explore partnership opportunities with La Familia Chamber of Commerce. Collaborate with us to strengthen the Nairobi business community.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css"> <!-- For general styles like cta-button, container etc. -->
+    <link rel="stylesheet" href="css/partnerships.css"> <!-- Specific styles for this page -->
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <div class="site-branding">
+                <a href="index.html">
+                    <img src="images/lafamilialogo.webp" alt="La Familia Chambers Logo" class="logo">
+                    <h1>La Familia Chambers</h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <button id="search-toggle" aria-label="Toggle Search Bar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button id="hamburger-menu" aria-label="Open Mobile Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="discover.html" class="nav-link">Discover Nairobi</a></li>
+                <li><a href="directory.html" class="nav-link">Member Directory</a></li>
+                <li><a href="join.html" class="nav-link">Join La Familia</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="board.html">Board of Directors</a></li>
+                        <li><a href="partnerships.html" class="active">Partnerships</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Members <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="awards.html">Awards & Recognition</a></li>
+                        <li><a href="clubs.html">Member Clubs</a></li>
+                        <li><a href="reviews.html">Member Reviews</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">News & Events <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Business Blog</a></li>
+                        <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="news.html">Chamber News</a></li> </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="search-bar-container" class="search-bar-hidden">
+            <div class="search-input-wrapper">
+                <input type="search" id="site-search" placeholder="Search members, events, news..." aria-label="Site Search">
+                <button id="search-submit-btn" class="search-control-btn" aria-label="Submit Global Search"><i class="fas fa-search"></i></button>
+                <button id="search-clear-btn" class="search-control-btn" aria-label="Clear Search Input"><i class="fas fa-times"></i></button>
+                <button id="search-mic-btn" class="search-control-btn" aria-label="Search with Voice"><i class="fas fa-microphone"></i></button>
+            </div>
+            <div class="search-filters">
+                <select id="search-type-filter" aria-label="Filter by Type">
+                    <option value="">All Types</option>
+                    <option value="member">Members</option>
+                    <option value="event">Events</option>
+                    <option value="news">News</option>
+                    <option value="blog">Blog Posts</option>
+                </select>
+                <select id="search-location-filter" aria-label="Filter by Location">
+                    <option value="">All Locations</option>
+                    <option value="nairobi">Nairobi</option>
+                    <option value="thika">Thika</option>
+                    <option value="mombasa">Mombasa</option>
+                </select>
+            </div>
+            <div id="search-suggestions" class="search-suggestions"></div>
+            <div id="search-history" class="search-history"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section for Partnerships -->
+        <section class="hero-section partnerships-hero-section">
+            <div class="hero-image-slider">
+                <!-- Using a specific image for partnerships hero -->
+                <img src="images/image_15cb1a.png" alt="People shaking hands, symbolizing partnership" class="hero-image active-slide">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                <h2>Partner With La Familia Chambers</h2>
+                <p>Collaborate with us to foster growth, innovation, and community strength in Nairobi.</p>
+                <a href="#get-started" class="cta-button primary-cta">Become a Partner Today!</a>
+            </div>
+        </section>
+
+        <!-- About Our Partnerships Section -->
+        <section class="partnerships-about page-section">
+            <h2 class="section-title">About Our Partnerships</h2>
+            <p class="section-description">At La Familia Chambers, we believe in the power of collaboration to drive innovation and expand reach. Our partnership program is designed to create symbiotic relationships that benefit all parties involved, leading to enhanced solutions and broader market penetration across Nairobi.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Mutual Growth</h3>
+                    <p>We foster relationships that ensure shared success and sustainable growth for both La Familia Chambers and our partners.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation & Synergy</h3>
+                    <p>Leverage combined expertise to develop cutting-edge solutions and bring transformative opportunities to the Nairobi market.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Strength</h3>
+                    <p>Strengthen the local economy by working together to support businesses and create a thriving ecosystem.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits of Partnering Section -->
+        <section class="partnerships-benefits page-section bg-light-gray">
+            <h2 class="section-title">Benefits of Partnering with La Familia Chambers</h2>
+            <p class="section-description">Our partners gain access to a wealth of resources, expertise, and market opportunities within the Nairobi business landscape.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Expanded Network</h3>
+                    <p>Connect with a diverse range of businesses and professionals across various industries in Nairobi.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Increased Visibility</h3>
+                    <p>Amplify your brand presence through joint marketing initiatives, events, and chamber publications.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Business Development</h3>
+                    <p>Access new client segments and explore new revenue streams through collaborative projects.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Knowledge Sharing</h3>
+                    <p>Participate in workshops, seminars, and exclusive discussions to gain insights and best practices.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Exclusive Opportunities</h3>
+                    <p>Benefit from special offers, sponsorships, and preferred access to chamber resources and events.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Enhanced Credibility</h3>
+                    <p>Strengthen your reputation by associating with a respected and influential business chamber.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Tiers Section -->
+        <section class="partnership-tiers page-section">
+            <h2 class="section-title">Our Partnership Tiers</h2>
+            <p class="section-description">We offer flexible partnership tiers designed to align with various business goals and levels of engagement.</p>
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <h3>Community Partner</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Basic networking events access</li>
+                        <li><i class="fas fa-check-circle"></i> Digital listing in directory</li>
+                        <li><i class="fas fa-check-circle"></i> Newsletter mentions</li>
+                    </ul>
+                    <p>Ideal for local businesses looking to engage with the community and gain initial exposure.</p>
+                </div>
+                <div class="tier-card featured-tier">
+                    <h3>Strategic Partner</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Priority event access & discounts</li>
+                        <li><i class="fas fa-check-circle"></i> Enhanced directory profile</li>
+                        <li><i class="fas fa-check-circle"></i> Co-marketing opportunities</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated chamber liaison</li>
+                    </ul>
+                    <p>For growing businesses seeking deeper engagement, increased visibility, and strategic collaborations.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>Innovator Partner</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Exclusive access to leadership forums</li>
+                        <li><i class="fas fa-check-circle"></i> Opportunities for joint initiatives & research</li>
+                        <li><i class="fas fa-check-circle"></i> Prominent branding on all chamber platforms</li>
+                        <li><i class="fas fa-check-circle"></i> Direct input on chamber policies</li>
+                    </ul>
+                    <p>Designed for established leaders and innovators committed to shaping the future of Nairobi's business landscape.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Started Section (Call to Action) -->
+        <section class="partnerships-get-started page-section cta-section">
+            <div class="cta-content">
+                <h2>Ready to Partner with La Familia Chambers?</h2>
+                <p>Join our network of influential businesses and contribute to the vibrant growth of Nairobi.</p>
+                <a href="join.html" class="cta-button primary-cta">Connect With Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-contact">
+                <h4>Contact La Familia</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Chambers Lane, Westlands, Nairobi, Kenya</p>
+                <p><i class="fas fa-phone"></i> +254 707 176 595</p>
+                <p><i class="fas fa-envelope"></i> info@lafamiliachambers.co.ke</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/icons%26logos/facebook_24dp.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/icons%26logos/instagram_24dp.svg" alt="Instagram"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/icons%26logos/linkedin_24dp.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Twitter"><img src="images/icons%26logos/twitter_24dp.svg" alt="Twitter"></a>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Notice</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-about">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About La Familia</a></li>
+                    <li><a href="developer.html">About the Developer</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; <span id="copyright-year"></span> La Familia Chambers. All rights reserved. | Alex Malunda | WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+    <script src="js/imageSlider.js"></script>
+    <script src="js/dictquotes.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "name": "Nairobi National Park",
+        "image": "images/discover/nairobi-national-park.webp",
+        "address": "Langata Road, Nairobi, Kenya",
+        "description": "The only national park in the world located within a capital city, offering incredible wildlife viewing opportunities against the backdrop of Nairobi's skyline.",
+        "learnMoreLink": "https://www.kws.go.ke/content/nairobi-national-park"
+    },
+    {
+        "id": "2",
+        "name": "Giraffe Centre",
+        "image": "images/discover/giraffe-centre.webp",
+        "address": "Duma Rd, Nairobi, Kenya",
+        "description": "An iconic conservation and education center where visitors can interact with endangered Rothschild's giraffes.",
+        "learnMoreLink": "https://www.giraffecentre.org/"
+    },
+    {
+        "id": "3",
+        "name": "Karen Blixen Museum",
+        "image": "images/discover/karen-blixen-museum.webp",
+        "address": "Karen Road, Nairobi, Kenya",
+        "description": "The former home of 'Out of Africa' author Karen Blixen, now a museum showcasing colonial life in Kenya.",
+        "learnMoreLink": "https://museums.or.ke/karen-blixen-museum/"
+    },
+    {
+        "id": "4",
+        "name": "David Sheldrick Wildlife Trust",
+        "image": "images/discover/sheldrick-trust.webp",
+        "address": "Magadi Road, Nairobi, Kenya",
+        "description": "A world-renowned orphan elephant rescue and rehabilitation program, offering a unique chance to see baby elephants being fed.",
+        "learnMoreLink": "https://www.sheldrickwildlifetrust.org/"
+    },
+    {
+        "id": "5",
+        "name": "Bomas of Kenya",
+        "image": "images/discover/bomas-of-kenya.webp",
+        "address": "Langata Road, Nairobi, Kenya",
+        "description": "Experience the rich cultural diversity of Kenya through traditional homesteads, dances, and music from various ethnic groups.",
+        "learnMoreLink": "https://www.bomasofkenya.co.ke/"
+    },
+    {
+        "id": "6",
+        "name": "Nairobi CBD & Skyscrapers",
+        "image": "images/discover/nairobi-cbd.webp",
+        "address": "Nairobi Central Business District, Kenya",
+        "description": "The bustling heart of the city, home to modern skyscrapers, major businesses, and vibrant street life.",
+        "learnMoreLink": "#"
+    },
+    {
+        "id": "7",
+        "name": "Village Market",
+        "image": "images/discover/village-market.webp",
+        "address": "Limuru Road, Gigiri, Nairobi, Kenya",
+        "description": "A premier shopping, recreation, and entertainment complex, offering a wide array of international and local brands, restaurants, and activities.",
+        "learnMoreLink": "https://www.villagemarket-kenya.com/"
+    },
+    {
+        "id": "8",
+        "name": "Karura Forest",
+        "image": "images/discover/karura-forest.webp",
+        "address": "Limuru Road, Muthaiga, Nairobi, Kenya",
+        "description": "An urban forest offering a serene escape with walking trails, waterfalls, and a rich biodiversity, perfect for outdoor activities.",
+        "learnMoreLink": "https://www.friendsofkarura.org/"
+    }
+]

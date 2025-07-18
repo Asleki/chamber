@@ -54,60 +54,6 @@
         .ad-card-features li:last-child {
             margin-bottom: 0;
         }
-        .modal-stepper span {
-            flex: 1;
-            text-align: center;
-            padding: 0.5rem;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .modal-stepper span.active {
-            border-color: #3b82f6;
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        .modal-stepper span.completed {
-            border-color: #10b981;
-            color: #10b981;
-            font-weight: bold;
-        }
-        .modal-stepper span:not(:last-child)::after {
-            content: '---';
-            margin-left: 0.5rem;
-            margin-right: 0.5rem;
-            color: #d1d5db;
-            font-weight: normal;
-        }
-        .modal-stepper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        .modal-stepper::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: #d1d5db;
-            z-index: -1;
-            transform: translateY(-50%);
-        }
-        .modal-stepper span:not(:first-child) {
-            margin-left: 0.5rem;
-        }
-        .modal-stepper span:not(:last-child) {
-            margin-right: 0.5rem;
-        }
-        /* Adjusted modal height to prevent overlap with sticky header */
-        #ad-modal > div {
-            max-height: 85vh; /* Reduced from 90vh */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for vertical centering */
-        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -205,152 +151,6 @@
         </div>
     </main>
 
-    <!-- Ad Submission Modal -->
-    <div id="ad-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-2/3 lg:w-1/2 p-6 relative max-h-[85vh] overflow-y-auto">
-            <!-- Close Button - Moved to top-left -->
-            <button id="close-ad-modal-btn" class="absolute top-4 left-4 text-gray-500 hover:text-gray-700 text-4xl font-bold p-2 leading-none rounded-full hover:bg-gray-200 transition-colors duration-200" aria-label="Close Ad Submission Form">
-                &times;
-            </button>
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Ad Submission</h2>
-
-            <!-- Stepper Navigation -->
-            <div class="modal-stepper mb-8 text-lg font-semibold text-gray-500">
-                <span id="ad-step-details" class="active">1. Details</span>
-                <span id="ad-step-consent">2. Consent</span>
-                <span id="ad-step-payment">3. Payment</span>
-                <span id="ad-step-summary">4. Summary</span>
-            </div>
-
-            <!-- Ad Submission Form -->
-            <form id="ad-submission-form">
-                <!-- Step 1: Ad Details (Split into two sub-steps managed by JS) -->
-                <div id="ad-step-1" class="ad-modal-step">
-                    <!-- Sub-step 1.1: Confirmation of Auto-selected Details -->
-                    <div id="ad-step-1-confirm">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Confirm Ad Package Details</h3>
-                        <div class="mb-4">
-                            <label for="ad-type-confirm" class="block text-gray-700 text-sm font-bold mb-2">Ad Type:</label>
-                            <input type="text" id="ad-type-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
-                        </div>
-                        <div class="mb-4">
-                            <label for="ad-runtime-confirm" class="block text-gray-700 text-sm font-bold mb-2">Runtime:</label>
-                            <input type="text" id="ad-runtime-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
-                        </div>
-                        <div class="mb-4">
-                            <label for="ad-details-level-confirm" class="block text-gray-700 text-sm font-bold mb-2">Details Level:</label>
-                            <input type="text" id="ad-details-level-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
-                        </div>
-                        <div class="mb-6">
-                            <label for="ad-price-confirm" class="block text-gray-700 text-sm font-bold mb-2">Calculated Price:</label>
-                            <input type="text" id="ad-price-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 font-bold text-lg cursor-not-allowed" readonly>
-                        </div>
-                        <div class="flex justify-end">
-                            <button type="button" id="confirm-ad-details-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Confirm & Continue</button>
-                        </div>
-                    </div>
-
-                    <!-- Sub-step 1.2: User Input Fields -->
-                    <div id="ad-step-1-input" class="hidden">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Enter Your Ad Content</h3>
-                        <div class="mb-4">
-                            <label for="ad-title" class="block text-gray-700 text-sm font-bold mb-2">Ad Title <span class="text-red-500">*</span>:</label>
-                            <input type="text" id="ad-title" name="adTitle" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="ad-description" class="block text-gray-700 text-sm font-bold mb-2">Ad Description <span class="text-red-500">*</span>:</label>
-                            <textarea id="ad-description" name="adDescription" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
-                        </div>
-                        <div class="mb-4">
-                            <label for="ad-target-url" class="block text-gray-700 text-sm font-bold mb-2">Target URL <span class="text-red-500">*</span>:</label>
-                            <input type="url" id="ad-target-url" name="adTargetUrl" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://yourwebsite.com" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="ad-image-url" class="block text-gray-700 text-sm font-bold mb-2">Ad Image URL (Optional):</label>
-                            <input type="url" id="ad-image-url" name="adImageUrl" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://example.com/image.jpg">
-                        </div>
-                        <div class="flex justify-between">
-                            <button type="button" id="prev-ad-substep-2-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                            <button type="button" id="next-ad-step-1-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2: Consent Agreement -->
-                <div id="ad-step-2" class="ad-modal-step hidden">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Consent Agreement</h3>
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 max-h-64 overflow-y-auto text-gray-700 text-sm">
-                        <h4 class="font-bold text-base mb-2">La Familia Chambers Advertising Terms and Conditions</h4>
-                        <p class="mb-2">By proceeding, you agree to the following terms:</p>
-                        <ul class="list-disc list-inside ml-4 mb-4">
-                            <li>All ad content must be truthful, accurate, and not misleading.</li>
-                            <li>Ads must comply with all applicable laws and regulations.</li>
-                            <li>La Familia Chambers reserves the right to review and reject any ad content that violates our policies or is deemed inappropriate.</li>
-                            <li>Payment is required in full before ad placement.</li>
-                            <li>Ad runtime begins upon approval and successful payment.</li>
-                            <li>No refunds will be issued for ads that have commenced their runtime.</li>
-                            <li>You are responsible for the intellectual property rights of all content submitted.</li>
-                            <li>La Familia Chambers is not responsible for the performance or results of your advertisement.</li>
-                        </ul>
-                        <p class="font-bold">Please read carefully before agreeing.</p>
-                    </div>
-                    <div class="mb-6">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" id="consent-agreement" name="consentAgreement" class="form-checkbox text-blue-600 h-5 w-5">
-                            <span class="ml-2 text-gray-700">I have read and agree to the terms and conditions.</span>
-                        </label>
-                    </div>
-                    <div class="flex justify-between">
-                        <button type="button" id="prev-ad-step-2-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                        <button type="button" id="next-ad-step-2-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Payment -->
-                <div id="ad-step-3" class="ad-modal-step hidden">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Payment Method</h3>
-                    <div class="mb-4">
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="adPaymentMethod" value="credit-card" class="form-radio text-blue-600 h-5 w-5" checked>
-                            <span class="ml-2 text-gray-700">Credit Card</span>
-                        </label>
-                    </div>
-                    <div class="mb-4">
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="adPaymentMethod" value="mpesa" class="form-radio text-blue-600 h-5 w-5">
-                            <span class="ml-2 text-gray-700">M-Pesa</span>
-                        </label>
-                    </div>
-                    <div class="mb-6">
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="adPaymentMethod" value="paypal" class="form-radio text-blue-600 h-5 w-5">
-                            <span class="ml-2 text-gray-700">PayPal</span>
-                        </label>
-                    </div>
-                    <div class="text-xl font-bold text-gray-900 mb-6">
-                        Total Amount: <span id="ad-final-total">$0.00</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <button type="button" id="prev-ad-step-3-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                        <button type="button" id="next-ad-step-3-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
-                    </div>
-                </div>
-
-                <!-- Step 4: Summary & Submit -->
-                <div id="ad-step-4" class="ad-modal-step hidden">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Review Your Ad</h3>
-                    <div id="ad-summary-content" class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 text-gray-700">
-                        <p>No ad data to display. Please go back and fill the form.</p>
-                    </div>
-                    <div class="flex justify-between">
-                        <button type="button" id="prev-ad-step-4-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                        <button type="submit" id="submit-ad-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300">Place Ad Order</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <footer>
         <div class="footer-content-wrapper">
             <div class="footer-contact">
@@ -392,6 +192,137 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/advertise.js"></script>
+    <script src="js/imall-dropdown.js"></script>
+    <script>
+        // --- Ad Pricing Data (repeated here for advertise.html) ---
+        const adPricingData = [
+            {
+                type: 'Banner Ad',
+                description: 'Prominent display banner on category pages. High visibility.',
+                details: [
+                    { level: 'Basic', features: ['Small banner (300x100)', 'Static image'], priceFactor: 1.0 },
+                    { level: 'Standard', features: ['Medium banner (600x150)', 'Animated GIF/Small video', 'Click tracking'], priceFactor: 1.5 },
+                    { level: 'Premium', features: ['Large banner (900x200)', 'Interactive elements', 'A/B testing', 'Dedicated support'], priceFactor: 2.0 }
+                ],
+                runtime: [
+                    { duration: '1 Week', multiplier: 1.0 },
+                    { duration: '2 Weeks', multiplier: 1.8 },
+                    { duration: '1 Month', multiplier: 3.0 },
+                    { duration: '3 Months', multiplier: 8.0 }
+                ],
+                basePrice: 50.00 // Base price per week for Basic Banner
+            },
+            {
+                type: 'Featured Product',
+                description: 'Showcase your product directly on the La Familia Chambers homepage or top category sections.',
+                details: [
+                    { level: 'Basic', features: ['Single product highlight', 'Standard product card'], priceFactor: 1.2 },
+                    { level: 'Standard', features: ['Multiple product highlights', 'Enhanced product card', 'Priority placement'], priceFactor: 1.8 },
+                    { level: 'Premium', features: ['Homepage carousel slot', 'Customizable product display', 'Dedicated landing page'], priceFactor: 2.5 }
+                ],
+                runtime: [
+                    { duration: '1 Week', multiplier: 1.0 },
+                    { duration: '2 Weeks', multiplier: 1.9 },
+                    { duration: '1 Month', multiplier: 3.5 },
+                    { duration: '3 Months', multiplier: 9.5 }
+                ],
+                basePrice: 80.00 // Base price per week for Basic Featured Product
+            },
+            {
+                type: 'Sponsored Content',
+                description: 'Integrate your brand story or product review into our blog or guides.',
+                details: [
+                    { level: 'Basic', features: ['Short article (500 words)', '1 image', 'Basic SEO'], priceFactor: 1.5 },
+                    { level: 'Standard', features: ['Medium article (1000 words)', '3 images/1 video', 'Advanced SEO', 'Social media share'], priceFactor: 2.2 },
+                    { level: 'Premium', features: ['Long-form article (1500+ words)', 'Rich media integration', 'Full SEO audit', 'Newsletter feature'], priceFactor: 3.0 }
+                ],
+                runtime: [
+                    { duration: '1 Month', multiplier: 1.0 },
+                    { duration: '3 Months', multiplier: 2.8 },
+                    { duration: '6 Months', multiplier: 5.0 },
+                    { duration: '1 Year', multiplier: 9.0 }
+                ],
+                basePrice: 150.00 // Base price per month for Basic Sponsored Content
+            }
+        ];
+
+        // --- DOM Elements ---
+        const adPricingGrid = document.getElementById('ad-pricing-grid');
+        const loadingMessage = document.getElementById('loading-message');
+
+        /**
+         * Renders the advertising pricing cards on the page.
+         */
+        function renderAdPricing() {
+            if (!adPricingGrid) return;
+
+            adPricingGrid.innerHTML = ''; // Clear loading message
+            if (loadingMessage) {
+                loadingMessage.classList.add('hidden');
+            }
+
+            adPricingData.forEach(adPackage => {
+                const cardHtml = `
+                    <div class="ad-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="ad-card-header mb-4">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-2">${adPackage.type}</h3>
+                            <p class="text-gray-600 text-sm">${adPackage.description}</p>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Details & Features:</h4>
+                            <div class="space-y-4">
+                                ${adPackage.details.map(detail => `
+                                    <div class="border border-gray-200 rounded-lg p-3">
+                                        <h5 class="font-bold text-lg text-blue-600">${detail.level}</h5>
+                                        <ul class="list-disc list-inside text-gray-700 text-sm ad-card-features mt-1">
+                                            ${detail.features.map(f => `<li>${f}</li>`).join('')}
+                                        </ul>
+                                        <p class="mt-2 text-gray-800 font-semibold">Base Price Factor: ${detail.priceFactor.toFixed(1)}x</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Runtime Options:</h4>
+                            <div class="space-y-2">
+                                ${adPackage.runtime.map(runtime => `
+                                    <div class="flex justify-between items-center text-gray-700">
+                                        <span>${runtime.duration}</span>
+                                        <span>${runtime.multiplier.toFixed(1)}x</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div class="text-center mt-auto">
+                            <p class="text-xl font-bold text-gray-800 mb-4">Starting from: <span class="text-blue-600 text-3xl">$${adPackage.basePrice.toFixed(2)}</span></p>
+                            <button
+                                class="select-ad-package-btn bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75"
+                                data-ad-type="${adPackage.type}"
+                            >
+                                Select This Package
+                            </button>
+                        </div>
+                    </div>
+                `;
+                adPricingGrid.insertAdjacentHTML('beforeend', cardHtml);
+            });
+
+            document.querySelectorAll('.select-ad-package-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const adType = event.currentTarget.dataset.adType;
+                    const selectedPackageData = adPricingData.find(p => p.type === adType);
+                    if (selectedPackageData) {
+                        // Encode the selected package data and redirect
+                        const encodedData = encodeURIComponent(JSON.stringify(selectedPackageData));
+                        window.location.href = `advertise-order.html?package=${encodedData}`;
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAdPricing();
+        });
+    </script>
 </body>
 </html>

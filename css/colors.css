@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Global Color Definitions and Theme Switching for La Familia Chambers
+   ========================================================================== */
+
+/* Default (Light) Theme Colors */
+:root {
+    /* Brand Colors */
+    --primary-color: hsl(210, 80%, 35%); /* Deep, professional Blue */
+    --primary-color-light: hsl(210, 80%, 85%); /* Lighter shade for hover/active backgrounds */
+    --primary-color-dark: hsl(210, 80%, 25%); /* Darker shade for active text/borders */
+
+    --secondary-color: hsl(35, 90%, 50%); /* Vibrant Orange/Gold for accents */
+    --secondary-color-light: hsl(35, 90%, 90%); /* Lighter accent */
+
+    /* Neutral Colors - Grays */
+    --text-color-primary: hsl(0, 0%, 20%); /* Dark Gray for main text */
+    --text-color-secondary: hsl(0, 0%, 40%); /* Lighter Gray for secondary text */
+    --heading-color: hsl(0, 0%, 15%); /* Very Dark Gray/Near Black for headings */
+    --link-color: hsl(210, 80%, 45%); /* Blue for unvisited links */
+    --link-hover-color: hsl(210, 80%, 30%); /* Darker blue on link hover */
+
+    --background-color-body: hsl(0, 4%, 75%); /* Off-white for page background */
+    --background-color-white: hsl(0, 0%, 100%); /* Pure white for cards/modals/header/nav */
+    --background-color-footer: hsl(0, 0%, 95%); /* Very light gray for footer */
+    --background-color-hover: hsl(210, 20%, 95%); /* Subtle hover for list items */
+
+    --border-color: hsl(0, 0%, 85%); /* Light gray for borders */
+    --border-color-light: hsl(0, 0%, 90%); /* Even lighter for subtle separators */
+
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
+
+    /* Specific element colors not covered by general variables */
+    --error-background-color: #ffe6e6; /* Light red for error messages */
+    --success-color: hsl(120, 60%, 40%); /* Green for checkmarks/success */
+}
+
+/* Dark Mode Overrides */
+html[data-theme="dark"] {
+    /* Brand Colors - keep hue/saturation, adjust lightness */
+    --primary-color: hsl(210, 80%, 65%); /* Lighter blue for dark mode visibility */
+    --primary-color-light: hsl(210, 80%, 45%); /* Darker background for active/hover */
+    --primary-color-dark: hsl(210, 80%, 75%); /* Lighter text/borders */
+
+    --secondary-color: hsl(35, 90%, 60%); /* Slightly brighter orange for dark mode */
+    --secondary-color-light: hsl(35, 90%, 30%); /* Darker accent background */
+
+    /* Neutral Colors - Grays become lighter */
+    --text-color-primary: hsl(0, 0%, 85%); /* Light Gray for main text */
+    --text-color-secondary: hsl(0, 0%, 65%); /* Darker white for secondary text */
+    --heading-color: hsl(0, 0%, 95%); /* Near white for headings */
+    --link-color: hsl(210, 80%, 60%); /* Slightly lighter blue for links */
+    --link-hover-color: hsl(210, 80%, 75%); /* Brighter blue on link hover */
+
+    --background-color-body: hsl(240, 10%, 15%); /* Dark charcoal for page background */
+    --background-color-white: hsl(240, 10%, 20%); /* Slightly lighter charcoal for cards/modals */
+    --background-color-footer: hsl(240, 6%, 25%); /* Slightly darker than body for dark mode footer */
+    --background-color-hover: hsl(240, 10%, 25%); /* Subtle hover for list items */
+
+    --border-color: hsl(240, 5%, 30%); /* Darker gray for borders */
+    --border-color-light: hsl(240, 5%, 25%); /* Even darker for subtle separators */
+
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Stronger shadow, often subtle glow or inner shadow */
+
+    /* Specific element colors not covered by general variables */
+    --error-background-color: hsl(0, 70%, 20%); /* Darker red for error messages in dark mode */
+    --success-color: hsl(120, 60%, 60%); /* Lighter green for dark mode */
+}

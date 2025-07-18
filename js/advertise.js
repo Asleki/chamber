@@ -1,6 +1,8 @@
-// js/advertise.js
+// js/advertise-order.js
 
-// --- Ad Pricing Data ---
+// --- Ad Pricing Data (must be consistent with advertise.html's data) ---
+// This data is duplicated here because advertise-order.js runs independently.
+// In a production environment, this might come from a shared config or API.
 const adPricingData = [
     {
         type: 'Banner Ad',
@@ -53,12 +55,6 @@ const adPricingData = [
 ];
 
 // --- DOM Elements ---
-const adPricingGrid = document.getElementById('ad-pricing-grid');
-const loadingMessage = document.getElementById('loading-message');
-
-// Modal Elements
-const adModal = document.getElementById('ad-modal');
-const closeAdModalBtn = document.getElementById('close-ad-modal-btn');
 const adSubmissionForm = document.getElementById('ad-submission-form');
 
 // Stepper Navigation Elements
@@ -79,8 +75,8 @@ const adStep1Input = document.getElementById('ad-step-1-input');
 
 // Step 1 Confirmation Inputs
 const adTypeConfirm = document.getElementById('ad-type-confirm');
-const adRuntimeConfirm = document.getElementById('ad-runtime-confirm');
-const adDetailsLevelConfirm = document.getElementById('ad-details-level-confirm');
+const adRuntimeSelect = document.getElementById('ad-runtime-select'); // Changed from input to select
+const adDetailsLevelSelect = document.getElementById('ad-details-level-select'); // Changed from input to select
 const adPriceConfirm = document.getElementById('ad-price-confirm');
 const confirmAdDetailsBtn = document.getElementById('confirm-ad-details-btn');
 
@@ -89,8 +85,8 @@ const adTitleInput = document.getElementById('ad-title');
 const adDescriptionInput = document.getElementById('ad-description');
 const adTargetUrlInput = document.getElementById('ad-target-url');
 const adImageUrlInput = document.getElementById('ad-image-url');
-const prevAdSubstep2Btn = document.getElementById('prev-ad-substep-2-btn'); // New button for going back from input to confirm
-const nextAdStep1Btn = document.getElementById('next-ad-step-1-btn'); // This button now moves from input to Step 2
+const prevAdSubstep2Btn = document.getElementById('prev-ad-substep-2-btn');
+const nextAdStep1Btn = document.getElementById('next-ad-step-1-btn');
 
 // Step 2 Inputs (Consent)
 const consentAgreementCheckbox = document.getElementById('consent-agreement');
@@ -111,11 +107,17 @@ const submitAdBtn = document.getElementById('submit-ad-btn');
 // Notification element (assuming main.js provides this, or it's a global element)
 const notificationMessageDiv = document.getElementById('notification-message');
 
+// Success Modal Elements
+const successModal = document.getElementById('success-modal');
+const successMessageContent = document.getElementById('success-message-content');
+const closeSuccessModalBtn = document.getElementById('close-success-modal-btn');
+const goToAdvertisePageBtn = document.getElementById('go-to-advertise-page-btn');
+
 
 // --- State Variables ---
 let currentAdStep = 1;
 let currentAdSubStep = 1; // 1 for confirm, 2 for input
-let selectedAdPackage = null;
+let selectedAdPackage = null; // This will be populated from URL params
 let adFormData = {
     adType: '',
     adRuntime: '',
@@ -133,28 +135,51 @@ let adFormData = {
 
 /**
  * Displays a temporary notification message.
+ * Assumes a global 'notificationMessageDiv' element is available.
  * @param {string} messageText - The message to display.
  * @param {boolean} isSuccess - True for success (green), false for error (red).
  */
 function displayNotification(messageText, isSuccess = true) {
     if (notificationMessageDiv) {
         notificationMessageDiv.textContent = messageText;
-        notificationMessageDiv.classList.remove('opacity-0', 'notification-fade-out', 'bg-green-500', 'bg-red-500', 'opacity-100', 'show');
+        // Remove previous classes to ensure correct display
+        notificationMessageDiv.classList.remove('opacity-0', 'notification-fade-out', 'bg-green-500', 'bg-red-500');
         
-        notificationMessageDiv.classList.add('opacity-100', isSuccess ? 'bg-green-500' : 'bg-red-500');
+        notificationMessageDiv.classList.add('opacity-100', isSuccess ? 'bg-green-500' : 'bg-red-500', 'show'); // 'show' for immediate visibility
 
+        // Add a fade-out effect after a delay
         setTimeout(() => {
-            notificationMessageDiv.classList.remove('opacity-100');
+            notificationMessageDiv.classList.remove('opacity-100', 'show');
             notificationMessageDiv.classList.add('opacity-0', 'notification-fade-out');
         }, 3000);
     }
 }
 
 /**
- * Calculates the price of an ad package.
- * @param {object} adTypeData - The base ad type data.
- * @param {string} runtimeDuration - The selected runtime duration string.
- * @param {string} detailsLevel - The selected details level string.
+ * Opens the success message modal.
+ * @param {string} message - The message to display in the modal.
+ */
+function openSuccessModal(message) {
+    if (successModal && successMessageContent) {
+        successMessageContent.textContent = message;
+        successModal.classList.remove('hidden');
+    }
+}
+
+/**
+ * Closes the success message modal.
+ */
+function closeSuccessModal() {
+    if (successModal) {
+        successModal.classList.add('hidden');
+    }
+}
+
+/**
+ * Calculates the price of an ad package based on selected type, runtime, and detail level.
+ * @param {object} adTypeData - The base ad type data (e.g., from adPricingData).
+ * @param {string} runtimeDuration - The selected runtime duration string (e.g., '1 Week').
+ * @param {string} detailsLevel - The selected details level string (e.g., 'Basic').
  * @returns {number} The calculated price.
  */
 function calculateAdPrice(adTypeData, runtimeDuration, detailsLevel) {
@@ -162,7 +187,7 @@ function calculateAdPrice(adTypeData, runtimeDuration, detailsLevel) {
     const detail = adTypeData.details.find(d => d.level === detailsLevel);
 
     if (!runtime || !detail) {
-        console.error("Invalid runtime or detail level selected.");
+        console.error("Invalid runtime or detail level selected for price calculation.");
         return 0;
     }
 
@@ -170,131 +195,106 @@ function calculateAdPrice(adTypeData, runtimeDuration, detailsLevel) {
 }
 
 /**
- * Renders the advertising pricing cards on the page.
+ * Populates the runtime and details level dropdowns based on the selected ad package.
  */
-function renderAdPricing() {
-    if (!adPricingGrid) return;
+function populateDropdowns() {
+    if (!selectedAdPackage) return;
 
-    adPricingGrid.innerHTML = '';
-    if (loadingMessage) {
-        loadingMessage.classList.add('hidden');
+    // Populate Runtime dropdown
+    if (adRuntimeSelect) {
+        adRuntimeSelect.innerHTML = ''; // Clear existing options
+        selectedAdPackage.runtime.forEach(r => {
+            const option = document.createElement('option');
+            option.value = r.duration;
+            option.textContent = r.duration;
+            adRuntimeSelect.appendChild(option);
+        });
+        // Set default selected value
+        adRuntimeSelect.value = adFormData.adRuntime;
     }
 
-    adPricingData.forEach(adPackage => {
-        const cardHtml = `
-            <div class="ad-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <div class="ad-card-header mb-4">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-2">${adPackage.type}</h3>
-                    <p class="text-gray-600 text-sm">${adPackage.description}</p>
-                </div>
-                <div class="mb-6">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Details & Features:</h4>
-                    <div class="space-y-4">
-                        ${adPackage.details.map(detail => `
-                            <div class="border border-gray-200 rounded-lg p-3">
-                                <h5 class="font-bold text-lg text-blue-600">${detail.level}</h5>
-                                <ul class="list-disc list-inside text-gray-700 text-sm ad-card-features mt-1">
-                                    ${detail.features.map(f => `<li>${f}</li>`).join('')}
-                                </ul>
-                                <p class="mt-2 text-gray-800 font-semibold">Base Price Factor: ${detail.priceFactor.toFixed(1)}x</p>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Runtime Options:</h4>
-                    <div class="space-y-2">
-                        ${adPackage.runtime.map(runtime => `
-                            <div class="flex justify-between items-center text-gray-700">
-                                <span>${runtime.duration}</span>
-                                <span>${runtime.multiplier.toFixed(1)}x</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                <div class="text-center mt-auto">
-                    <p class="text-xl font-bold text-gray-800 mb-4">Starting from: <span class="text-blue-600 text-3xl">$${adPackage.basePrice.toFixed(2)}</span></p>
-                    <button
-                        class="select-ad-package-btn bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75"
-                        data-ad-type="${adPackage.type}"
-                    >
-                        Select This Package
-                    </button>
-                </div>
-            </div>
-        `;
-        adPricingGrid.insertAdjacentHTML('beforeend', cardHtml);
-    });
-
-    document.querySelectorAll('.select-ad-package-btn').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const adType = event.currentTarget.dataset.adType;
-            const selectedPackageData = adPricingData.find(p => p.type === adType);
-            if (selectedPackageData) {
-                openAdModal(selectedPackageData);
-            }
+    // Populate Details Level dropdown
+    if (adDetailsLevelSelect) {
+        adDetailsLevelSelect.innerHTML = ''; // Clear existing options
+        selectedAdPackage.details.forEach(d => {
+            const option = document.createElement('option');
+            option.value = d.level;
+            option.textContent = d.level;
+            adDetailsLevelSelect.appendChild(option);
         });
-    });
+        // Set default selected value
+        adDetailsLevelSelect.value = adFormData.adDetailsLevel;
+    }
+
+    // Add event listeners for changes to update price
+    if (adRuntimeSelect) {
+        adRuntimeSelect.addEventListener('change', updateCalculatedPrice);
+    }
+    if (adDetailsLevelSelect) {
+        adDetailsLevelSelect.addEventListener('change', updateCalculatedPrice);
+    }
 }
 
 /**
- * Opens the ad submission modal and pre-fills selected package details.
- * @param {object} packageData - The selected ad package data.
+ * Updates the calculated price based on current dropdown selections.
  */
-function openAdModal(packageData) {
-    if (!adModal) return;
+function updateCalculatedPrice() {
+    if (!selectedAdPackage) return;
 
-    selectedAdPackage = packageData;
-    currentAdStep = 1;
-    currentAdSubStep = 1; // Start with the confirmation sub-step
+    adFormData.adRuntime = adRuntimeSelect ? adRuntimeSelect.value : '';
+    adFormData.adDetailsLevel = adDetailsLevelSelect ? adDetailsLevelSelect.value : '';
 
-    adSubmissionForm.reset();
-    adFormData = {
-        adType: selectedAdPackage.type,
-        adRuntime: selectedAdPackage.runtime[0].duration,
-        adDetailsLevel: selectedAdPackage.details[0].level,
-        calculatedPrice: 0,
-        adTitle: '',
-        adDescription: '',
-        adTargetUrl: '',
-        adImageUrl: '',
-        consentAgreed: false,
-        paymentMethod: 'credit-card'
-    };
-
-    // Pre-fill confirmation fields
-    if (adTypeConfirm) adTypeConfirm.value = adFormData.adType;
-    if (adRuntimeConfirm) adRuntimeConfirm.value = adFormData.adRuntime;
-    if (adDetailsLevelConfirm) adDetailsLevelConfirm.value = adFormData.adDetailsLevel;
-    
     adFormData.calculatedPrice = calculateAdPrice(
         selectedAdPackage,
         adFormData.adRuntime,
         adFormData.adDetailsLevel
     );
+
     if (adPriceConfirm) adPriceConfirm.value = `$${adFormData.calculatedPrice.toFixed(2)}`;
     if (adFinalTotalSpan) adFinalTotalSpan.textContent = `$${adFormData.calculatedPrice.toFixed(2)}`;
+}
 
-    adModal.classList.remove('hidden');
-    showAdStep(currentAdStep); // This will call showAdSubStep(1) internally for step 1
 
-    if (submitAdBtn) {
-        submitAdBtn.disabled = false;
-        submitAdBtn.textContent = 'Place Ad Order';
-        submitAdBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
-        submitAdBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+/**
+ * Initializes the form with data from the URL parameters.
+ */
+function initializeFormFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const packageDataString = urlParams.get('package');
+
+    if (packageDataString) {
+        try {
+            selectedAdPackage = JSON.parse(decodeURIComponent(packageDataString));
+            
+            // Populate adFormData with initial values from the selected package
+            adFormData.adType = selectedAdPackage.type;
+            // Default to first runtime and detail level if available
+            adFormData.adRuntime = selectedAdPackage.runtime[0] ? selectedAdPackage.runtime[0].duration : '';
+            adFormData.adDetailsLevel = selectedAdPackage.details[0] ? selectedAdPackage.details[0].level : '';
+            
+            // Populate dropdowns and calculate price
+            populateDropdowns();
+            updateCalculatedPrice();
+
+            // Populate static ad type field
+            if (adTypeConfirm) adTypeConfirm.value = adFormData.adType;
+            
+            // Show the first step (confirm sub-step)
+            showAdStep(1);
+
+        } catch (error) {
+            console.error("Error parsing ad package data from URL:", error);
+            displayNotification("Could not load ad package details. Please select a package from the Advertise page.", false);
+            // Optionally redirect back to advertise.html if data is corrupted
+            // setTimeout(() => window.location.href = 'advertise.html', 3000);
+        }
+    } else {
+        displayNotification("No ad package selected. Please choose a package from the Advertise page.", false);
+        // Optionally redirect back to advertise.html if no package is selected
+        // setTimeout(() => window.location.href = 'advertise.html', 3000);
     }
 }
 
-/**
- * Closes the ad submission modal.
- */
-function closeAdModal() {
-    if (adModal) adModal.classList.add('hidden');
-    adSubmissionForm.reset();
-    selectedAdPackage = null;
-    adFormData = {};
-}
 
 /**
  * Displays a specific step in the ad submission process.
@@ -392,21 +392,9 @@ function updateAdSummary() {
 
 // --- Event Listeners ---
 document.addEventListener('DOMContentLoaded', () => {
-    renderAdPricing();
+    initializeFormFromUrl(); // Call this to populate initial data
 
-    if (closeAdModalBtn) {
-        closeAdModalBtn.addEventListener('click', closeAdModal);
-    }
-
-    if (adModal) {
-        adModal.addEventListener('click', (event) => {
-            if (event.target === adModal) {
-                closeAdModal();
-            }
-        });
-    }
-
-    // New event listener for "Confirm & Continue" button
+    // Event listener for "Confirm & Continue" button
     if (confirmAdDetailsBtn) {
         confirmAdDetailsBtn.addEventListener('click', () => {
             showAdSubStep(2); // Move to the input sub-step
@@ -423,10 +411,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Original nextAdStep1Btn now moves from input sub-step to Step 2
     if (nextAdStep1Btn) {
         nextAdStep1Btn.addEventListener('click', () => {
+            // Basic client-side validation for required fields in Step 1 Input
             if (adTitleInput.checkValidity() && adDescriptionInput.checkValidity() && adTargetUrlInput.checkValidity()) {
                 showAdStep(2);
             } else {
-                adSubmissionForm.reportValidity();
+                adSubmissionForm.reportValidity(); // Show browser validation messages
                 displayNotification('Please fill in all required ad details.', false);
             }
         });
@@ -464,14 +453,16 @@ document.addEventListener('DOMContentLoaded', () => {
         adSubmissionForm.addEventListener('submit', (event) => {
             event.preventDefault();
 
+            // Final validation before submission
             if (!adFormData.consentAgreed) {
                 displayNotification('Consent agreement is required.', false);
-                showAdStep(2);
+                showAdStep(2); // Go back to consent step
                 return;
             }
 
             console.log("Ad Order Submitted:", adFormData);
-            displayNotification('Your ad order has been submitted successfully!', true);
+            // Display custom success modal instead of temporary notification
+            openSuccessModal('Your ad order has been submitted successfully!');
             
             if (submitAdBtn) {
                 submitAdBtn.disabled = true;
@@ -479,6 +470,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitAdBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
                 submitAdBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
             }
+        });
+    }
+
+    // Event listeners for the success modal buttons
+    if (closeSuccessModalBtn) {
+        closeSuccessModalBtn.addEventListener('click', closeSuccessModal);
+    }
+    if (goToAdvertisePageBtn) {
+        goToAdvertisePageBtn.addEventListener('click', () => {
+            window.location.href = 'advertise.html'; // Redirect back to the advertise page
         });
     }
 });

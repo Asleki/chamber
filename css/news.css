@@ -1,6 +1,6 @@
 /* ==========================================================================
-    News-Specific Styles (for Homepage widget and Full News Pages)
-    ========================================================================== */
+   News-Specific Styles (for Homepage widget and Full News Pages)
+   ========================================================================== */
 
 /* Styles for the News Updates widget on the homepage */
 .news-updates {
@@ -9,27 +9,30 @@
     justify-content: space-between; /* Pushes button to bottom if content is short */
 }
 
-/* Container for dynamically loaded news items on homepage */
-#homepage-news-container {
-    margin-bottom: 1.5rem; /* Space between news items and "View All News" button */
-    flex-grow: 1; /* Allows news content to take available space */
-}
-
-/* Individual News Item (on homepage) */
+/* Individual News Item (on homepage and full news list) */
 .news-item {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
-    text-align: left; /* Align text inside news items to the left */
+    text-align: left;
+    display: flex; /* Use flexbox to align image and text side-by-side */
+    align-items: flex-start; /* Align items to the top */
+    gap: 1rem; /* Space between image and text content */
 }
 
 .news-item:last-of-type {
     border-bottom: none; /* No border for the last item */
 }
 
+.news-item-text-content {
+    flex-grow: 1; /* Allows this content block to take up available space */
+    display: flex;
+    flex-direction: column; /* Stack title, summary, date, button vertically */
+}
+
 .news-item-title {
-    font-size: 1.3em; /* Slightly smaller for the compact news section */
+    font-size: 1.3em;
     color: var(--primary-color);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.4rem; /* Space below title */
     line-height: 1.3;
 }
 
@@ -40,23 +43,43 @@
 }
 
 .news-item-title a:hover {
-    color: var(--accent-color); /* Matches your design */
+    color: var(--accent-color);
 }
 
 .news-item-summary {
     font-size: 0.95em;
-    color: var(--text-color-light); /* Lighter text for summary */
+    color: var(--text-color-light);
     line-height: 1.5;
+    margin-bottom: 0.8rem; /* Space below summary before date/button */
 }
+
+.news-item-date {
+    font-size: 0.85em;
+    color: var(--text-color-light);
+    margin-bottom: 0.8rem; /* Space below date */
+}
+
+/* Styling for images within news items - UNIFORM DISPLAY */
+.news-item img {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 120px; /* Fixed width for uniformity */
+    height: 100px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crop image to fit, maintaining aspect ratio */
+    display: block;
+    margin-right: 1rem; /* Space to the right of the image */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Styles for the "View All News" button on the homepage */
 .news-updates .view-all-news-button {
-    margin-top: 15px; /* Adjust spacing from news items */
-    display: block; /* Make it a block element to control its width and centering */
-    width: fit-content; /* Make the button only as wide as its content */
-    margin-left: auto; /* Center the button */
-    margin-right: auto; /* Center the button */
-    background-color: var(--primary-color); /* Maintain primary style */
+    margin-top: 15px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--primary-color);
     color: var(--background-color-white);
     border: 2px solid var(--primary-color);
 }
@@ -85,17 +108,17 @@
 
 .error-message {
     color: var(--error-color);
-    background-color: #ffe6e6; /* Light red background for error */
+    background-color: #ffe6e6;
     font-weight: bold;
 }
 
 .hidden {
-    display: none !important; /* Important to ensure it overrides other styles */
+    display: none !important;
 }
 
 /* Styles for Full News Article Pages (e.g., news-article-gourmet-bistro.html) */
 .article-page-main {
-    padding-top: 2rem; /* Adjust based on your header height */
+    padding-top: 2rem;
     padding-bottom: 3rem;
 }
 
@@ -174,28 +197,29 @@
     text-align: center;
     margin-top: 3rem;
 }
-/* Read More Button styling (re-added for clarity, if not in main.css) */
+/* Read More Button styling */
 .read-more-button {
-    display: inline-block;
-    margin-top: 15px;
+    display: block; /* Make it a block element to allow margin: auto for centering */
+    margin: 15px auto 0 auto; /* Top margin, auto left/right for centering, no bottom margin */
     padding: 8px 15px;
-    background-color: var(--secondary-color); /* Use your theme's secondary color */
-    color: var(--background-color); /* White text */
+    background-color: var(--secondary-color);
+    color: var(--background-color);
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s ease;
+    width: fit-content; /* Ensure it only takes the width of its content */
 }
 
 .read-more-button:hover {
-    background-color: var(--primary-color); /* Darker on hover */
+    background-color: var(--primary-color);
 }
 
 /* Specific style for news items that trigger a modal */
 .news-item .news-modal-trigger {
-    cursor: pointer; /* Indicate it's clickable */
+    cursor: pointer;
     color: var(--heading-color);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
@@ -213,12 +237,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure it's on top of everything */
-    overflow-y: auto; /* Allow scrolling for long content */
+    z-index: 1000;
+    overflow-y: auto;
     padding: 20px;
 }
 
@@ -230,13 +254,13 @@
     background-color: rgb(211, 216, 244);
     padding: 30px;
     border-radius: 10px;
-    max-width: 800px; /* Max width for the modal content */
-    width: 95%; /* Responsive width */
+    max-width: 800px;
+    width: 95%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-height: 90vh; /* Max height to fit viewport */
-    overflow-y: auto; /* Scroll content if it's too long */
-    animation: fadeInScale 0.3s ease-out forwards; /* Simple animation */
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: fadeInScale 0.3s ease-out forwards;
 }
 
 .news-modal-close-button {
@@ -305,7 +329,7 @@ body.modal-open {
 @media (max-width: 768px) {
     /* Ensure button centering on mobile for homepage news as well */
     .news-updates .view-all-news-button {
-        width: 100%; /* Make button full width on mobile */
+        width: 100%;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
@@ -325,5 +349,110 @@ body.modal-open {
     .news-full-article ul li {
         font-size: 1em;
     }
+
+    /* Adjust news-item for smaller screens */
+    .news-item {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;
+        text-align: center;
+    }
+    .news-item img {
+        margin-bottom: 0.5rem; /* Add some space below image when stacked */
+    }
+    .news-item-text-content {
+        align-items: center; /* Center text content when stacked vertically */
+    }
 }
 
+/* --- Carousel Specific Styles for Homepage News --- */
+.news-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px; /* Ensure enough height for content */
+    margin-bottom: 1.5rem; /* Space between carousel and "View All News" button */
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px; /* Ensure slides have a minimum height */
+}
+
+.carousel-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-slide img {
+    max-width: 90%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-slide h4 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.carousel-slide p {
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: grey;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
