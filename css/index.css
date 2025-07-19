@@ -20,7 +20,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: white; /* Default color for text directly in .hero-section (like the overlay text) */
     border-radius: 8px;
     margin-bottom: 40px;
 }
@@ -54,7 +54,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* This is the semi-transparent black overlay */
     z-index: 1;
     border-radius: 8px;
 }
@@ -70,15 +70,25 @@
     font-size: 3.5rem;
     margin-bottom: 15px;
     font-weight: 700;
-    color: var(--background-color-white);
+    color: var(--background-color-white); /* Default for light mode */
 }
 
 .hero-text p {
     font-size: 1.5rem;
     margin-bottom: 30px;
     line-height: 1.6;
-    color: var(--background-color-white);
+    color: var(--background-color-white); /* Default for light mode */
 }
+
+/* --- DARK MODE OVERRIDES FOR HERO TEXT --- */
+body.dark-mode .hero-text h2 {
+    color: #00BFFF; /* Deep Sky Blue - a bright, readable blue */
+}
+
+body.dark-mode .hero-text p {
+    color: #FFFFFF; /* Pure White */
+}
+/* --- END DARK MODE OVERRIDES --- */
 
 .cta-button {
     display: inline-block;
@@ -328,6 +338,17 @@
     border: 1px solid #e0e0e0;
 }
 
+body.dark-mode .weather-widget {
+    background-color: var(--background-color-footer-dark); /* Dark mode background for widget */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+body.dark-mode .weather-widget h3 {
+    color: var(--heading-color); /* Readable heading in dark mode */
+}
+
+
 .weather-widget h3 {
     font-size: 2.2em;
     color: #003366;
@@ -353,11 +374,21 @@
     border: 1px solid #d0e0f0;
 }
 
+body.dark-mode .current-weather-card {
+    background-color: var(--background-color-body); /* Dark mode background */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
 .current-weather-card .day-name {
     font-size: 1.4em;
     font-weight: 600;
     color: #0056b3;
     margin-bottom: 10px;
+}
+
+body.dark-mode .current-weather-card .day-name {
+    color: var(--primary-color); /* Readable blue in dark mode */
 }
 
 .current-weather-card .weather-icon-lg {
@@ -375,10 +406,18 @@
     margin-bottom: 5px;
 }
 
+body.dark-mode .current-weather-card .temperature {
+    color: var(--text-color-primary); /* Light text in dark mode */
+}
+
 .current-weather-card .description {
     font-size: 1.2em;
     color: #666;
     text-transform: capitalize;
+}
+
+body.dark-mode .current-weather-card .description {
+    color: var(--text-color-secondary); /* Lighter text for description */
 }
 
 .forecast-cards-wrapper {
@@ -403,11 +442,21 @@
     align-items: center;
 }
 
+body.dark-mode .forecast-day-card {
+    background-color: var(--background-color-white); /* Lighter dark background for forecast cards */
+    border: 1px solid var(--border-color-light);
+    box-shadow: 0 1px 5px var(--shadow-color);
+}
+
 .forecast-day-card .day-name {
     font-size: 1em;
     font-weight: 600;
     color: #003366;
     margin-bottom: 8px;
+}
+
+body.dark-mode .forecast-day-card .day-name {
+    color: var(--primary-color); /* Readable blue in dark mode */
 }
 
 .forecast-day-card .weather-icon-sm {
@@ -423,6 +472,11 @@
     color: #333;
     line-height: 1;
 }
+
+body.dark-mode .forecast-day-card .temperature {
+    color: var(--text-color-primary); /* Light text in dark mode */
+}
+
 
 /* --- Business Dictionary --- */
 .business-dictionary {
@@ -442,6 +496,10 @@ body.dark-mode .business-dictionary {
     font-size: 1.8em;
     color: #003366;
     margin-bottom: 20px;
+}
+
+body.dark-mode #dictionary-quote-heading {
+    color: var(--heading-color); /* Make heading readable in dark mode */
 }
 
 .dictionary-content-wrapper {
@@ -467,9 +525,18 @@ body.dark-mode .business-dictionary {
     flex-shrink: 0;
 }
 
+body.dark-mode .carousel-btn {
+    background-color: var(--primary-color); /* Dark mode button background */
+    color: var(--background-color-white); /* Dark mode button text */
+}
+
 .carousel-btn:hover {
     background-color: #004085;
     transform: scale(1.05);
+}
+
+body.dark-mode .carousel-btn:hover {
+    background-color: var(--primary-color-dark); /* Dark mode button hover */
 }
 
 .carousel-btn i {
@@ -491,12 +558,22 @@ body.dark-mode .business-dictionary {
     max-width: 600px;
 }
 
+body.dark-mode #dictionary-display {
+    background-color: var(--background-color-white); /* Dark mode background for display */
+    border: 1px solid var(--border-color);
+}
+
+
 #dictionary-display .quote-text {
     font-size: 1.8em;
     font-weight: 500;
     color: #0056b3;
     margin-bottom: 10px;
     line-height: 1.4;
+}
+
+body.dark-mode #dictionary-display .quote-text {
+    color: var(--primary-color); /* Readable blue in dark mode */
 }
 
 #dictionary-display .quote-author {
@@ -506,10 +583,18 @@ body.dark-mode .business-dictionary {
     margin-top: 5px;
 }
 
+body.dark-mode #dictionary-display .quote-author {
+    color: var(--text-color-secondary); /* Readable gray in dark mode */
+}
+
 #dictionary-display .term-text {
     font-size: 1.6em;
     color: #003366;
     margin-bottom: 8px;
+}
+
+body.dark-mode #dictionary-display .term-text {
+    color: var(--heading-color); /* Readable heading in dark mode */
 }
 
 #dictionary-display .definition-text {
@@ -517,6 +602,11 @@ body.dark-mode .business-dictionary {
     color: #444;
     line-height: 1.5;
 }
+
+body.dark-mode #dictionary-display .definition-text {
+    color: var(--text-color-primary); /* Readable text in dark mode */
+}
+
 
 /* --- Member Spotlights --- */
 .member-spotlights {
@@ -544,6 +634,11 @@ body.dark-mode .business-dictionary {
     padding-bottom: 15px;
 }
 
+body.dark-mode .spotlight-carousel {
+    background-color: var(--background-color-footer-dark); /* Dark mode background */
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
 .spotlight-carousel::-webkit-scrollbar {
     display: none;
 }
@@ -566,9 +661,19 @@ body.dark-mode .business-dictionary {
     transition: transform 0.2s ease-in-out;
 }
 
+body.dark-mode .member-spotlight-card {
+    background-color: var(--background-color-white); /* Dark mode background */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
 .member-spotlight-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .member-spotlight-card:hover {
+    box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 .member-spotlight-card img {
@@ -586,6 +691,10 @@ body.dark-mode .business-dictionary {
     margin-bottom: 10px;
 }
 
+body.dark-mode .member-spotlight-card h4 {
+    color: var(--primary-color); /* Readable blue in dark mode */
+}
+
 .member-spotlight-card p {
     font-size: 0.95em;
     color: #555;
@@ -593,8 +702,16 @@ body.dark-mode .business-dictionary {
     line-height: 1.4;
 }
 
+body.dark-mode .member-spotlight-card p {
+    color: var(--text-color-secondary); /* Readable gray in dark mode */
+}
+
 .member-spotlight-card p strong {
     color: #333;
+}
+
+body.dark-mode .member-spotlight-card p strong {
+    color: var(--text-color-primary); /* Readable text in dark mode */
 }
 
 .member-spotlight-card .website-link {
@@ -609,8 +726,17 @@ body.dark-mode .business-dictionary {
     transition: background-color 0.3s ease;
 }
 
+body.dark-mode .member-spotlight-card .website-link {
+    background-color: var(--secondary-color); /* Dark mode button background */
+    color: var(--background-color-white); /* Dark mode button text */
+}
+
 .member-spotlight-card .website-link:hover {
     background-color: #e65100;
+}
+
+body.dark-mode .member-spotlight-card .website-link:hover {
+    background-color: var(--secondary-color-light); /* Dark mode button hover */
 }
 
 .fas {

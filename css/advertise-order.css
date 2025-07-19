@@ -1,0 +1,499 @@
+/* css/advertise-order.css */
+
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto; /* Centers the container and adds vertical spacing */
+    padding: 20px;
+}
+
+/* Ad Order Container Styling */
+.ad-order-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+.ad-order-container h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ad-order-container p.text-lg {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Stepper Navigation --- */
+.modal-stepper {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e0e0e0;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: relative;
+}
+
+.modal-stepper span {
+    position: relative;
+    padding-bottom: 10px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.modal-stepper span.active {
+    color: #007bff; /* Active step color */
+}
+
+.modal-stepper span.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Aligns with the border */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff; /* Active indicator bar */
+}
+
+/* --- Form Steps (Visibility handled by JS using 'hidden' attribute) --- */
+.ad-modal-step h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* Form Groups for Labels and Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+textarea {
+    resize: vertical; /* Allow only vertical resizing */
+    min-height: 100px;
+}
+
+.required {
+    color: #dc3545; /* Red asterisk for required fields */
+    font-weight: bold;
+}
+
+/* --- Buttons --- */
+.button {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button.primary {
+    background-color: #007bff;
+    color: #fff;
+}
+.button.primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+}
+
+.button.secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+.button.secondary:hover {
+    background-color: #5a6268;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button.success {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 30px; /* Larger for submit */
+    font-size: 1.1em;
+}
+.button.success:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+.button:disabled {
+    background-color: #c0c0c0 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right by default */
+    margin-top: 30px;
+}
+
+.form-actions.flex-between {
+    justify-content: space-between;
+}
+
+/* --- Checkbox and Radio Groups --- */
+.checkbox-group, .radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+    width: auto; /* Override 100% width for inputs */
+    margin-right: 10px;
+    appearance: none; /* Remove default browser styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative; /* For custom checkmark */
+}
+
+.radio-group input[type="radio"] {
+    border-radius: 50%; /* Make radio buttons round */
+}
+
+.checkbox-group input[type="checkbox"]:checked,
+.radio-group input[type="radio"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Custom checkmark for checkbox */
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '\2713'; /* Unicode checkmark */
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Custom dot for radio button */
+.radio-group input[type="radio"]:checked::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.checkbox-group label, .radio-group label {
+    font-weight: normal; /* Labels shouldn't be bold here */
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 0; /* Remove default margin */
+}
+
+/* --- Terms and Summary Boxes --- */
+.terms-box, .summary-box {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    max-height: 250px; /* Fixed height for terms */
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.terms-box h4, .summary-box h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.terms-box ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.terms-box ul li {
+    margin-bottom: 5px;
+}
+
+.terms-box p.bold {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.summary-box p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.summary-box p strong {
+    color: #333;
+}
+
+.summary-box p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.summary-box p a:hover {
+    text-decoration: underline;
+}
+
+.summary-box p .success-text {
+    color: #28a745;
+    font-weight: bold;
+}
+.summary-box p .error-text {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.total-amount {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.total-amount span {
+    color: #007bff; /* Highlight total price */
+}
+
+/* --- Modal Styling --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Start hidden for transition */
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    transform: translateY(-20px); /* Start slightly up for animation */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-title.success {
+    color: #28a745;
+}
+
+.modal-body {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Space between modal buttons */
+}
+
+/* Utility Class for Hiding Elements */
+/* This is crucial and will be toggled by JavaScript */
+.hidden {
+    display: none !important;
+}
+
+/* Notification Message Styling */
+#notification-message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #fff; /* Default text color for notifications */
+}
+
+.notification-success {
+    background-color: #28a745;
+}
+
+.notification-error {
+    background-color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ad-order-container {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    .ad-order-container h1 {
+        font-size: 1.8em;
+    }
+
+    .ad-order-container p.text-lg {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .modal-stepper {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+
+    .ad-modal-step h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .button.success {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        padding: 10px 12px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-actions {
+        flex-direction: column; /* Stack buttons on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-order-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .ad-order-container h1 {
+        font-size: 1.5em;
+    }
+
+    .ad-order-container p.text-lg {
+        font-size: 0.9em;
+    }
+
+    .modal-stepper span {
+        font-size: 0.9em;
+    }
+
+    .ad-modal-step h3 {
+        font-size: 1.3em;
+    }
+
+    .button {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+    .form-actions button:last-child {
+        margin-bottom: 0;
+    }
+}

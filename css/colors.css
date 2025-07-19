@@ -30,8 +30,13 @@
     --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
 
     /* Specific element colors not covered by general variables */
-    --error-background-color: #ffe6e6; /* Light red for error messages */
+    --error-color: #dc3545; /* Red for errors */
+    --error-background-color: #ffe6e6; /* Light red background for error */
     --success-color: hsl(120, 60%, 40%); /* Green for checkmarks/success */
+
+    /* Social icon filter for light mode (default: no invert) */
+    --social-icon-filter: invert(0%);
+    --social-icon-hover-filter: invert(0%) sepia(100%) saturate(2000%) hue-rotate(30deg) brightness(100%) contrast(100%); /* Accent color */
 }
 
 /* Dark Mode Overrides */
@@ -62,6 +67,11 @@ html[data-theme="dark"] {
     --shadow-color: rgba(0, 0, 0, 0.4); /* Stronger shadow, often subtle glow or inner shadow */
 
     /* Specific element colors not covered by general variables */
+    --error-color: #ff6b6b; /* Lighter Red */
     --error-background-color: hsl(0, 70%, 20%); /* Darker red for error messages in dark mode */
-    --success-color: hsl(120, 60%, 60%); /* Lighter green for dark mode */
+    --success-color: hsl(120, 60%, 60%); /* Lighter Green */
+
+    /* Social icon filter for dark mode (invert to make them light) */
+    --social-icon-filter: invert(100%);
+    --social-icon-hover-filter: invert(80%) sepia(100%) saturate(2000%) hue-rotate(30deg) brightness(100%) contrast(100%); /* Accent color */
 }

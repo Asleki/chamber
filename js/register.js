@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleVisibility(registrationSuccessMessage, false); // Hide success message on load
 
         try {
-            const response = await fetch('/data/events.json'); // Adjust path as needed
+            const response = await fetch('./data/events.json'); // Adjust path as needed
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

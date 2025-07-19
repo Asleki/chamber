@@ -8,7 +8,6 @@
     <meta name="keywords" content="La Familia Chambers ad submission, online ad form, digital marketing order, sponsored content form">
     <meta name="author" content="La Familia Chambers">
 
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/advertise-order.html">
     <meta property="og:title" content="Submit Ad Order | La Familia Chambers">
@@ -21,35 +20,18 @@
     <meta property="twitter:image" content="https://asleki.github.io/wdd231/chamber/images/lafamilialogo.webp">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Your Custom CSS Files -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/advertise.css"> <!-- Reusing styles for stepper and form elements -->
-
-    <style>
-        /* Specific styles for this page's main content area */
-        .ad-order-container {
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            max-width: 800px; /* Max width for the form container */
-            margin: 2rem auto; /* Center the container with vertical margin */
-        }
-    </style>
+    <link rel="stylesheet" href="css/advertise-order.css">
+    <link rel="stylesheet" href="css/advertise.css"> 
 </head>
-<body class="bg-gray-100 font-sans">
+<body>
 
     <header class="sticky-header">
         <div class="header-top">
@@ -135,84 +117,83 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-6 my-8">
+    <main class="container">
         <div class="ad-order-container">
             <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">Submit Your Ad Order</h1>
             <p class="text-lg text-gray-700 text-center mb-8">Please fill out the form below to finalize your advertising package.</p>
 
-            <!-- Stepper Navigation -->
-            <div class="modal-stepper mb-8 text-lg font-semibold text-gray-500">
+            <div class="modal-stepper">
                 <span id="ad-step-details" class="active">1. Details</span>
                 <span id="ad-step-consent">2. Consent</span>
                 <span id="ad-step-payment">3. Payment</span>
                 <span id="ad-step-summary">4. Summary</span>
             </div>
 
-            <!-- Ad Submission Form -->
             <form id="ad-submission-form">
-                <!-- Step 1: Ad Details (Split into two sub-steps managed by JS) -->
                 <div id="ad-step-1" class="ad-modal-step">
-                    <!-- Sub-step 1.1: Confirmation of Auto-selected Details -->
                     <div id="ad-step-1-confirm">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Confirm Ad Package Details</h3>
-                        <div class="mb-4">
-                            <label for="ad-type-confirm" class="block text-gray-700 text-sm font-bold mb-2">Ad Type:</label>
-                            <input type="text" id="ad-type-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 cursor-not-allowed" readonly>
+                        <h3>Confirm Ad Package Details</h3>
+                        <div class="form-group">
+                            <label for="ad-type-confirm">Ad Type:</label>
+                            <input type="text" id="ad-type-confirm" value="Banner Ad" readonly>
                         </div>
-                        <div class="mb-4">
-                            <label for="ad-runtime-select" class="block text-gray-700 text-sm font-bold mb-2">Runtime:</label>
-                            <select id="ad-runtime-select" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <!-- Options will be populated by JavaScript -->
+                        <div class="form-group">
+                            <label for="ad-runtime-select">Runtime:</label>
+                            <select id="ad-runtime-select">
+                                <option value="1 Week">1 Week</option>
+                                <option value="2 Weeks">2 Weeks</option>
+                                <option value="1 Month">1 Month</option>
+                                <option value="3 Months">3 Months</option>
                             </select>
                         </div>
-                        <div class="mb-4">
-                            <label for="ad-details-level-select" class="block text-gray-700 text-sm font-bold mb-2">Details Level:</label>
-                            <select id="ad-details-level-select" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <!-- Options will be populated by JavaScript -->
+                        <div class="form-group">
+                            <label for="ad-details-level-select">Details Level:</label>
+                            <select id="ad-details-level-select">
+                                <option value="Basic">Basic</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Premium">Premium</option>
                             </select>
                         </div>
-                        <div class="mb-6">
-                            <label for="ad-price-confirm" class="block text-gray-700 text-sm font-bold mb-2">Calculated Price:</label>
-                            <input type="text" id="ad-price-confirm" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 font-bold text-lg cursor-not-allowed" readonly>
+                        <div class="form-group">
+                            <label for="ad-price-confirm">Calculated Price:</label>
+                            <input type="text" id="ad-price-confirm" value="$0.00" readonly>
                         </div>
-                        <div class="flex justify-end">
-                            <button type="button" id="confirm-ad-details-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Confirm & Continue</button>
+                        <div class="form-actions right">
+                            <button type="button" id="confirm-ad-details-btn" class="button primary">Confirm & Continue</button>
                         </div>
                     </div>
 
-                    <!-- Sub-step 1.2: User Input Fields -->
-                    <div id="ad-step-1-input" class="hidden">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Enter Your Ad Content</h3>
-                        <div class="mb-4">
-                            <label for="ad-title" class="block text-gray-700 text-sm font-bold mb-2">Ad Title <span class="text-red-500">*</span>:</label>
-                            <input type="text" id="ad-title" name="adTitle" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="ad-step-1-input" hidden>
+                        <h3>Enter Your Ad Content</h3>
+                        <div class="form-group">
+                            <label for="ad-title">Ad Title <span class="required">*</span>:</label>
+                            <input type="text" id="ad-title" name="adTitle" required>
                         </div>
-                        <div class="mb-4">
-                            <label for="ad-description" class="block text-gray-700 text-sm font-bold mb-2">Ad Description <span class="text-red-500">*</span>:</label>
-                            <textarea id="ad-description" name="adDescription" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                        <div class="form-group">
+                            <label for="ad-description">Ad Description <span class="required">*</span>:</label>
+                            <textarea id="ad-description" name="adDescription" rows="4" required></textarea>
                         </div>
-                        <div class="mb-4">
-                            <label for="ad-target-url" class="block text-gray-700 text-sm font-bold mb-2">Target URL <span class="text-red-500">*</span>:</label>
-                            <input type="url" id="ad-target-url" name="adTargetUrl" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://yourwebsite.com" required>
+                        <div class="form-group">
+                            <label for="ad-target-url">Target URL <span class="required">*</span>:</label>
+                            <input type="url" id="ad-target-url" name="adTargetUrl" placeholder="https://yourwebsite.com" required>
                         </div>
-                        <div class="mb-6">
-                            <label for="ad-image-url" class="block text-gray-700 text-sm font-bold mb-2">Ad Image URL (Optional):</label>
-                            <input type="url" id="ad-image-url" name="adImageUrl" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://example.com/image.jpg">
+                        <div class="form-group">
+                            <label for="ad-image-url">Ad Image URL (Optional):</label>
+                            <input type="url" id="ad-image-url" name="adImageUrl" placeholder="https://example.com/image.jpg">
                         </div>
-                        <div class="flex justify-between">
-                            <button type="button" id="prev-ad-substep-2-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                            <button type="button" id="next-ad-step-1-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
+                        <div class="form-actions flex-between">
+                            <button type="button" id="prev-ad-substep-2-btn" class="button secondary">Previous</button>
+                            <button type="button" id="next-ad-step-1-btn" class="button primary">Next</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 2: Consent Agreement -->
-                <div id="ad-step-2" class="ad-modal-step hidden">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Consent Agreement</h3>
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 max-h-64 overflow-y-auto text-gray-700 text-sm">
-                        <h4 class="font-bold text-base mb-2">La Familia Chambers Advertising Terms and Conditions</h4>
-                        <p class="mb-2">By proceeding, you agree to the following terms:</p>
-                        <ul class="list-disc list-inside ml-4 mb-4">
+                <div id="ad-step-2" class="ad-modal-step" hidden>
+                    <h3>Consent Agreement</h3>
+                    <div class="terms-box">
+                        <h4>La Familia Chambers Advertising Terms and Conditions</h4>
+                        <p>By proceeding, you agree to the following terms:</p>
+                        <ul>
                             <li>All ad content must be truthful, accurate, and not misleading.</li>
                             <li>Ads must comply with all applicable laws and regulations.</li>
                             <li>La Familia Chambers reserves the right to review and reject any ad content that violates our policies or is deemed inappropriate.</li>
@@ -222,64 +203,66 @@
                             <li>You are responsible for the intellectual property rights of all content submitted.</li>
                             <li>La Familia Chambers is not responsible for the performance or results of your advertisement.</li>
                         </ul>
-                        <p class="font-bold">Please read carefully before agreeing.</p>
+                        <p class="bold">Please read carefully before agreeing.</p>
                     </div>
-                    <div class="mb-6">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" id="consent-agreement" name="consentAgreement" class="form-checkbox text-blue-600 h-5 w-5">
-                            <span class="ml-2 text-gray-700">I have read and agree to the terms and conditions.</span>
-                        </label>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent-agreement" name="consentAgreement">
+                        <label for="consent-agreement">I have read and agree to the terms and conditions.</label>
                     </div>
-                    <div class="flex justify-between">
-                        <button type="button" id="prev-ad-step-2-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                        <button type="button" id="next-ad-step-2-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
+                    <div class="form-actions flex-between">
+                        <button type="button" id="prev-ad-step-2-btn" class="button secondary">Previous</button>
+                        <button type="button" id="next-ad-step-2-btn" class="button primary">Next</button>
                     </div>
                 </div>
 
-                <!-- Step 3: Payment -->
-                <div id="ad-step-3" class="ad-modal-step hidden">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Payment Method</h3>
-                    <div class="mb-4">
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="adPaymentMethod" value="credit-card" class="form-radio text-blue-600 h-5 w-5" checked>
-                            <span class="ml-2 text-gray-700">Credit Card</span>
-                        </label>
+                <div id="ad-step-3" class="ad-modal-step" hidden>
+                    <h3>Payment Method</h3>
+                    <div class="form-group radio-group">
+                        <input type="radio" name="adPaymentMethod" value="credit-card" id="radio-credit-card" checked>
+                        <label for="radio-credit-card">Credit Card</label>
                     </div>
-                    <div class="mb-4">
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="adPaymentMethod" value="mpesa" class="form-radio text-blue-600 h-5 w-5">
-                            <span class="ml-2 text-gray-700">M-Pesa</span>
-                        </label>
+                    <div class="form-group radio-group">
+                        <input type="radio" name="adPaymentMethod" value="mpesa" id="radio-mpesa">
+                        <label for="radio-mpesa">M-Pesa</label>
                     </div>
-                    <div class="mb-6">
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="adPaymentMethod" value="paypal" class="form-radio text-blue-600 h-5 w-5">
-                            <span class="ml-2 text-gray-700">PayPal</span>
-                        </label>
+                    <div class="form-group radio-group">
+                        <input type="radio" name="adPaymentMethod" value="paypal" id="radio-paypal">
+                        <label for="radio-paypal">PayPal</label>
                     </div>
-                    <div class="text-xl font-bold text-gray-900 mb-6">
+                    <div class="total-amount">
                         Total Amount: <span id="ad-final-total">$0.00</span>
                     </div>
-                    <div class="flex justify-between">
-                        <button type="button" id="prev-ad-step-3-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                        <button type="button" id="next-ad-step-3-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Next</button>
+                    <div class="form-actions flex-between">
+                        <button type="button" id="prev-ad-step-3-btn" class="button secondary">Previous</button>
+                        <button type="button" id="next-ad-step-3-btn" class="button primary">Next</button>
                     </div>
                 </div>
 
-                <!-- Step 4: Summary & Submit -->
-                <div id="ad-step-4" class="ad-modal-step hidden">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Review Your Ad</h3>
-                    <div id="ad-summary-content" class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 text-gray-700">
+                <div id="ad-step-4" class="ad-modal-step" hidden>
+                    <h3>Review Your Ad</h3>
+                    <div id="ad-summary-content" class="summary-box">
                         <p>No ad data to display. Please go back and fill the form.</p>
                     </div>
-                    <div class="flex justify-between">
-                        <button type="button" id="prev-ad-step-4-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Previous</button>
-                        <button type="submit" id="submit-ad-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300">Place Ad Order</button>
+                    <div class="form-actions flex-between">
+                        <button type="button" id="prev-ad-step-4-btn" class="button secondary">Previous</button>
+                        <button type="submit" id="submit-ad-btn" class="button success">Place Ad Order</button>
                     </div>
                 </div>
             </form>
         </div>
     </main>
+
+    <div id="success-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 class="modal-title success">Success! 🎉</h2>
+            <p id="success-message-content" class="modal-body"></p>
+            <div class="modal-actions">
+                <button id="close-success-modal-btn" class="button secondary">Close</button>
+                <button id="go-to-advertise-page-btn" class="button primary">Go to Advertise Page</button>
+            </div>
+        </div>
+    </div>
+
 
     <footer>
         <div class="footer-content-wrapper">
@@ -323,5 +306,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/advertise.js"></script>
+   
 </body>
 </html>

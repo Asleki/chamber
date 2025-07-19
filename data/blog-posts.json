@@ -2,7 +2,7 @@
     {
         "id": "remote-work-kenya",
         "title": "The Rise of Remote Work: Opportunities for Kenyan SMEs",
-        "image": "images/blog-placeholder-1.webp",
+        "image": "images/remotework.webp",
         "category": "Entrepreneurship",
         "author": "Alex Malunda",
         "date": "July 15, 2025",
@@ -23,7 +23,7 @@
     {
     "id": "digital-marketing-trends",
     "title": "5 Digital Marketing Trends Every Nairobi Business Needs to Know",
-    "image": "images/blog-placeholder-2.webp",
+    "image": "images/Top-5-Digital-Marketing-Trends.webp",
     "category": "Marketing",
     "author": "Jane Doe",
     "date": "July 10, 2025",
@@ -76,7 +76,7 @@
     {
         "id": "sustainable-business-practices",
         "title": "Sustainable Business Practices: A Guide for Kenyan Entrepreneurs",
-        "image": "images/blog-placeholder-3.webp",
+        "image": "images/sustainability.webp",
         "category": "Sustainability",
         "author": "John Mwangi",
         "date": "July 5, 2025",
@@ -133,7 +133,7 @@
     {
         "id": "networking-tips-for-smes",
         "title": "Networking Tips for Small Businesses in Nairobi",
-        "image": "images/blog-placeholder-4.webp",
+        "image": "images/networking.webp",
         "category": "Networking",
         "author": "Sarah Ochieng",
         "date": "June 30, 2025",
@@ -174,7 +174,7 @@
     {
         "id": "fintech-innovation-kenya",
         "title": "Fintech Innovation in Kenya: Transforming the Business Landscape",
-        "image": "images/blog-placeholder-5.webp",
+        "image": "images/fin_future_social-100.webp",
         "category": "Finance",
         "author": "Michael Mutua",
         "date": "June 25, 2025",
@@ -223,7 +223,7 @@
     {
         "id": "customer-experience-strategies",
         "title": "Enhancing Customer Experience: Strategies for Kenyan Businesses",
-        "image": "images/blog-placeholder-6.webp",
+        "image": "images/customer.webp",
         "category": "Customer Service",
         "author": "Grace Wanjiku",
         "date": "June 20, 2025",

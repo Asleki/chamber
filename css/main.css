@@ -1,98 +1,96 @@
 /* ============================================== */
-/* Global Styles & CSS Variables (Light Mode)   */
+/* Global Styles & CSS Variables                  */
 /* ============================================== */
 :root {
-    /* Brand Colors */
-    --primary-color: hsl(210, 80%, 35%); /* Deep, professional Blue */
-    --primary-color-light: hsl(210, 80%, 85%); /* Lighter shade for hover/active backgrounds */
-    --primary-color-dark: hsl(210, 80%, 25%); /* Darker shade for active text/borders */
+  /* Brand Colors */
+  --primary-color: hsl(210, 80%, 35%); /* Deep, professional Blue */
+  --primary-color-light: hsl(210, 80%, 85%); /* Lighter shade for hover/active backgrounds */
+  --primary-color-dark: hsl(210, 80%, 25%); /* Darker shade for active text/borders */
 
-    --secondary-color: hsl(35, 90%, 50%); /* Vibrant Orange/Gold for accents */
-    --secondary-color-light: hsl(35, 90%, 90%); /* Lighter accent */
+  --secondary-color: hsl(35, 90%, 50%); /* Vibrant Orange/Gold for accents */
+  --secondary-color-light: hsl(35, 90%, 90%); /* Lighter accent */
 
-    /* Neutral Colors - Grays */
-    --text-color-primary: hsl(0, 0%, 20%); /* Dark Gray for main text */
-    --text-color-secondary: hsl(0, 0%, 40%); /* Lighter Gray for secondary text */
-    --heading-color: hsl(0, 0%, 15%); /* Very Dark Gray/Near Black for headings */
-    --link-color: hsl(210, 80%, 45%); /* Blue for unvisited links */
-    --link-hover-color: hsl(210, 80%, 30%); /* Darker blue on link hover */
+  /* Neutral Colors - Grays */
+  --text-color-primary: hsl(0, 0%, 20%); /* Dark Gray for main text */
+  --text-color-secondary: hsl(0, 0%, 40%); /* Lighter Gray for secondary text */
+  --heading-color: hsl(0, 0%, 15%); /* Very Dark Gray/Near Black for headings */
+  --link-color: hsl(210, 80%, 45%); /* Blue for unvisited links */
+  --link-hover-color: hsl(210, 80%, 30%); /* Darker blue on link hover */
 
-    --background-color-body: hsl(0, 0%, 98%); /* Off-white for page background */
-    --background-color-white: hsl(0, 0%, 100%); /* Pure white for cards/modals/header/nav */
-    --background-color-footer-light: hsl(0, 0%, 95%); /* Very light gray for footer in light mode */
-    --background-color-hover: hsl(210, 20%, 95%); /* Subtle hover for list items */
+  --background-color-body: hsl(0, 0%, 98%); /* Off-white for page background */
+  --background-color-white: hsl(0, 0%, 100%); /* Pure white for cards/modals/header/nav */
+  --background-color-footer-light: hsl(0, 0%, 95%); /* Very light gray for footer in light mode */
+  --background-color-hover: hsl(210, 20%, 95%); /* Subtle hover for list items */
 
-    --border-color: hsl(0, 0%, 85%); /* Light gray for borders */
-    --border-color-light: hsl(0, 0%, 90%); /* Even lighter for subtle separators */
+  --border-color: hsl(0, 0%, 85%); /* Light gray for borders */
+  --border-color-light: hsl(0, 0%, 90%); /* Even lighter for subtle separators */
 
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
 
-    /* Typography */
-    --font-family-body: 'Roboto', sans-serif;
-    --font-size-base: 1rem; /* 16px */
-    --line-height-base: 1.6;
+  /* Typography */
+  --font-family-body: 'Roboto', sans-serif;
+  --font-size-base: 1rem; /* 16px */
+  --line-height-base: 1.6;
 }
 
 /* ============================================== */
 /* Dark Mode Variables Override                   */
 /* ============================================== */
 body.dark-mode {
-    /* Brand Colors - keep hue/saturation, adjust lightness */
-    --primary-color: hsl(210, 80%, 65%); /* Lighter blue for dark mode visibility */
-    --primary-color-light: hsl(210, 80%, 45%); /* Darker background for active/hover */
-    --primary-color-dark: hsl(210, 80%, 75%); /* Lighter text/borders */
+  --primary-color: hsl(210, 80%, 65%);
+  --primary-color-light: hsl(210, 80%, 45%);
+  --primary-color-dark: hsl(210, 80%, 75%);
 
-    --secondary-color: hsl(35, 90%, 60%); /* Slightly brighter orange for dark mode */
-    --secondary-color-light: hsl(35, 90%, 30%); /* Darker accent background */
+  --secondary-color: hsl(35, 90%, 60%);
+  --secondary-color-light: hsl(35, 90%, 30%);
 
-    /* Neutral Colors - Grays become lighter */
-    --text-color-primary: hsl(0, 0%, 85%); /* Light Gray for main text */
-    --text-color-secondary: hsl(0, 0%, 65%); /* Darker white for secondary text */
-    --heading-color: hsl(0, 0%, 95%); /* Near white for headings */
-    --link-color: hsl(210, 80%, 60%); /* Slightly lighter blue for links */
-    --link-hover-color: hsl(210, 80%, 75%); /* Brighter blue on link hover */
+  --text-color-primary: hsl(0, 0%, 85%);
+  --text-color-secondary: hsl(0, 0%, 65%);
+  --heading-color: hsl(0, 0%, 95%);
+  --link-color: hsl(210, 80%, 60%);
+  --link-hover-color: hsl(210, 80%, 75%);
 
-    --background-color-body: hsl(240, 10%, 15%); /* Dark charcoal for page background */
-    --background-color-white: hsl(240, 10%, 20%); /* Slightly lighter charcoal for cards/modals */
-    --background-color-footer-dark: hsl(240, 10%, 18%); /* Slightly darker than body for dark mode footer */
-    --background-color-hover: hsl(240, 10%, 25%); /* Subtle hover for list items */
+  --background-color-body: hsl(240, 10%, 15%);
+  --background-color-white: hsl(240, 10%, 20%);
+  --background-color-footer-dark: hsl(240, 10%, 18%);
+  --background-color-hover: hsl(240, 10%, 25%);
 
-    --border-color: hsl(240, 5%, 30%); /* Darker gray for borders */
-    --border-color-light: hsl(240, 5%, 25%); /* Even darker for subtle separators */
+  --border-color: hsl(240, 5%, 30%);
+  --border-color-light: hsl(240, 5%, 25%);
 
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Stronger shadow, often subtle glow or inner shadow */
+  --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================== */
 /* Base Styles                                    */
 /* ============================================== */
 * {
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    background-color: var(--background-color-body);
-    color: var(--text-color-primary);
-    transition: background-color 0.3s ease, color 0.3s ease; /* Provides smooth transition for dark mode */
-    min-width: 320px; /* Ensures responsiveness down to minimum width, prevents content from being smaller than this */
-    overflow-x: hidden; /* CRITICAL: Prevents horizontal scroll from body overflow */
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--background-color-body);
+  color: var(--text-color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 .container {
-    max-width: 1200px; /* Max width for content */
-    margin: 0 auto; /* Centers the container */
-    padding: 1rem; /* Internal padding for smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 h1 { font-size: 2.5rem; }
@@ -103,31 +101,30 @@ h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
 
 p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
+  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 img {
-    max-width: 100%; /* Ensures images are responsive */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Removes extra space below images */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-/* Styles common form elements */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -135,16 +132,16 @@ input[type="url"],
 input[type="search"],
 select,
 textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-base);
-    background-color: var(--background-color-white);
-    color: var(--text-color-primary);
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  background-color: var(--background-color-white);
+  color: var(--text-color-primary);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 input[type="text"]:focus,
@@ -154,607 +151,587 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 2px var(--primary-color-light);
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-color-light);
 }
 
 select {
-    appearance: none; /* Removes the default arrow */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Adds a custom arrow */
-    background-repeat: no-repeat;
-    background-position: right 0.75rem center;
-    background-size: 1em;
-    padding-right: 2.5rem; /* Provides space for the custom arrow */
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
 }
 
 body.dark-mode select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom arrow for dark mode */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
 }
-
 
 /* ============================================== */
 /* Button Styles                                  */
 /* ============================================== */
 .btn {
-    display: inline-block; /* Allows padding and margin */
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.1s ease;
-    text-decoration: none; /* Ensures no underline on buttons that are links */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.1s ease;
+  text-decoration: none;
 }
 
-/* Primary Button */
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--background-color-white);
-    border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--background-color-white);
+  border: 1px solid var(--primary-color);
 }
 .btn-primary:hover {
-    background-color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
-    transform: translateY(-1px);
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+  transform: translateY(-1px);
 }
 .btn-primary:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-/* Secondary Button */
 .btn-secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 .btn-secondary:hover {
-    background-color: var(--primary-color-light);
-    color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
-    transform: translateY(-1px);
+  background-color: var(--primary-color-light);
+  color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+  transform: translateY(-1px);
 }
 .btn-secondary:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 /* ============================================== */
 /* Header Styles                                  */
 /* ============================================== */
 .sticky-header {
-    background-color: var(--background-color-white);
-    padding: 1rem;
-    box-shadow: 0 2px 5px var(--shadow-color);
-    position: sticky; /* Keeps the header fixed at the top */
-    top: 0;
-    z-index: 1000; /* Ensures the header is above other content */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--background-color-white);
+  padding: 1rem;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px; /* Constrains header content width */
-    margin: 0 auto; /* Centers header content */
-    gap: 1rem; /* Space between branding and controls */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
 .site-branding {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .site-branding a {
-    display: flex; /* Ensures logo and h1 are aligned */
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none; /* Removes underline from the link */
-    color: inherit; /* Inherits color from parent */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 .site-branding .logo {
-    width: 50px; /* Adjusts width */
-    height: auto;
+  width: 50px;
+  height: auto;
 }
 
 .site-branding h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: var(--heading-color);
-    white-space: nowrap; /* Prevents text wrap on small screens */
-    /* Potential horizontal scroll point: If h1 text is too long and cannot shrink, this might cause overflow on very small screens. Maximize flexibility where possible. */
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--heading-color);
+  white-space: nowrap;
 }
 
 .header-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .header-controls button {
-    background: none;
-    border: none;
-    color: var(--text-color-secondary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%; /* Creates a circular hit area */
-    transition: background-color 0.2s ease, color 0.2s ease;
+  background: none;
+  border: none;
+  color: var(--text-color-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .header-controls button:hover {
-    background-color: var(--background-color-hover);
-    color: var(--primary-color);
+  background-color: var(--background-color-hover);
+  color: var(--primary-color);
 }
 
 #hamburger-menu {
-    display: block; /* Shown by default on mobile */
+  display: block;
 }
 
-/* Search Bar Container - Hidden by default, toggled by JS */
 #search-bar-container {
-    background-color: var(--background-color-white);
-    padding: 0.75rem 1rem;
-    border-top: 1px solid var(--border-color);
-    transition: all 0.3s ease-in-out;
-    max-height: 0; /* Initially hidden */
-    overflow: hidden; /* Hides content when collapsed */
-    opacity: 0;
-    transform: translateY(-20px);
-    visibility: hidden; /* Ensures it's not focusable when hidden */
+  background-color: var(--background-color-white);
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border-color);
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
 }
 
 #search-bar-container.search-bar-visible {
-    max-height: 200px; /* Provides sufficient height to show content */
-    overflow: visible; /* Allows content to be seen */
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
+  max-height: 200px;
+  overflow: visible;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .search-input-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    max-width: 800px; /* Constrain search input width */
-    margin: 0.5rem auto; /* Center input */
-    position: relative; /* For absolute positioning of buttons */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 800px;
+  margin: 0.5rem auto;
+  position: relative;
 }
 
 #site-search {
-    flex-grow: 1; /* Allows input to take available space */
-    margin-bottom: 0; /* Overrides default input margin */
-    padding-right: 6rem; /* Provides space for search controls */
-    /* Potential horizontal scroll point: If 6rem is too wide for small screens, it can cause overflow. */
-    /* We will address this in media queries if needed by making buttons static or hiding them */
+  flex-grow: 1;
+  margin-bottom: 0;
+  padding-right: 6rem;
 }
 
 .search-control-btn {
-    background: none;
-    border: none;
-    color: var(--text-color-secondary);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    transition: color 0.2s ease;
-    position: absolute; /* Positions within the wrapper */
+  background: none;
+  border: none;
+  color: var(--text-color-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+  position: absolute;
 }
 #search-submit-btn { right: 0.5rem; }
 #search-clear-btn { right: 3rem; }
-#search-mic-btn { right: 5.5rem; } /* Requires JS to position dynamically or adjust layout */
+#search-mic-btn { right: 5.5rem; }
 
 .search-control-btn:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .search-filters {
-    display: flex;
-    flex-wrap: wrap; /* Allows filters to wrap to next line */
-    gap: 1rem;
-    max-width: 800px;
-    margin: 0.5rem auto 1rem;
-    justify-content: center; /* Center filters on mobile */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0.5rem auto 1rem;
+  justify-content: center;
 }
 
 .search-filters select {
-    width: auto; /* Allows selects to size based on content */
-    min-width: 150px; /* Ensures a minimum readable width for selects */
-    margin-bottom: 0;
-    flex-grow: 1; /* Allows selects to grow if space available, but respects min-width */
-    /* Potential horizontal scroll point: If min-width * number of selects > container width, it will overflow before wrapping */
+  width: auto;
+  min-width: 150px;
+  margin-bottom: 0;
+  flex-grow: 1;
 }
 
 /* ============================================== */
 /* Main Navigation (Mobile First)                 */
 /* ============================================== */
 .main-nav {
-    background-color: var(--background-color-body); /* Slightly different from header-top background */
-    border-top: 1px solid var(--border-color-light);
-    box-shadow: 0 2px 5px var(--shadow-color);
-    position: absolute; /* Positions relative to header for slide-out */
-    width: 100%;
-    left: 0;
-    top: 100%; /* Positions below the header */
-    transform: translateX(-100%); /* Hidden off-screen */
-    transition: transform 0.3s ease-in-out;
-    z-index: 999; /* Below sticky header */
+  background-color: var(--background-color-body);
+  border-top: 1px solid var(--border-color-light);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
 }
 
 .main-nav.nav-open {
-    transform: translateX(0); /* Slides in */
+  transform: translateX(0);
 }
 
 .nav-list {
-    display: flex;
-    flex-direction: column; /* Stacks vertically on mobile */
-    padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
 }
 
 .nav-list li {
-    position: relative; /* For dropdown positioning */
+  position: relative;
 }
 
 .nav-list .nav-link {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: var(--text-color-primary);
-    font-weight: 600;
-    transition: background-color 0.2s ease, color 0.2s ease;
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text-color-primary);
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-list .nav-link.active {
-    background-color: var(--primary-color);
-    color: var(--background-color-white);
+  background-color: var(--primary-color);
+  color: var(--background-color-white);
 }
 
 .nav-list .nav-link:not(.active):hover {
-    background-color: var(--background-color-hover);
-    color: var(--primary-color);
+  background-color: var(--background-color-hover);
+  color: var(--primary-color);
 }
 
-/* Dropdown specific styles (Mobile - accordion behavior) */
 .nav-dropdown .dropdown-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ensures toggle takes full width */
-    padding-right: 1.5rem; /* Provides space for the caret */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 1.5rem;
 }
 
 .nav-dropdown .dropdown-toggle i {
-    font-size: 0.8em; /* Smaller caret */
-    transition: transform 0.3s ease;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
 }
 
 .nav-dropdown.open .dropdown-toggle i {
-    transform: rotate(180deg); /* Rotates caret when open */
+  transform: rotate(180deg);
 }
 
 .dropdown-menu {
-    display: none; /* Hidden by default on mobile, toggled by JS */
-    padding-left: 1.5rem; /* Indents dropdown items */
-    background-color: var(--background-color-body); /* Slightly different background for sub-menu */
-    border-top: 1px solid var(--border-color-light); /* Adds a separator */
+  display: none;
+  padding-left: 1.5rem;
+  background-color: var(--background-color-body);
+  border-top: 1px solid var(--border-color-light);
 }
 
 .nav-dropdown.open .dropdown-menu {
-    display: block; /* Shows when 'open' class is applied by JS */
+  display: block;
 }
 
 .dropdown-menu li a {
-    padding: 0.75rem 1rem;
-    display: block;
-    color: var(--text-color-secondary); /* More subtle for sub-links */
+  padding: 0.75rem 1rem;
+  display: block;
+  color: var(--text-color-secondary);
 }
 
 .dropdown-menu li a:hover {
-    background-color: var(--background-color-hover);
-    color: var(--primary-color);
+  background-color: var(--background-color-hover);
+  color: var(--primary-color);
 }
 
 /* ============================================== */
 /* Main Content Layout (General)                  */
 /* ============================================== */
 .main-content {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 .hero-small {
-    background-color: var(--primary-color-light);
-    color: var(--text-color-primary);
-    padding: 2rem 1rem;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+  background-color: var(--primary-color-light);
+  color: var(--text-color-primary);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .hero-small h2 {
-    color: var(--primary-color-dark);
-    margin-bottom: 0.5rem;
-    font-size: 2.2rem;
+  color: var(--primary-color-dark);
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
 }
 
 body.dark-mode .hero-small {
-    background-color: var(--primary-color-light); /* Lighter primary for dark mode hero background */
-    color: var(--text-color-primary); /* Text color set by dark mode variable */
+  background-color: var(--primary-color-light);
+  color: var(--text-color-primary);
 }
 
 body.dark-mode .hero-small h2 {
-    color: var(--heading-color); /* Heading color set by dark mode variable */
+  color: blue;
 }
 
-/* Styles for cards/sections (used by insight-card, modal-content) */
 .insight-card,
-.modal-content { /* member-card is styled in directory.css */
-    background-color: var(--background-color-white);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 8px var(--shadow-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+.modal-content {
+  background-color: var(--background-color-white);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ============================================== */
 /* Footer Styles                                  */
 /* ============================================== */
 footer {
-    background-color: var(--background-color-footer-light); /* Light gray for footer in light mode */
-    color: var(--text-color-secondary);
-    padding: 2rem 1rem;
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  background-color: var(--background-color-footer-light);
+  color: var(--text-color-secondary);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body.dark-mode footer {
-    background-color: var(--background-color-footer-dark); /* Darker gray for footer in dark mode */
+  background-color: var(--background-color-footer-dark);
 }
 
 .footer-content-wrapper {
-    display: grid;
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto 1.5rem;
-    grid-template-columns: 1fr; /* Stacks vertically on small screens */
-    text-align: center; /* Centers content in a single column */
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  grid-template-columns: 1fr;
+  text-align: center;
 }
 
 .footer-content-wrapper h4 {
-    color: var(--heading-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
 }
 
 .footer-contact p {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centers icons with text */
-    gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .footer-contact i {
-    color: var(--primary-color); /* Highlights icons with primary color */
+  color: var(--primary-color);
 }
 
 .social-links {
-    display: flex;
-    justify-content: center; /* Centers social icons */
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .social-links img {
-    width: 32px; /* Adjusts size of social icons */
-    height: 32px;
-    transition: transform 0.2s ease;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
 }
 
 .social-links img:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .footer-quick-links ul,
 .footer-about ul {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .footer-quick-links li,
 .footer-about li {
-    margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .footer-quick-links a,
 .footer-about a {
-    color: var(--text-color-secondary);
-    transition: color 0.2s ease;
+  color: var(--text-color-secondary);
+  transition: color 0.2s ease;
 }
 
 .footer-quick-links a:hover,
 .footer-about a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 .footer-copyright {
-    border-top: 1px solid var(--border-color-light);
-    padding-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-color-secondary);
+  border-top: 1px solid var(--border-color-light);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
 }
 
 .footer-copyright a {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 .footer-copyright a:hover {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 /* ============================================== */
 /* Media Queries (Responsive Design)              */
 /* ============================================== */
 
-/* Applies styles to small devices (e.g., phones in landscape, larger phones) */
 @media (min-width: 576px) {
-    .container {
-        padding: 1.5rem; /* Increase padding for slightly larger screens */
-    }
+  .container {
+    padding: 1.5rem;
+  }
 
-    .header-top {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
+  .header-top {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 
-    .site-branding h1 {
-        font-size: 2rem;
-    }
+  .site-branding h1 {
+    font-size: 2rem;
+  }
 
-    /* Adjust search bar input layout for slightly larger mobiles */
-    #site-search {
-        padding-right: 3rem; /* Reduce space for buttons, as we'll hide some */
-    }
-    #search-mic-btn {
-        display: none; /* Hide microphone button on smaller screens */
-    }
+  #site-search {
+    padding-right: 3rem;
+  }
+  #search-mic-btn {
+    display: none;
+  }
 
-    .footer-content-wrapper {
-        grid-template-columns: repeat(2, 1fr); /* Arranges into 2 columns on wider small screens */
-        text-align: left;
-    }
+  .footer-content-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
 
-    .footer-contact p,
-    .social-links {
-        justify-content: flex-start; /* Aligns to the left in a multi-column footer */
-    }
+  .footer-contact p,
+  .social-links {
+    justify-content: flex-start;
+  }
 }
 
-/* Applies styles to medium devices (e.g., tablets) */
 @media (min-width: 768px) {
-    .container {
-        padding: 2rem; /* More padding for tablets */
-    }
+  .container {
+    padding: 2rem;
+  }
 
-    .site-branding .logo {
-        width: 60px;
-    }
-    .site-branding h1 {
-        font-size: 2.2rem;
-    }
+  .site-branding .logo {
+    width: 60px;
+  }
+  .site-branding h1 {
+    font-size: 2.2rem;
+  }
 
-    /* Hides the hamburger menu on tablet-sized and larger screens and displays desktop navigation links */
-    #hamburger-menu {
-        display: none;
-    }
+  #hamburger-menu {
+    display: none;
+  }
 
-    .main-nav {
-        position: static; /* Removes absolute positioning */
-        transform: translateX(0); /* Always visible */
-        box-shadow: none; /* Removes shadow below static navigation */
-        border-top: none;
-        padding: 0;
-    }
+  .main-nav {
+    position: static;
+    transform: translateX(0);
+    box-shadow: none;
+    border-top: none;
+    padding: 0;
+  }
 
-    .nav-list {
-        flex-direction: row; /* Arranges into a horizontal layout */
-        justify-content: center; /* Centers navigation items */
-        padding: 0;
-    }
+  .nav-list {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+  }
 
-    .nav-list .nav-link {
-        padding: 1rem 1.2rem; /* Provides more generous padding for desktop links */
-    }
+  .nav-list .nav-link {
+    padding: 1rem 1.2rem;
+  }
 
-    /* Styles for desktop dropdowns (hover behavior) */
-    .nav-dropdown .dropdown-menu {
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: 100%; /* Positions directly below the parent link */
-        left: 0;
-        min-width: 200px; /* Ensures the menu has sufficient width */
-        z-index: 1001; /* Positions above other content */
-        background-color: var(--background-color-white); /* Use card background for dropdown */
-        border: 1px solid var(--border-color); /* Add border */
-        box-shadow: 0 4px 8px var(--shadow-color); /* Add shadow */
-        border-radius: 5px; /* Rounded corners */
-        padding: 0.5rem 0; /* Internal padding */
-    }
+  .nav-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1001;
+    background-color: var(--background-color-white);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 5px;
+    padding: 0.5rem 0;
+  }
 
-    .nav-dropdown:hover > .dropdown-menu {
-        display: block; /* Displays on hover */
-    }
+  .nav-dropdown:hover > .dropdown-menu {
+    display: block;
+  }
 
-    .nav-dropdown .dropdown-menu li a {
-        padding: 0.75rem 1rem;
-        white-space: nowrap; /* Prevents text wrapping in dropdowns */
-    }
+  .nav-dropdown .dropdown-menu li a {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
 
-    .nav-dropdown .dropdown-toggle i {
-        margin-left: 0.5rem; /* Provides space for caret */
-        transform: rotate(0deg); /* Resets rotation */
-    }
+  .nav-dropdown .dropdown-toggle i {
+    margin-left: 0.5rem;
+    transform: rotate(0deg);
+  }
 
-    /* Prevent mobile-specific dropdown behavior from interfering with desktop hover */
-    .nav-dropdown.open .dropdown-toggle i {
-        transform: rotate(0deg);
-    }
-    .nav-dropdown.open .dropdown-menu {
-        display: none; /* Hide if JS 'open' class is present on desktop, rely on hover */
-    }
-    .nav-dropdown:hover.open .dropdown-menu { /* Ensures hover still works if JavaScript adds 'open' */
-        display: block;
-    }
+  .nav-dropdown.open .dropdown-toggle i {
+    transform: rotate(0deg);
+  }
+  .nav-dropdown.open .dropdown-menu {
+    display: none;
+  }
+  .nav-dropdown:hover.open .dropdown-menu {
+    display: block;
+  }
 
-    /* Repositions search bar input controls for larger screens */
-    .search-input-wrapper {
-        position: relative; /* Re-establish relative positioning for contained buttons */
-    }
-    #site-search {
-        padding-right: 6rem; /* Restore padding for all three buttons */
-    }
-    #search-mic-btn {
-        display: inline-block; /* Show microphone button again */
-    }
+  .search-input-wrapper {
+    position: relative;
+  }
+  #site-search {
+    padding-right: 6rem;
+  }
+  #search-mic-btn {
+    display: inline-block;
+  }
 
+  .search-filters {
+    justify-content: flex-start;
+  }
+  .search-filters select {
+    width: auto;
+    flex-grow: 0;
+  }
 
-    .search-filters {
-        justify-content: flex-start; /* Aligns filters to the left */
-    }
-    .search-filters select {
-        width: auto; /* Allow selects to shrink/grow based on content more naturally */
-        flex-grow: 0; /* Prevent them from stretching excessively */
-    }
-
-    .footer-content-wrapper {
-        grid-template-columns: repeat(4, 1fr); /* Arranges into 4 columns on desktop */
-    }
+  .footer-content-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* Applies styles to large devices (e.g., desktops) */
 @media (min-width: 992px) {
-    .site-branding h1 {
-        font-size: 2.5rem;
-    }
-    .main-nav .nav-link {
-        padding: 1rem 1.5rem;
-    }
+  .site-branding h1 {
+    font-size: 2.5rem;
+  }
+  .main-nav .nav-link {
+    padding: 1rem 1.5rem;
+  }
 }
 
-/* Applies styles to extra large devices - just cleaning up padding if container is maxed out */
 @media (min-width: 1200px) {
-    .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .header-top,
-    .main-nav .nav-list,
-    .search-bar-container .search-input-wrapper, /* Apply padding reset to children that were limited by max-width */
-    .search-bar-container .search-filters,
-    .footer-content-wrapper {
-        padding-left: 0; /* Remove internal padding if container itself is max-width and centered */
-        padding-right: 0;
-    }
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-top,
+  .main-nav .nav-list,
+  .search-bar-container .search-input-wrapper,
+  .search-bar-container .search-filters,
+  .footer-content-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

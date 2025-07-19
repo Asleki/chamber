@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Assuming blog-posts.json is in a 'data' folder.
             // You would create a similar JSON file for your blog posts.
             // For now, it will load an empty array if file not found, or use placeholders if you remove the fetch.
-            const response = await fetch('/data/blog-posts.json');
+            const response = await fetch('./data/blog-posts.json');
             if (!response.ok) {
                 // If file doesn't exist, log error but don't stop execution
                 console.warn('blog-posts.json not found or could not be loaded. Displaying placeholders if any.');
@@ -60,10 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displayBlogPosts = (posts) => {
         if (blogPostsContainer) {
-            // Clear existing *dynamic* content, but keep static HTML placeholders if they exist
-            // A more robust solution for mixed content would involve clearing only a specific child div
-            // For now, let's clear it completely if we intend to load dynamically.
-            // If you always want to mix static and dynamic, modify this.
+            // Clear existing posts before displaying new ones
             blogPostsContainer.innerHTML = '';
         }
 

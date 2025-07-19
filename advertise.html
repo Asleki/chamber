@@ -8,7 +8,6 @@
     <meta name="keywords" content="La Familia Chambers advertising, online ads, digital marketing, product promotion, sponsored content, banner ads">
     <meta name="author" content="La Familia Chambers">
 
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asleki.github.io/wdd231/chamber/advertise.html">
     <meta property="og:title" content="Advertise with La Familia Chambers | Grow Your Business">
@@ -21,18 +20,12 @@
     <meta property="twitter:image" content="https://asleki.github.io/wdd231/chamber/images/lafamilialogo.webp">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Your Custom CSS Files -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/advertise.css">
@@ -142,12 +135,12 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-6 bg-white rounded-lg shadow-md my-8">
-        <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Advertise Your Business with La Familia Chambers</h1>
-        <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">Reach thousands of potential customers daily through our platform. Choose the perfect advertising package that suits your needs and budget.</p>
+    <main class="main-content-advertise">
+        <h1 class="advertise-title">Advertise Your Business with La Familia Chambers</h1>
+        <p class="advertise-description">Reach thousands of potential customers daily through our platform. Choose the perfect advertising package that suits your needs and budget.</p>
 
-        <div id="ad-pricing-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <p class="col-span-full text-center text-gray-500 py-8" id="loading-message">Loading advertising packages...</p>
+        <div id="ad-pricing-grid" class="ad-pricing-grid">
+            <p class="loading-message" id="loading-message">Loading advertising packages...</p>
         </div>
     </main>
 
@@ -192,7 +185,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/imall-dropdown.js"></script>
     <script>
         // --- Ad Pricing Data (repeated here for advertise.html) ---
         const adPricingData = [
@@ -263,40 +255,40 @@
 
             adPricingData.forEach(adPackage => {
                 const cardHtml = `
-                    <div class="ad-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                        <div class="ad-card-header mb-4">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-2">${adPackage.type}</h3>
-                            <p class="text-gray-600 text-sm">${adPackage.description}</p>
+                    <div class="ad-card">
+                        <div class="ad-card-header">
+                            <h3 class="ad-card-title">${adPackage.type}</h3>
+                            <p class="ad-card-description">${adPackage.description}</p>
                         </div>
-                        <div class="mb-6">
-                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Details & Features:</h4>
-                            <div class="space-y-4">
+                        <div class="ad-card-details-section">
+                            <h4 class="ad-card-subtitle">Details & Features:</h4>
+                            <div class="ad-card-detail-group">
                                 ${adPackage.details.map(detail => `
-                                    <div class="border border-gray-200 rounded-lg p-3">
-                                        <h5 class="font-bold text-lg text-blue-600">${detail.level}</h5>
-                                        <ul class="list-disc list-inside text-gray-700 text-sm ad-card-features mt-1">
+                                    <div class="ad-card-detail-item">
+                                        <h5 class="ad-card-detail-level">${detail.level}</h5>
+                                        <ul class="ad-card-features">
                                             ${detail.features.map(f => `<li>${f}</li>`).join('')}
                                         </ul>
-                                        <p class="mt-2 text-gray-800 font-semibold">Base Price Factor: ${detail.priceFactor.toFixed(1)}x</p>
+                                        <p class="ad-card-price-factor">Base Price Factor: ${detail.priceFactor.toFixed(1)}x</p>
                                     </div>
                                 `).join('')}
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Runtime Options:</h4>
-                            <div class="space-y-2">
+                        <div class="ad-card-runtime-section">
+                            <h4 class="ad-card-subtitle">Runtime Options:</h4>
+                            <div class="ad-card-runtime-group">
                                 ${adPackage.runtime.map(runtime => `
-                                    <div class="flex justify-between items-center text-gray-700">
+                                    <div class="ad-card-runtime-option">
                                         <span>${runtime.duration}</span>
                                         <span>${runtime.multiplier.toFixed(1)}x</span>
                                     </div>
                                 `).join('')}
                             </div>
                         </div>
-                        <div class="text-center mt-auto">
-                            <p class="text-xl font-bold text-gray-800 mb-4">Starting from: <span class="text-blue-600 text-3xl">$${adPackage.basePrice.toFixed(2)}</span></p>
+                        <div class="ad-card-footer">
+                            <p class="ad-card-starting-price">Starting from: <span class="ad-card-price">$${adPackage.basePrice.toFixed(2)}</span></p>
                             <button
-                                class="select-ad-package-btn bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75"
+                                class="select-ad-package-btn"
                                 data-ad-type="${adPackage.type}"
                             >
                                 Select This Package

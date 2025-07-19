@@ -1,6 +1,6 @@
 /* ==========================================================================
-   News-Specific Styles (for Homepage widget and Full News Pages)
-   ========================================================================== */
+    News-Specific Styles (for Homepage widget and Full News Pages)
+    ========================================================================== */
 
 /* Styles for the News Updates widget on the homepage */
 .news-updates {
@@ -53,10 +53,18 @@
     margin-bottom: 0.8rem; /* Space below summary before date/button */
 }
 
+body.dark-mode .news-item-summary {
+    color: var(--text-color-secondary); /* Ensure readability in dark mode */
+}
+
 .news-item-date {
     font-size: 0.85em;
     color: var(--text-color-light);
     margin-bottom: 0.8rem; /* Space below date */
+}
+
+body.dark-mode .news-item-date {
+    color: var(--text-color-secondary); /* Ensure readability in dark mode */
 }
 
 /* Styling for images within news items - UNIFORM DISPLAY */
@@ -71,7 +79,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Styles for the "View All News" button on the homepage */
 .news-updates .view-all-news-button {
     margin-top: 15px;
@@ -82,6 +89,12 @@
     background-color: var(--primary-color);
     color: var(--background-color-white);
     border: 2px solid var(--primary-color);
+}
+
+body.dark-mode .news-updates .view-all-news-button {
+    background-color: var(--primary-color); /* Keep primary color background */
+    color: var(--background-color-white); /* Keep white text for main button */
+    border-color: var(--primary-color);
 }
 
 .news-updates .view-all-news-button:hover {
@@ -131,6 +144,11 @@
     box-shadow: var(--shadow-light);
 }
 
+body.dark-mode .news-full-article {
+    background-color: var(--background-color-white); /* Dark mode card background */
+    box-shadow: var(--shadow-color);
+}
+
 .news-full-article h1 {
     font-size: 2.5em;
     color: var(--heading-color);
@@ -144,6 +162,11 @@
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
+}
+
+body.dark-mode .news-full-article .article-meta {
+    color: var(--text-color-secondary); /* Dark mode meta text color */
+    border-bottom-color: var(--border-color-light);
 }
 
 .news-full-article .article-hero-image {
@@ -162,6 +185,10 @@
     margin-bottom: 1.5rem;
 }
 
+body.dark-mode .news-full-article p {
+    color: var(--text-color-primary); /* Dark mode paragraph text */
+}
+
 .news-full-article h3 {
     font-size: 1.8em;
     color: var(--primary-color);
@@ -174,6 +201,10 @@
     margin-left: 20px;
     margin-bottom: 1.5rem;
     color: var(--text-color);
+}
+
+body.dark-mode .news-full-article ul {
+    color: var(--text-color-primary); /* Dark mode list item text */
 }
 
 .news-full-article ul li {
@@ -197,13 +228,14 @@
     text-align: center;
     margin-top: 3rem;
 }
+
 /* Read More Button styling */
 .read-more-button {
     display: block; /* Make it a block element to allow margin: auto for centering */
     margin: 15px auto 0 auto; /* Top margin, auto left/right for centering, no bottom margin */
     padding: 8px 15px;
     background-color: var(--secondary-color);
-    color: var(--background-color);
+    color: var(--background-color); /* This is likely light in light mode */
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
@@ -213,9 +245,23 @@
     width: fit-content; /* Ensure it only takes the width of its content */
 }
 
+/* Dark mode specific style for the Read More button text */
+body.dark-mode .read-more-button {
+    /* Background color might need adjustment to contrast with dark grey text */
+    background-color: var(--primary-color); /* Example: use a primary blue for background */
+    color: #666666; /* Dark Grey color for the text */
+}
+
+
 .read-more-button:hover {
     background-color: var(--primary-color);
 }
+
+body.dark-mode .read-more-button:hover {
+    background-color: var(--primary-color-dark); /* Darker blue on hover */
+    color: #333333; /* Even darker grey on hover for text */
+}
+
 
 /* Specific style for news items that trigger a modal */
 .news-item .news-modal-trigger {
@@ -224,6 +270,11 @@
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
+
+body.dark-mode .news-item .news-modal-trigger {
+    color: var(--heading-color); /* Ensure heading is readable */
+}
+
 
 .news-item .news-modal-trigger:hover {
     color: var(--secondary-color);
@@ -263,6 +314,11 @@
     animation: fadeInScale 0.3s ease-out forwards;
 }
 
+body.dark-mode .news-modal-content {
+    background-color: var(--background-color-body); /* Dark mode modal background */
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
 .news-modal-close-button {
     position: absolute;
     top: 15px;
@@ -273,6 +329,10 @@
     cursor: pointer;
     color: var(--text-color);
     transition: color 0.2s ease;
+}
+
+body.dark-mode .news-modal-close-button {
+    color: var(--text-color-secondary); /* Dark mode close button color */
 }
 
 .news-modal-close-button:hover {
@@ -287,10 +347,18 @@
     line-height: 1.2;
 }
 
+body.dark-mode .news-modal-content h2 {
+    color: var(--heading-color); /* Dark mode modal heading */
+}
+
 .modal-article-body p {
     line-height: 1.6;
     margin-bottom: 15px;
     color: var(--text-color);
+}
+
+body.dark-mode .modal-article-body p {
+    color: var(--text-color-primary); /* Dark mode modal body text */
 }
 
 .modal-article-date {
@@ -299,6 +367,11 @@
     text-align: right;
     margin-top: 20px;
 }
+
+body.dark-mode .modal-article-date {
+    color: var(--text-color-secondary); /* Dark mode modal date */
+}
+
 
 /* Utility class to prevent body scrolling when modal is open */
 body.modal-open {
@@ -380,6 +453,11 @@ body.modal-open {
     margin-bottom: 1.5rem; /* Space between carousel and "View All News" button */
 }
 
+body.dark-mode .news-carousel-container {
+    background-color: var(--background-color-white); /* Dark mode background for carousel */
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
 .carousel-slides {
     position: relative;
     width: 100%;
@@ -424,11 +502,19 @@ body.modal-open {
     margin-bottom: 0.5rem;
 }
 
+body.dark-mode .carousel-slide h4 {
+    color: var(--heading-color); /* Dark mode heading */
+}
+
 .carousel-slide p {
     font-size: 1em;
     color: var(--text-color);
     line-height: 1.4;
     margin-bottom: 0.5rem;
+}
+
+body.dark-mode .carousel-slide p {
+    color: var(--text-color-primary); /* Dark mode text */
 }
 
 .carousel-pagination {
@@ -450,6 +536,10 @@ body.modal-open {
     background-color: grey;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-mode .pagination-dot {
+    background-color: var(--border-color); /* Dark mode inactive dot color */
 }
 
 .pagination-dot.active {

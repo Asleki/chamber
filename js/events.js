@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Assuming events.json is in a 'data' folder at the root level.
             // Adjust this path if your events.json is located elsewhere.
-            const response = await fetch('/data/events.json');
+            const response = await fetch('./data/events.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

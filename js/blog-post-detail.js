@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleVisibility(blogPostContentArea, false);
 
         try {
-            const response = await fetch('/data/blog-posts.json'); // Adjust path as needed
+            const response = await fetch('./data/blog-posts.json'); // Adjust path as needed
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

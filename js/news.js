@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('/data/news.json'); // Adjust path if your news.json is elsewhere
+            const response = await fetch('./data/news.json'); // Go up one level (from js) then into data
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
