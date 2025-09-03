@@ -1,316 +1,338 @@
-// js/imall-category.js
+// imall-category.js
 
-// --- Global Data Stores ---
-let ALL_PRODUCTS = []; // Stores all products once fetched
-let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Reuse cart from imall.js
+// This script assumes that 'products' data is available globally or fetched by imall.js
+// And that createProductCard function is also available globally (from imall.js)
 
-// --- DOM Element References ---
-const categoryPageTitle = document.getElementById('category-page-title');
-const productListGrid = document.getElementById('product-list-grid');
-const noProductsMessage = document.getElementById('no-products-message');
-const cartItemCountSpan = document.getElementById('cart-item-count'); // For updating cart count
-
-// Notification element (reused from imall.js)
-const notificationMessageDiv = document.getElementById('notification-message');
-
-// --- Configuration Constants (reused from imall.js) ---
-const PLACEHOLDER_IMAGE_PATH = 'https://placehold.co/300x200/FF0000/FFFFFF?text=Image+Error';
-const NOTIFICATION_DURATION = 3000; // milliseconds
-
-// --- Utility Functions (reused and adapted from imall.js) ---
-
-/**
- * Handles image loading errors by replacing the src with a placeholder.
- * @param {HTMLImageElement} imageElement - The image element that failed to load.
- */
-function handleImageError(imageElement) {
-    imageElement.onerror = null; // Prevent infinite loop
-    imageElement.src = PLACEHOLDER_IMAGE_PATH;
-}
-
-/**
- * Displays a temporary notification message.
- * @param {string} messageText - The message to display.
- * @param {boolean} isSuccess - True for success (green), false for error (red).
- */
-function displayNotification(messageText, isSuccess = true) {
-    if (notificationMessageDiv) {
-        notificationMessageDiv.textContent = messageText;
-        notificationMessageDiv.classList.remove('opacity-0', 'notification-fade-out', 'bg-green-500', 'bg-red-500');
-        notificationMessageDiv.classList.add('opacity-100', isSuccess ? 'bg-green-500' : 'bg-red-500');
-
-        setTimeout(() => {
-            notificationMessageDiv.classList.remove('opacity-100');
-            notificationMessageDiv.classList.add('opacity-0', 'notification-fade-out');
-        }, NOTIFICATION_DURATION);
-    }
-}
-
-/**
- * Adds a product to the cart or increments its quantity if already present.
- * Updates localStorage and the cart count display.
- * @param {object} product - The product object to add.
- * @param {number} quantity - The quantity to add (defaults to 1).
- */
-function addToCart(product, quantity = 1) {
-    if (product.inStock === 0) {
-        displayNotification(`${product.name} is out of stock!`, false);
-        return;
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure allProducts is available from imall.js
+    if (typeof allProducts === 'undefined' || !allProducts.length) {
+        console.warn('allProducts array not found or is empty. Make sure imall.js fetches and exposes product data.');
+        // Optionally, fetch products here if imall.js doesn't provide them
+        // fetch('/api/products') .then(res => res.json()) .then(data => { allProducts = data; initializeCategoryPage(); });
+        return; 
     }
 
-    const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
+    const productGrid = document.getElementById('product-grid');
+    const categoryTitle = document.getElementById('category-title');
+    const currentCategoryBreadcrumb = document.getElementById('current-category-breadcrumb');
+    const brandFiltersContainer = document.getElementById('brand-filters');
+    const sortBySelect = document.getElementById('sort-by');
+    const minPriceInput = document.getElementById('min-price');
+    const maxPriceInput = document.getElementById('max-price');
+    const applyPriceFilterBtn = document.getElementById('apply-price-filter');
+    const ratingFilters = document.querySelectorAll('#rating-filters input[type="checkbox"]');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const noProductsMessage = document.getElementById('no-products-message');
+    const loadMoreBtn = document.getElementById('load-more-btn');
 
-    if (existingItemIndex > -1) {
-        const currentQuantityInCart = cartItems[existingItemIndex].quantity;
-        const potentialNewQuantity = currentQuantityInCart + quantity;
+    let currentFilters = {
+        category: '',
+        subCategory: '',
+        brand: [],
+        minPrice: null,
+        maxPrice: null,
+        minRating: null,
+        deal: false,
+        new: false,
+        hotpick: false,
+        featured: false
+    };
 
-        if (potentialNewQuantity > product.inStock) {
-            displayNotification(`Cannot add more ${product.name}. Only ${product.inStock} available.`, false);
-            return;
+    let currentSort = sortBySelect.value;
+    const productsPerPage = 12; // Number of products to show initially and load more
+    let currentPage = 1;
+    let filteredAndSortedProducts = [];
+
+    /**
+     * Extracts URL parameters to set initial filters.
+     */
+    function parseUrlParameters() {
+        const params = new URLSearchParams(window.location.search);
+        
+        // Handle direct category or subCategory
+        if (params.has('category')) {
+            currentFilters.category = params.get('category');
         }
-        if (product.maxOrderQuantity && potentialNewQuantity > product.maxOrderQuantity) {
-            displayNotification(`Cannot add more ${product.name}. Maximum order quantity is ${product.maxOrderQuantity}.`, false);
-            return;
+        if (params.has('subCategory')) {
+            currentFilters.subCategory = params.get('subCategory');
+        }
+        // Handle brand from URL if it's a single brand link
+        if (params.has('brand')) {
+            currentFilters.brand = [params.get('brand')];
         }
 
-        cartItems[existingItemIndex].quantity = potentialNewQuantity;
-        displayNotification(`${quantity}x ${product.name} added to cart!`);
-    } else {
-        if (quantity < (product.minOrderQuantity || 1)) {
-            displayNotification(`Minimum order quantity for ${product.name} is ${product.minOrderQuantity || 1}.`, false);
-            return;
+        // Handle special flags
+        currentFilters.deal = params.has('deal') && params.get('deal') === 'true';
+        currentFilters.new = params.has('new') && params.get('new') === 'true';
+        currentFilters.hotpick = params.has('hotpick') && params.get('hotpick') === 'true';
+        currentFilters.featured = params.has('featured') && params.get('featured') === 'true';
+
+        // Set breadcrumb and title based on URL
+        let titleText = 'All Products';
+        let breadcrumbText = 'All Products';
+
+        if (currentFilters.category) {
+            titleText = currentFilters.category;
+            breadcrumbText = currentFilters.category;
         }
-        if (quantity > (product.maxOrderQuantity || 9999)) {
-            displayNotification(`Maximum order quantity for ${product.name} is ${product.maxOrderQuantity || 9999}.`, false);
-            return;
+        if (currentFilters.subCategory) {
+            titleText = currentFilters.subCategory;
+            breadcrumbText = `${currentFilters.category || 'Category'} / ${currentFilters.subCategory}`;
         }
-        if (quantity > product.inStock) {
-            displayNotification(`Only ${product.inStock} of ${product.name} are available.`, false);
-            return;
+        if (currentFilters.brand.length > 0) {
+            titleText = currentFilters.brand[0];
+            breadcrumbText = `${breadcrumbText ? breadcrumbText + ' / ' : ''}${currentFilters.brand[0]}`;
         }
-        cartItems.push({ ...product, quantity: quantity });
-        displayNotification(`${quantity}x ${product.name} added to cart!`);
-    }
-
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    updateCartCount();
-}
-
-/**
- * Updates the displayed count of items in the shopping cart icon.
- */
-function updateCartCount() {
-    if (cartItemCountSpan) {
-        const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
-        cartItemCountSpan.textContent = totalItems;
-        if (totalItems > 0) {
-            cartItemCountSpan.classList.remove('hidden');
-        } else {
-            cartItemCountSpan.classList.add('hidden');
+        if (currentFilters.deal) {
+            titleText = 'Today\'s Deals';
+            breadcrumbText = `${breadcrumbText ? breadcrumbText + ' / ' : ''}Deals`;
         }
-    }
-}
-
-/**
- * Generates HTML for a single product card. (Copied from imall.js)
- * @param {object} product - The product object.
- * @returns {string} HTML string for the product card.
- */
-function createProductCardHTML(product) {
-    const isDiscountedBadge = product.isDiscounted ? `<span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">Sale!</span>` : '';
-    const originalPriceDisplay = product.originalPrice ? `<span class="text-gray-400 line-through text-sm ml-2">Ksh ${product.originalPrice.toFixed(2).toLocaleString('en-KE')}</span>` : '';
-    const inStock = product.inStock > 0;
-    const stockClass = inStock ? 'bg-green-500' : 'bg-red-500';
-    const stockText = inStock ? `In Stock (${product.inStock})` : 'Out of Stock';
-
-    return `
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative product-card" data-product-id="${product.id}">
-            ${isDiscountedBadge}
-            <span class="absolute top-2 left-2 ${stockClass} text-white text-xs font-bold px-2 py-1 rounded-full">${stockText}</span>
-            <a href="./imall-product-detail.html?productId=${product.id}" class="block">
-                <img
-                    src="${product.images[0] || PLACEHOLDER_IMAGE_PATH}"
-                    alt="${product.name}"
-                    class="w-full h-48 object-cover rounded-t-xl"
-                    onerror="handleImageError(this);"
-                />
-            </a>
-            <div class="p-4 flex flex-col flex-grow">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2 line-clamp-1">${product.name}</h3>
-                <p class="text-gray-600 text-sm mb-2 line-clamp-2">${product.description}</p>
-                <div class="flex items-center text-yellow-500 text-sm mb-2">
-                    ${'<i class="fas fa-star"></i>'.repeat(Math.floor(product.rating))}
-                    ${product.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : ''}
-                    <span class="text-gray-600 ml-1">(${product.rating})</span>
-                    <span class="text-gray-500 ml-2">(${product.reviewsCount} reviews)</span>
-                </div>
-                <div class="flex justify-between items-center mt-auto pt-2 border-t border-gray-100">
-                    <span class="text-2xl font-bold text-blue-600">Ksh ${product.price.toFixed(2).toLocaleString('en-KE')}</span>
-                    ${originalPriceDisplay}
-                    <button
-                        class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 ${!inStock ? 'opacity-50 cursor-not-allowed' : ''}"
-                        data-product-id="${product.id}"
-                        ${!inStock ? 'disabled' : ''}
-                    >
-                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-// --- Main Page Logic ---
-
-/**
- * Parses URL parameters to determine product filtering criteria.
- * @returns {object} An object containing filter criteria.
- */
-function getFilterCriteriaFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    const filters = {};
-
-    if (params.has('category')) {
-        filters.category = decodeURIComponent(params.get('category'));
-    }
-    if (params.has('subCategory')) {
-        filters.subCategory = decodeURIComponent(params.get('subCategory'));
-    }
-    if (params.has('brand')) {
-        filters.brand = decodeURIComponent(params.get('brand'));
-    }
-    if (params.has('search')) {
-        filters.search = decodeURIComponent(params.get('search'));
-    }
-    if (params.has('section')) { // For "deals", "new-arrivals", "brands" pages
-        filters.section = decodeURIComponent(params.get('section'));
-    }
-
-    return filters;
-}
-
-/**
- * Filters the ALL_PRODUCTS array based on the given criteria.
- * @param {Array} products - The array of all products.
- * @param {object} filters - The filter criteria from URL.
- * @returns {Array} The filtered array of products.
- */
-function filterProducts(products, filters) {
-    let filtered = [...products]; // Start with a copy of all products
-
-    if (filters.category && filters.category !== 'all') {
-        filtered = filtered.filter(p => p.category && p.category.toLowerCase() === filters.category.toLowerCase());
-    }
-    if (filters.subCategory) {
-        filtered = filtered.filter(p => p.subCategory && p.subCategory.toLowerCase() === filters.subCategory.toLowerCase());
-    }
-    if (filters.brand) {
-        filtered = filtered.filter(p => p.brand && p.brand.toLowerCase() === filters.brand.toLowerCase());
-    }
-    if (filters.search) {
-        const searchQuery = filters.search.toLowerCase();
-        filtered = filtered.filter(p =>
-            p.name.toLowerCase().includes(searchQuery) ||
-            (p.description && p.description.toLowerCase().includes(searchQuery)) ||
-            (p.brand && p.brand.toLowerCase().includes(searchQuery)) ||
-            (p.category && p.category.toLowerCase().includes(searchQuery)) ||
-            (p.subCategory && p.subCategory.toLowerCase().includes(searchQuery))
-        );
-    }
-    if (filters.section) {
-        if (filters.section === 'deals') {
-            filtered = filtered.filter(p => p.isDiscounted && p.inStock > 0).sort((a,b) => b.originalPrice - a.price); // Show discounted, best deals first
-        } else if (filters.section === 'new-arrivals') {
-            // Assuming new arrivals can be identified by higher IDs or a 'dateAdded' field
-            filtered = filtered.sort((a, b) => b.id.localeCompare(a.id)); // Simple sorting by ID for 'newness'
-        } else if (filters.section === 'brands') {
-             // If navigating directly to all brands page, show all products, perhaps sorted by brand
-             filtered = filtered.sort((a,b) => (a.brand || '').localeCompare(b.brand || ''));
+        if (currentFilters.new) {
+            titleText = 'New Arrivals';
+            breadcrumbText = `${breadcrumbText ? breadcrumbText + ' / ' : ''}New Arrivals`;
         }
-    }
-    // Only show in-stock items by default, unless searching specifically for out-of-stock
-    filtered = filtered.filter(p => p.inStock > 0);
-
-    return filtered;
-}
-
-/**
- * Renders the filtered products onto the page.
- * @param {Array} productsToDisplay - The array of products to render.
- * @param {object} filters - The active filter criteria.
- */
-function renderProducts(productsToDisplay, filters) {
-    productListGrid.innerHTML = ''; // Clear previous content
-
-    let title = "All Products";
-    if (filters.category && filters.category !== 'all') {
-        title = filters.category;
-        if (filters.subCategory) {
-            title += ` - ${filters.subCategory}`;
+        if (currentFilters.hotpick) {
+            titleText = 'Hot Picks';
+            breadcrumbText = `${breadcrumbText ? breadcrumbText + ' / ' : ''}Hot Picks`;
         }
-        title += " Products";
-    } else if (filters.brand) {
-        title = `${filters.brand} Products`;
-    } else if (filters.search) {
-        title = `Search Results for "${filters.search}"`;
-    } else if (filters.section) {
-        if (filters.section === 'deals') {
-            title = "Amazing Deals!";
-        } else if (filters.section === 'new-arrivals') {
-            title = "New Arrivals";
-        } else if (filters.section === 'brands') {
-            title = "All Brands"; // This might change if you want to show brand logos
+        if (currentFilters.featured) {
+            titleText = 'Featured Products';
+            breadcrumbText = `${breadcrumbText ? breadcrumbText + ' / ' : ''}Featured Products`;
         }
-    }
-    categoryPageTitle.textContent = title;
-    document.title = `iMall - ${title}`; // Update browser tab title
 
-    if (productsToDisplay.length > 0) {
-        productsToDisplay.forEach(product => {
-            productListGrid.insertAdjacentHTML('beforeend', createProductCardHTML(product));
+        categoryTitle.textContent = `Products in ${titleText}`;
+        currentCategoryBreadcrumb.textContent = breadcrumbText;
+    }
+
+    /**
+     * Filters products based on currentFilters state.
+     * @returns {Array} The filtered array of products.
+     */
+    function filterProducts() {
+        return allProducts.filter(product => {
+            let matchesCategory = true;
+            let matchesSubCategory = true;
+            let matchesBrand = true;
+            let matchesPrice = true;
+            let matchesRating = true;
+            let matchesSpecialFlag = true;
+
+            // Category filter
+            if (currentFilters.category && product.category !== currentFilters.category) {
+                matchesCategory = false;
+            }
+            // Sub-category filter
+            if (currentFilters.subCategory && product.subCategory !== currentFilters.subCategory) {
+                matchesSubCategory = false;
+            }
+            // Brand filter
+            if (currentFilters.brand.length > 0 && !currentFilters.brand.includes(product.brand)) {
+                matchesBrand = false;
+            }
+            // Price filter
+            if (currentFilters.minPrice !== null && product.price < currentFilters.minPrice) {
+                matchesPrice = false;
+            }
+            if (currentFilters.maxPrice !== null && product.price > currentFilters.maxPrice) {
+                matchesPrice = false;
+            }
+            // Rating filter
+            if (currentFilters.minRating !== null && product.rating < currentFilters.minRating) {
+                matchesRating = false;
+            }
+            // Special flags
+            if (currentFilters.deal && !product.isDeal) {
+                matchesSpecialFlag = false;
+            }
+            if (currentFilters.new && !product.isNew) {
+                matchesSpecialFlag = false;
+            }
+            if (currentFilters.hotpick && !product.isHotPick) {
+                matchesSpecialFlag = false;
+            }
+            if (currentFilters.featured && !product.isFeatured) {
+                matchesSpecialFlag = false;
+            }
+
+
+            return matchesCategory && matchesSubCategory && matchesBrand && matchesPrice && matchesRating && matchesSpecialFlag;
         });
-        noProductsMessage.classList.add('hidden'); // Hide "No products found" message
-    } else {
-        noProductsMessage.classList.remove('hidden'); // Show "No products found" message
     }
 
-    // Attach event listeners to "Add to Cart" buttons
-    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const productId = event.currentTarget.dataset.productId;
-            const product = ALL_PRODUCTS.find(p => p.id === productId);
-            if (product) {
-                addToCart(product);
+    /**
+     * Sorts products based on currentSort state.
+     * @param {Array} productsToSort - The array of products to sort.
+     * @returns {Array} The sorted array of products.
+     */
+    function sortProducts(productsToSort) {
+        return [...productsToSort].sort((a, b) => {
+            switch (currentSort) {
+                case 'price-asc':
+                    return a.price - b.price;
+                case 'price-desc':
+                    return b.price - a.price;
+                case 'rating-desc':
+                    return b.rating - a.rating;
+                case 'name-asc':
+                    return a.name.localeCompare(b.name);
+                default:
+                    return 0; // No specific sort
             }
         });
-    });
-}
-
-/**
- * Fetches all products and then initiates filtering and rendering.
- */
-async function initializeCategoryPage() {
-    try {
-        const productsResponse = await fetch('data/imall-products.json');
-        if (!productsResponse.ok) {
-            throw new Error(`HTTP error! status: ${productsResponse.status}`);
-        }
-        ALL_PRODUCTS = await productsResponse.json();
-
-        const filters = getFilterCriteriaFromUrl();
-        const filteredProducts = filterProducts(ALL_PRODUCTS, filters);
-        renderProducts(filteredProducts, filters);
-        updateCartCount(); // Ensure cart count is updated on page load
-    } catch (error) {
-        console.error('Failed to load products for category page:', error);
-        categoryPageTitle.textContent = 'Error Loading Products';
-        productListGrid.innerHTML = '<p class="col-span-full text-center text-red-600">Failed to load products. Please try again later.</p>';
-        noProductsMessage.classList.add('hidden'); // Hide the default message if an error occurs
     }
-}
 
-// --- Event Listeners ---
-document.addEventListener('DOMContentLoaded', initializeCategoryPage);
+    /**
+     * Renders products to the grid.
+     * @param {Array} productsToRender - The products to display.
+     * @param {boolean} append - If true, appends products; otherwise, replaces.
+     */
+    function renderProducts(productsToRender, append = false) {
+        if (!append) {
+            productGrid.innerHTML = '';
+            currentPage = 1;
+        }
 
-// Handle browser's back/forward buttons (if URL changes without full reload)
-window.addEventListener('popstate', initializeCategoryPage);
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const productsToDisplay = productsToRender.slice(startIndex, endIndex);
+
+        if (productsToDisplay.length === 0 && !append) {
+            noProductsMessage.style.display = 'block';
+            loadMoreBtn.style.display = 'none';
+            return;
+        } else {
+            noProductsMessage.style.display = 'none';
+        }
+
+        productsToDisplay.forEach(product => {
+            const productCard = createProductCard(product); // Use createProductCard from imall.js
+            productGrid.appendChild(productCard);
+        });
+
+        // Show/hide load more button
+        if (endIndex < productsToRender.length) {
+            loadMoreBtn.style.display = 'block';
+        } else {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+
+    /**
+     * Updates and re-renders the product grid based on current filters and sort.
+     */
+    function updateProductDisplay() {
+        filteredAndSortedProducts = sortProducts(filterProducts());
+        renderProducts(filteredAndSortedProducts);
+    }
+
+    /**
+     * Populates the brand filter checkboxes dynamically.
+     */
+    function populateBrandFilters() {
+        const uniqueBrands = [...new Set(allProducts.map(p => p.brand))].sort();
+        brandFiltersContainer.innerHTML = ''; // Clear existing filters
+
+        uniqueBrands.forEach(brand => {
+            const li = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = `brand-${brand.replace(/\s/g, '-')}`;
+            checkbox.value = brand;
+            if (currentFilters.brand.includes(brand)) {
+                checkbox.checked = true;
+            }
+            
+            const label = document.createElement('label');
+            label.htmlFor = checkbox.id;
+            label.textContent = brand;
+
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    currentFilters.brand.push(brand);
+                } else {
+                    currentFilters.brand = currentFilters.brand.filter(b => b !== brand);
+                }
+                updateProductDisplay();
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            brandFiltersContainer.appendChild(li);
+        });
+    }
+
+    /**
+     * Sets up all event listeners for filters and sorting.
+     */
+    function setupEventListeners() {
+        // Sort by dropdown
+        sortBySelect.addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            updateProductDisplay();
+        });
+
+        // Price range filter
+        applyPriceFilterBtn.addEventListener('click', () => {
+            currentFilters.minPrice = minPriceInput.value ? parseFloat(minPriceInput.value) : null;
+            currentFilters.maxPrice = maxPriceInput.value ? parseFloat(maxPriceInput.value) : null;
+            updateProductDisplay();
+        });
+
+        // Rating filters
+        ratingFilters.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // Get all checked ratings and find the minimum
+                const checkedRatings = Array.from(ratingFilters)
+                                            .filter(cb => cb.checked)
+                                            .map(cb => parseInt(cb.value));
+                currentFilters.minRating = checkedRatings.length > 0 ? Math.min(...checkedRatings) : null;
+                updateProductDisplay();
+            });
+        });
+
+        // Clear all filters
+        clearFiltersBtn.addEventListener('click', () => {
+            // Reset currentFilters
+            currentFilters = {
+                category: currentFilters.category, // Keep initial category from URL
+                subCategory: currentFilters.subCategory, // Keep initial subCategory from URL
+                brand: [],
+                minPrice: null,
+                maxPrice: null,
+                minRating: null,
+                deal: currentFilters.deal, // Keep initial deal from URL
+                new: currentFilters.new,   // Keep initial new from URL
+                hotpick: currentFilters.hotpick, // Keep initial hotpick from URL
+                featured: currentFilters.featured // Keep initial featured from URL
+            };
+
+            // Reset UI elements
+            minPriceInput.value = '';
+            maxPriceInput.value = '';
+            ratingFilters.forEach(cb => cb.checked = false);
+            // Re-populate brands to uncheck them
+            populateBrandFilters(); 
+            
+            updateProductDisplay();
+        });
+
+        // Load More button
+        loadMoreBtn.addEventListener('click', () => {
+            currentPage++;
+            renderProducts(filteredAndSortedProducts, true); // Append products
+        });
+    }
+
+    /**
+     * Initializes the category page by parsing URL, populating filters, and rendering products.
+     */
+    function initializeCategoryPage() {
+        parseUrlParameters();
+        populateBrandFilters();
+        setupEventListeners();
+        updateProductDisplay(); // Initial render
+    }
+
+    // Call the initialization function
+    initializeCategoryPage();
+});

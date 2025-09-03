@@ -1,741 +1,768 @@
-/* css/imall.css */
-
-/* General iMall Page Layout */
-#imall-main-content {
-    max-width: 1200px; /* Limit content width */
-    margin-left: auto;
-    margin-right: auto;
+/* Base colors - define these in main.css or a variables file, but duplicated here for completeness */
+:root {
+    /* Light Mode Defaults */
+    --primary-color: #0056b3; /* Example: A blue for La Familia */
+    --primary-color-dark: #003d7a;
+    --secondary-color: #f8f9fa; /* Light background for sub-nav */
+    --accent-color: #e67e22; /* Example: An orange for iMall highlights */
+    --accent-color-dark: #d35400;
+    --text-color: #333; /* Dark text for light background */
+    --text-color-light: #555; /* Slightly lighter dark text */
+    --heading-color: #222;
+    --background-color: #ffffff; /* Main content background */
+    --background-color-light: #fefefe; /* Card/lighter element background */
+    --border-color: #ddd;
+    --hover-background-color: #f2f2f2;
+    --shadow-small: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 10px rgba(0,0,0,0.15);
+    --sale-badge-color: #e74c3c; /* Red */
+    --success-color: #28a745; /* Green */
+    --star-color: #f39c12; /* Gold for stars */
 }
 
-/* iMall Subheader Styles */
-#imall-subheader {
-    position: sticky; /* Make it sticky below the main header */
-    top: 0; /* Adjust if your main header has a fixed height */
-    z-index: 40; /* Ensure it's above main content, but below notification */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+/* Dark Mode Overrides (assuming main.css adds .dark-mode to body) */
+body.dark-mode {
+    --primary-color: #4a90e2; /* Lighter blue for dark mode */
+    --primary-color-dark: #2c588b;
+    --secondary-color: #333; /* Darker background for sub-nav */
+    --accent-color: #ff9800; /* Brighter orange for dark mode */
+    --accent-color-dark: #e68a00;
+    --text-color: #e0e0e0; /* Light text for dark background */
+    --text-color-light: #bbbbbb; /* Slightly darker light text */
+    --heading-color: #f0f0f0;
+    --background-color: #1a1a1a; /* Dark main content background */
+    --background-color-light: #2c2c2c; /* Darker card/lighter element background */
+    --border-color: #444;
+    --hover-background-color: #444;
+    --shadow-small: 0 2px 5px rgba(0,0,0,0.3);
+    --shadow-medium: 0 4px 10px rgba(0,0,0,0.4);
+    --sale-badge-color: #e74c3c;
+    --success-color: #2ecc71;
+    --star-color: #f1c40f;
 }
 
-@media (min-width: 768px) {
-    #imall-subheader .container {
-        flex-direction: row;
-    }
+
+/* General iMall Layout */
+.imall-sub-header {
+    background-color: var(--primary-color-dark); /* A darker shade of your chamber's primary color */
+    color: var(--text-color-light); /* Should be light enough for dark primary-color-dark */
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Adjust search input and button alignment within its flex container */
-#imall-subheader .relative.w-full.md\:w-auto.flex-grow.md\:flex-grow-0.max-w-lg.flex {
-    align-items: center; /* Vertically align items in the search bar */
+.imall-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Match your main content width */
+    margin: 0 auto;
+    padding-bottom: 10px;
 }
 
-/* --- CORRECTED SEARCH INPUT AND ICON STYLES --- */
-#imall-search-input {
-    /* Ensure consistent height with button */
-    height: 42px; /* Roughly py-2 results in this height with padding + border */
-    padding-left: 2.5rem; /* IMPORTANT: Increased left padding to make space for the icon */
-    /* Other styles for the input field */
-    border-radius: 9999px 0 0 9999px; /* Rounded left side, straight right side */
-    border: 1px solid #d1d5db; /* A default gray-300 border */
-    outline: none; /* Remove default outline */
-    box-shadow: none; /* Remove default box shadow */
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-#imall-search-input:focus {
-    border-color: #3b82f6; /* blue-500 on focus */
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* blue-500 ring */
-}
-
-/* Search Icon Positioning */
-#imall-subheader svg.absolute.left-3 {
-    top: 50%;
-    transform: translateY(-50%);
-    /* Ensure the icon has a z-index if anything else might overlap */
-    z-index: 10;
-}
-
-#imall-search-button {
-    height: 42px; /* Ensure button height matches input */
-    border-radius: 0 9999px 9999px 0; /* Straight left side, rounded right side */
-    white-space: nowrap; /* Prevent "Search" text from wrapping */
-}
-
-/* Search Suggestions */
-.search-suggestions-container {
-    position: absolute;
-    top: 100%; /* Position below the input */
-    left: 0;
-    right: 0;
-    background-color: white;
-    border: 1px solid #e2e8f0; /* gray-200 */
-    border-top: none;
-    border-radius: 0 0 0.5rem 0.5rem; /* rounded-b-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 50; /* Above other content */
-    max-height: 250px;
-    overflow-y: auto; /* Add scroll for search suggestions too if they get too long */
-    display: none; /* Hidden by default, shown by JS */
-}
-
-.search-suggestions-container.active {
-    display: block;
-}
-
-.search-suggestion-item {
+.imall-branding {
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: #4a5568; /* gray-700 */
-    border-bottom: 1px solid #edf2f7; /* gray-100 */
 }
 
-.search-suggestion-item:last-child {
+.imall-branding .imall-logo {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+.imall-branding .imall-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--accent-color); /* A vibrant color for iMall, ensures visibility in dark mode */
+}
+
+/* iMall Search Bar */
+.imall-search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    position: relative;
+    max-width: 500px;
+}
+
+.imall-search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Space for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 1em;
+    background-color: var(--background-color); /* Use main background color for search bar input */
+    color: var(--text-color); /* Text color for input */
+}
+/* Placeholder text color */
+.imall-search-bar input::placeholder {
+    color: var(--text-color-light);
+}
+
+
+.imall-search-bar button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--primary-color); /* Primary color for search icon */
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-suggestions-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    z-index: 1001;
+    width: 100%;
+    box-shadow: var(--shadow-medium);
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+    color: var(--text-color); /* Ensure suggestion text is readable */
+}
+
+.search-suggestions-dropdown .suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.search-suggestions-dropdown .suggestion-item:last-child {
     border-bottom: none;
 }
 
-.search-suggestion-item:hover {
-    background-color: #f7fafc; /* gray-50 */
-    color: #2b6cb0; /* blue-600 */
+.search-suggestions-dropdown .suggestion-item:hover {
+    background-color: var(--hover-background-color);
 }
 
-/* --- Categories and Brands Dropdown Styles --- */
-/* Base styles for all dropdowns */
-.dropdown-content {
-    position: absolute;
-    top: calc(100% + 5px); /* Position slightly below the nav link */
-    left: 0;
-    background-color: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 0;
-    min-width: 180px;
-    z-index: 50; /* Ensure it's above other content */
-
-    /* ADDED FOR SCROLL */
-    max-height: 350px; /* Maximum height before scrolling */
-    overflow-y: auto; /* Add scrollbar when content exceeds max-height */
-    /* Custom scrollbar styling (Webkit browsers) */
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 10px;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-
-    /* Initial hidden state for both hover and click */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+.search-suggestions-dropdown .suggestion-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 3px;
 }
 
-/* Show dropdown on hover (for preview) */
-.group:hover > .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Keep dropdown open when 'active' class is added by JS (on click) */
-.dropdown-content.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Styling for dropdown links */
-.dropdown-content a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #4a5568; /* gray-700 */
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.dropdown-content a:hover {
-    background-color: #f7fafc; /* gray-50 */
-    color: #2b6cb0; /* blue-600 */
-}
-
-/* Specific styling for subcategories within categories dropdown */
-.categories-dropdown a.text-sm.pl-4 {
-    padding-left: 1.5rem; /* Further indent for subcategories */
+.search-suggestions-dropdown .suggestion-item span {
+    font-size: 0.8em;
+    color: var(--text-color-light); /* Lighter text for descriptive info */
 }
 
 
-/* Hero Carousel */
-#carousel-container {
-    height: 100%;
-}
-
-.carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.7s ease-in-out;
-}
-
-.carousel-item.active {
-    opacity: 1;
-}
-
-.carousel-item img {
-    filter: brightness(60%); /* Darken image for better text readability */
-}
-
-#carousel-dots {
-    z-index: 10;
-}
-
-.carousel-dot {
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-dot.bg-blue-500 {
-    background-color: #3b82f6; /* Tailwind blue-500 */
-}
-
-/* Product Card Enhancements */
-.product-card {
+/* iMall User Actions (Account, Cart) */
+.imall-user-actions {
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
+    gap: 15px;
 }
 
-.product-card .add-to-cart-btn {
-    white-space: nowrap; /* Prevent button text from wrapping */
-}
-
-/* Notification Message */
-#notification-message {
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Ensure Font Awesome icons are visible for Why Choose iMall section */
-#why-choose-imall i {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; /* Solid icons */
-}
-
-/* Responsive adjustments for the main content areas */
-@media (max-width: 767px) {
-    #imall-subheader .container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    #imall-subheader .flex-grow {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-    #imall-subheader .flex.items-center.space-x-6 {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-    }
-    /* Mobile-specific for dropdowns - make them flow and hidden by max-height */
-    .dropdown-content {
-        position: static; /* Make dropdown flow naturally in mobile */
-        width: 100%;
-        border: none;
-        box-shadow: none;
-        opacity: 1; /* Always visible opacity-wise when active */
-        visibility: visible;
-        transform: none;
-        max-height: 0; /* Hidden by default in mobile */
-        overflow: hidden; /* Ensure overflow hidden for the max-height transition */
-        transition: max-height 0.3s ease-out;
-        padding: 0;
-        /* Re-apply scroll for mobile when active */
-        &.active { /* Apply max-height and scroll only when active on mobile */
-            max-height: 300px; /* Max height for mobile, adjust as needed */
-            overflow-y: auto; /* Enable scroll for mobile active dropdown */
-            padding: 0.5rem 0;
-        }
-    }
-    /* Disable hover effect for mobile */
-    .group:hover > .dropdown-content {
-        max-height: 0; /* Override hover to keep it hidden */
-        padding: 0;
-        opacity: 1; /* Keep opacity 1 for smooth max-height transition */
-        visibility: visible;
-        transform: none;
-        overflow: hidden; /* Ensure this is also hidden on hover for mobile */
-    }
-    .categories-dropdown a.text-sm.pl-4 {
-        padding-left: 1.5rem;
-    }
-}
-body {
-    background-color: var(--background-color-body);
-    color: var(--text-color-primary);
-}
-
-/* iMall Subheader */
-#imall-subheader {
-    background-color: var(--background-color-white); /* bg-white */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    padding: 0.75rem 1.5rem; /* py-3 px-6 */
-    border-bottom-left-radius: 0.5rem; /* rounded-b-lg */
-    border-bottom-right-radius: 0.5rem; /* rounded-b-lg */
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#imall-subheader .container { /* container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 */
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+.user-action-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem; /* gap-4 */
-}
-@media (min-width: 768px) {
-    #imall-subheader .container {
-        flex-direction: row;
-    }
-}
-
-#imall-subheader .flex.items-center.space-x-2.flex-shrink-0 { /* a.flex.items-center.space-x-2.flex-shrink-0 */
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-
-#imall-subheader .h-10.w-10.rounded-full { /* img.h-10.w-10.rounded-full */
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
-}
-
-#imall-subheader .text-2xl.font-extrabold.text-gray-800 { /* span.text-2xl.font-extrabold.text-gray-800 */
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--heading-color); /* text-gray-800 */
-    transition: color 0.3s ease;
-}
-
-#imall-subheader .relative.w-full.md\:w-auto.flex-grow.md\:flex-grow-0.max-w-lg.flex.items-center { /* div.relative.w-full... */
-    position: relative;
-    width: 100%;
-    max-width: 32rem; /* max-w-lg */
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-@media (min-width: 768px) {
-    #imall-subheader .relative.w-full.md\:w-auto.flex-grow.md\:flex-grow-0.max-w-lg.flex.items-center {
-        flex-grow: 0;
-        width: auto;
-    }
-}
-
-#imall-subheader .w-full.pl-10.pr-4.py-2.rounded-l-full.border.border-gray-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:border-transparent.text-gray-700 { /* input.w-full... */
-    width: 100%;
-    padding: 0.5rem 1rem 0.5rem 2.5rem; /* py-2 pl-10 pr-4 */
-    border-radius: 9999px 0 0 9999px; /* rounded-l-full */
-    border: 1px solid var(--border-color); /* border-gray-300 */
-    outline: none; /* focus:outline-none */
-    color: var(--text-color-primary); /* text-gray-700 */
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-}
-#imall-subheader .w-full.pl-10.pr-4.py-2.rounded-l-full.border.border-gray-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:border-transparent.text-gray-700:focus {
-    border-color: var(--primary-color); /* focus:border-transparent */
-    box-shadow: 0 0 0 2px hsla(210, 80%, 35%, 0.5); /* focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 */
-}
-
-#imall-subheader svg.absolute.left-3.h-5.w-5.text-gray-400 { /* svg.absolute.left-3... */
-    position: absolute;
-    left: 0.75rem;
-    height: 1.25rem;
-    width: 1.25rem;
-    color: var(--text-color-secondary); /* text-gray-400 */
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none; /* Ensure it doesn't block input clicks */
-}
-
-#imall-subheader .bg-blue-500.hover\:bg-blue-600.text-white.px-4.py-2.rounded-r-full.transition-colors.duration-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:ring-opacity-75 { /* button.bg-blue-500... */
-    background-color: var(--primary-color); /* bg-blue-500 */
-    color: var(--background-color-white); /* text-white */
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    border-radius: 0 9999px 9999px 0; /* rounded-r-full */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    outline: none; /* focus:outline-none */
-}
-#imall-subheader .bg-blue-500.hover\:bg-blue-600.text-white.px-4.py-2.rounded-r-full.transition-colors.duration-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:ring-opacity-75:hover {
-    background-color: var(--primary-color-dark); /* hover:bg-blue-600 */
-}
-#imall-subheader .bg-blue-500.hover\:bg-blue-600.text-white.px-4.py-2.rounded-r-full.transition-colors.duration-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:ring-opacity-75:focus {
-    box-shadow: 0 0 0 2px hsla(210, 80%, 35%, 0.5); /* focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 */
-}
-
-.search-suggestions-container { /* div#imall-search-suggestions.search-suggestions-container */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--background-color-white);
-    border: 1px solid var(--border-color);
-    border-top: none;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 50;
-    max-height: 250px;
-    overflow-y: auto;
-    display: none; /* Controlled by JS */
-}
-
-.search-suggestions-container > div { /* Assuming suggestions are direct children divs/spans */
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    color: var(--text-color-primary); /* text-gray-700 */
-    border-bottom: 1px solid var(--border-color-light); /* border-gray-100 */
-}
-.search-suggestions-container > div:last-child {
-    border-bottom: none;
-}
-.search-suggestions-container > div:hover {
-    background-color: var(--background-color-hover); /* bg-gray-50 */
-    color: var(--link-hover-color); /* text-blue-600 */
-}
-
-
-#imall-subheader .flex.items-center.space-x-6.text-lg.font-medium { /* div.flex.items-center... */
-    display: flex;
-    align-items: center;
-    gap: 1.5rem; /* space-x-6 */
-    font-size: 1.125rem; /* text-lg */
-    font-weight: 500; /* font-medium */
-}
-
-#imall-subheader .text-gray-700.hover\:text-blue-600.transition-colors.duration-200.block.py-1 { /* a.text-gray-700... */
-    color: var(--text-color-primary); /* text-gray-700 */
-    transition: color 0.2s ease;
-    display: block;
-    padding-top: 0.25rem; /* py-1 */
-    padding-bottom: 0.25rem; /* py-1 */
-}
-#imall-subheader .text-gray-700.hover\:text-blue-600.transition-colors.duration-200.block.py-1:hover {
-    color: var(--link-hover-color); /* hover:text-blue-600 */
-}
-
-#imall-subheader .text-gray-600.hover\:text-gray-900.focus\:outline-none { /* a.text-gray-600... */
-    color: var(--text-color-secondary); /* text-gray-600 */
-    outline: none;
-    transition: color 0.2s ease;
-}
-#imall-subheader .text-gray-600.hover\:text-gray-900.focus\:outline-none:hover {
-    color: var(--heading-color); /* hover:text-gray-900 */
-}
-
-#imall-subheader .h-7.w-7 { /* svg.h-7.w-7 */
-    height: 1.75rem;
-    width: 1.75rem;
-}
-
-#imall-subheader .relative.text-gray-600.hover\:text-gray-900.focus\:outline-none { /* a.relative.text-gray-600... */
-    position: relative;
-}
-
-#imall-subheader .absolute.-top-2.-right-2.bg-blue-500.text-white.text-xs.font-bold.rounded-full.h-5.w-5.flex.items-center.justify-center.hidden { /* span.absolute.-top-2... */
-    position: absolute;
-    top: -0.5rem;
-    right: -0.5rem;
-    background-color: var(--primary-color); /* bg-blue-500 */
-    color: var(--background-color-white); /* text-white */
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: 50%;
-    height: 1.25rem;
-    width: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* hidden is controlled by JS */
-}
-
-.dropdown-content { /* div.dropdown-content */
-    position: absolute;
-    top: calc(100% + 0.5rem); /* top:calc(100% + 5px) */
-    left: 0;
-    background-color: var(--background-color-white); /* bg-white */
-    border: 1px solid var(--border-color); /* border-gray-200 */
-    border-radius: 0.5rem; /* rounded-md */
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-lg */
-    padding: 0.5rem 0; /* py-2 */
-    min-width: 11.25rem; /* min-w-48 */
-    z-index: 50;
-    max-height: 350px;
-    overflow-y: auto;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-}
-
-.group:hover > .dropdown-content { /* div.relative.group:hover > div.dropdown-content */
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-content.active { /* For JS controlled click */
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    display: block; /* Ensure it's block when active */
-}
-
-.dropdown-content a { /* a inside dropdown-content */
-    display: block;
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    color: var(--text-color-primary); /* text-gray-700 */
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-}
-.dropdown-content a:hover {
-    background-color: var(--background-color-hover); /* hover:bg-gray-100 */
-    color: var(--link-hover-color); /* hover:text-blue-600 */
+    color: var(--text-color-light); /* Needs to be visible on primary-color-dark */
+    font-size: 0.8em;
+    transition: color 0.2s ease;
 }
 
-.dropdown-content a.font-bold { /* a.font-bold */
-    font-weight: 700;
+.user-action-link:hover {
+    color: var(--accent-color);
 }
 
-#notification-message { /* div#notification-message */
-    position: fixed;
-    top: 8rem; /* top-32 */
-    left: 50%;
-    transform: translate(-50%, 0); /* transform -translate-x-1/2 */
-    background-color: hsl(135, 60%, 45%); /* bg-green-500 (approx) */
-    color: var(--background-color-white); /* text-white */
-    padding: 0.75rem 1rem; /* px-4 py-2 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-lg */
-    z-index: 5000;
+.user-action-link i {
+    font-size: 1.5em;
+    margin-bottom: 3px;
+}
+
+.cart-link {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* iMall Secondary Navigation (Categories, Brands, Deals, New Arrivals, Compare) */
+.imall-secondary-nav {
+    background-color: var(--secondary-color); /* Uses secondary color, which adjusts for dark mode */
+    padding: 10px 20px;
+}
+
+.imall-nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.imall-nav-item {
+    position: relative;
+    margin: 0 15px;
+}
+
+.imall-nav-link {
+    color: var(--text-color); /* Ensures readability on secondary-color */
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.imall-nav-link:hover,
+.imall-nav-link.active {
+    color: var(--accent-color);
+}
+
+/* Dropdown Menus for Categories and Brands */
+.imall-dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: var(--background-color-light); /* Uses adjusted background for dark mode */
+    box-shadow: var(--shadow-medium);
+    z-index: 1000; /* Ensure it's above other content */
+    min-width: 220px; /* Adjust as needed */
+    padding: 10px 0;
+    border-radius: 5px;
+    max-height: 400px; /* Enable scroll if content overflows */
+    overflow-y: auto;
+    left: 0; /* Align with parent nav item */
+    margin-top: 5px; /* Small gap below parent link */
+}
+
+.imall-dropdown:hover .imall-dropdown-menu,
+.imall-dropdown-menu.active { /* Added .active class for JS control */
+    display: block; /* Show on hover or when active */
+}
+
+.imall-dropdown-menu li {
+    list-style: none;
+}
+
+.imall-dropdown-menu a {
+    color: var(--text-color); /* Ensures readability */
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap; /* Prevent wrapping */
+    transition: background-color 0.2s ease;
+}
+
+.imall-dropdown-menu a:hover {
+    background-color: var(--hover-background-color); /* Light grey for hover, adjusts for dark mode */
+}
+
+.imall-dropdown-menu .category-main {
+    font-weight: bold;
+    color: var(--primary-color); /* Highlight main categories, adjusts for dark mode */
+    padding-left: 10px; /* Indent main categories slightly */
+    cursor: default; /* Not a direct link, just a header */
+}
+
+.imall-dropdown-menu .category-main:hover {
+    background-color: transparent; /* No hover effect on main category text */
+}
+
+.imall-dropdown-menu .subcategory-link {
+    padding-left: 30px; /* Indent subcategories */
+    font-size: 0.9em;
+}
+
+/* Hero Carousel */
+.imall-hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Increased height */
+    overflow: hidden;
+    background-color: var(--background-color-light); /* Placeholder background */
+    margin-bottom: 40px;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align text to left */
+    text-align: left; /* Align text to left */
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 1s ease-in-out;
+    padding-left: 5%; /* Padding for text */
 }
 
-/* Main Content Container */
-#imall-main-content { /* main#imall-main-content */
-    max-width: 1200px; /* container mx-auto */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem; /* p-6 */
+.hero-slide.active {
+    opacity: 1;
 }
+
+/* Example background images for hero slides - customize these */
+.hero-slide:nth-child(1) { background-image: url('../images/hero-images/imall-ad.webp'); }
+.hero-slide:nth-child(2) { background-image: url('../images/hero-images/imallhero.webp'); }
+.hero-slide:nth-child(3) { background-image: url('../images/hero-images/imall-ad.webp'); }
+.hero-slide:nth-child(4) { background-image: url('../images/hero-images/imallhero.webp'); }
+
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.65); /* Slightly less transparent for better readability */
+    color: white;
+    padding: 30px 40px; /* Increased padding */
+    border-radius: 8px;
+    max-width: 700px; /* Increased max-width for text */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Add subtle text shadow */
+}
+
+.hero-text h2 {
+    font-size: 3em; /* Larger font size */
+    margin-bottom: 15px; /* Increased margin */
+}
+
+.hero-text p {
+    font-size: 1.4em; /* Larger font size */
+    margin-bottom: 30px; /* Increased margin */
+}
+
+/* Buttons (from main.css or define here if iMall specific) */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 
 /* Section Titles */
-#imall-main-content h2.text-4xl.font-extrabold.text-gray-900.text-center.mb-8 { /* h2.text-4xl... */
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: var(--heading-color); /* text-gray-900 */
+.section-title {
     text-align: center;
-    margin-bottom: 2rem;
-    transition: color 0.3s ease;
-}
-
-/* Hero Section */
-#hero-section { /* section#hero-section */
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--heading-color); /* Uses heading color, which adjusts */
     position: relative;
-    background-color: var(--primary-color); /* bg-blue-700 (approx) */
-    color: var(--background-color-white); /* text-white */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
-    overflow: hidden;
-    margin-bottom: 3rem; /* mb-12 */
-    height: 24rem; /* h-96 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 10px;
 }
 
-#carousel-dots { /* div#carousel-dots */
+.section-title::after {
+    content: '';
     position: absolute;
-    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Why Choose iMall? Section */
+.imall-why-choose {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.reason-card {
+    background-color: var(--background-color-light); /* Uses adjusted background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    color: var(--text-color); /* Ensure text is readable */
+}
+
+.reason-card i {
+    font-size: 3em;
+    color: var(--primary-color); /* Adjusts for dark mode */
+    margin-bottom: 15px;
+}
+
+.reason-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--heading-color); /* Adjusts for dark mode */
+}
+
+/* Top Brands Section - Now using cards for each brand */
+.imall-top-brands {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.brand-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Larger minimum size for cards */
+    gap: 20px;
+    justify-items: center;
+    align-items: stretch; /* Stretch items to fill grid cell height */
+    margin-top: 30px;
+}
+
+.brand-card { /* New class for brand items as cards */
     display: flex;
-    gap: 0.5rem; /* space-x-2 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically in card */
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    padding: 20px 10px; /* Padding inside the card */
+    height: 100%; /* Ensure cards are same height */
+}
+
+.brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.brand-card img {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;
+    filter: grayscale(100%); /* Optional: grayscale and color on hover */
+    transition: filter 0.2s ease;
+    object-fit: contain; /* Ensure logo fits without cropping */
+}
+
+.brand-card:hover img {
+    filter: grayscale(0%);
+}
+
+.brand-card span {
+    font-weight: bold;
+    font-size: 1em; /* Slightly larger font */
+    text-align: center;
+}
+
+
+/* Product Sections (Hot Picks, Featured Products) */
+.imall-product-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background-color: var(--background-color-light); /* Uses adjusted background */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer; /* Indicate clickable */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.product-card .sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--sale-badge-color); /* Red */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
     z-index: 10;
 }
 
-/* Why Choose iMall Section */
-#why-choose-imall .grid.grid-cols-1.md\:grid-cols-3.gap-8 { /* div.grid.grid-cols-1... */
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem; /* gap-8 */
+.product-card img.product-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: contain; /* Contain entire image, black bars if needed */
+    padding: 10px;
+    background-color: white; /* Ensure image background is white for transparency */
 }
-@media (min-width: 768px) {
-    #why-choose-imall .grid.grid-cols-1.md\:grid-cols-3.gap-8 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-#why-choose-imall .bg-white.rounded-xl.shadow-lg.p-6.text-center { /* div.bg-white.rounded-xl... */
-    background-color: var(--background-color-white);
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-    padding: 1.5rem;
-    text-align: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+/* Ensure dark mode doesn't affect product image background if it's supposed to be white */
+body.dark-mode .product-card img.product-image {
+    background-color: #eee; /* Slightly off-white for dark mode contrast */
 }
 
-#why-choose-imall .text-blue-600.text-5xl.mb-4 { /* i.text-blue-600... */
-    font-size: 3.125rem;
-    color: var(--primary-color); /* text-blue-600 */
-    margin-bottom: 1rem;
-}
-#why-choose-imall .text-green-600.text-5xl.mb-4 { /* i.text-green-600... */
-    font-size: 3.125rem;
-    color: hsl(135, 60%, 45%); /* approx green-600 */
-    margin-bottom: 1rem;
-}
-#why-choose-imall .text-purple-600.text-5xl.mb-4 { /* i.text-purple-600... */
-    font-size: 3.125rem;
-    color: hsl(270, 60%, 45%); /* approx purple-600 */
-    margin-bottom: 1rem;
-}
 
-#why-choose-imall .text-2xl.font-bold.text-gray-800.mb-2 { /* h3.text-2xl... */
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--heading-color); /* text-gray-800 */
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-#why-choose-imall .text-gray-600 { /* p.text-gray-600 */
-    color: var(--text-color-secondary); /* text-gray-600 */
-    transition: color 0.3s ease;
-}
-
-/* Top Brands Section */
-#top-brands-grid { /* div#top-brands-grid */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* grid-cols-2 */
-    gap: 1.5rem; /* gap-6 */
-}
-@media (min-width: 640px) {
-    #top-brands-grid {
-        grid-template-columns: repeat(3, 1fr); /* sm:grid-cols-3 */
-    }
-}
-@media (min-width: 768px) {
-    #top-brands-grid {
-        grid-template-columns: repeat(4, 1fr); /* md:grid-cols-4 */
-    }
-}
-@media (min-width: 1024px) {
-    #top-brands-grid {
-        grid-template-columns: repeat(5, 1fr); /* lg:grid-cols-5 */
-    }
-}
-@media (min-width: 1280px) {
-    #top-brands-grid {
-        grid-template-columns: repeat(6, 1fr); /* xl:grid-cols-6 */
-    }
-}
-
-#top-brands-grid .col-span-full.text-center.text-gray-600 { /* p.col-span-full... */
-    grid-column: 1 / -1;
-    text-align: center;
-    color: var(--text-color-secondary); /* text-gray-600 */
-}
-
-#top-brands-section .flex.justify-center.mt-8 { /* div.flex.justify-center.mt-8 */
+.product-card-content {
+    padding: 15px;
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    flex-direction: column;
+    flex-grow: 1;
+    color: var(--text-color); /* Ensure all text within card content is readable */
 }
 
-#top-brands-section .bg-blue-500.hover\:bg-blue-600.text-white.font-bold.py-3.px-6.rounded-lg.shadow-md.transition-colors.duration-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:ring-opacity-75 { /* a.bg-blue-500... */
-    background-color: var(--primary-color); /* bg-blue-500 */
-    color: var(--background-color-white); /* text-white */
-    font-weight: 700;
-    padding: 0.75rem 1.5rem; /* py-3 px-6 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-md */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    outline: none;
-    text-decoration: none;
-    display: inline-block;
-}
-#top-brands-section .bg-blue-500.hover\:bg-blue-600.text-white.font-bold.py-3.px-6.rounded-lg.shadow-md.transition-colors.duration-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:ring-opacity-75:hover {
-    background-color: var(--primary-color-dark); /* hover:bg-blue-600 */
-}
-#top-brands-section .bg-blue-500.hover\:bg-blue-600.text-white.font-bold.py-3.px-6.rounded-lg.shadow-md.transition-colors.duration-300.focus\:outline-none.focus\:ring-2.focus\:ring-blue-500.focus\:ring-opacity-75:focus {
-    box-shadow: 0 0 0 2px hsla(210, 80%, 35%, 0.5); /* focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 */
+.product-card-content .brand-logo {
+    max-width: 60px; /* Smaller brand logo */
+    height: auto;
+    margin-bottom: 10px;
 }
 
-
-/* Hot Picks & Featured Products Sections */
-#hot-picks-grid,
-#featured-products-grid { /* div#hot-picks-grid, div#featured-products-grid */
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem; /* gap-8 */
-}
-@media (min-width: 640px) {
-    #hot-picks-grid,
-    #featured-products-grid {
-        grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
-    }
-}
-@media (min-width: 1024px) {
-    #hot-picks-grid,
-    #featured-products-grid {
-        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
-    }
-}
-@media (min-width: 1280px) {
-    #hot-picks-grid,
-    #featured-products-grid {
-        grid-template-columns: repeat(4, 1fr); /* xl:grid-cols-4 */
-    }
+.product-card-content .product-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--heading-color); /* Adjusts for dark mode */
 }
 
-#hot-picks-grid .col-span-full.text-center.text-gray-600,
-#featured-products-grid .col-span-full.text-center.text-gray-600 { /* p.col-span-full... */
-    grid-column: 1 / -1;
+.product-card-content .product-description {
+    font-size: 0.9em;
+    color: var(--text-color-light); /* Uses lighter text color for description */
+    margin-bottom: 10px;
+    flex-grow: 1; /* Pushes price/rating to bottom */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit description to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-card-content .price-info {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.product-card-content .current-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--accent-color); /* Uses accent color, which adjusts */
+    margin-right: 8px;
+}
+
+.product-card-content .original-price {
+    font-size: 0.9em;
+    color: var(--text-color-light); /* Uses lighter text color */
+    text-decoration: line-through;
+}
+
+.product-card-content .rating {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: var(--text-color); /* Ensures readability */
+    margin-bottom: 8px;
+}
+
+.product-card-content .rating .stars {
+    color: var(--star-color); /* Gold for stars */
+    margin-right: 5px;
+}
+
+.product-card-content .stock-info {
+    font-size: 0.8em;
+    color: var(--success-color); /* Green for in stock */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-card-content .add-to-cart-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+.product-card-content .add-to-cart-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.product-card-content .add-to-cart-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* View All Links */
+.view-all-link, .explore-more-link {
     text-align: center;
-    color: var(--text-color-secondary);
+    margin-top: 30px;
 }
 
-/* Notification Message (Tailwind classes directly mapped) */
-#notification-message {
+/* Back to Top Button */
+#back-to-top {
+    display: none; /* Hidden by default */
     position: fixed;
-    top: 8rem; /* top-32 */
-    left: 50%;
-    transform: translate(-50%, 0); /* -translate-x-1/2 */
-    background-color: hsl(135, 60%, 45%); /* bg-green-500 (approx) */
-    color: var(--background-color-white); /* text-white */
-    padding: 0.75rem 1rem; /* px-4 py-2 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-lg */
-    z-index: 5000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; /* Higher than other content but below modals */
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    padding: 12px 15px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    box-shadow: var(--shadow-medium);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+#back-to-top:hover {
+    background-color: var(--accent-color-dark);
+    transform: translateY(-3px);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .imall-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .imall-search-bar {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .imall-user-actions {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .imall-secondary-nav {
+        padding: 10px;
+    }
+
+    .imall-nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .imall-nav-item {
+        margin: 5px 10px;
+    }
+
+    .imall-dropdown-menu {
+        left: auto;
+        right: 0;
+        min-width: 180px;
+    }
+
+    .imall-hero-carousel {
+        height: 350px; /* Adjust height for tablets */
+    }
+
+    .hero-text h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .imall-nav-item {
+        margin: 5px 5px;
+    }
+
+    .brand-logo-grid, .product-grid, .why-choose-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .imall-branding .imall-title {
+        font-size: 1.5em;
+    }
+
+    .imall-hero-carousel {
+        height: 250px; /* Adjust height for mobile */
+    }
+    
+    .hero-text {
+        padding: 15px;
+        max-width: 90%; /* Wider on small screens */
+        text-align: center; /* Center text on small screens */
+    }
+
+    .hero-text h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .hero-slide {
+        justify-content: center; /* Center content on mobile */
+        padding-left: 0; /* Remove left padding */
+    }
+
+    .brand-logo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller grid for brands on mobile */
+    }
+}

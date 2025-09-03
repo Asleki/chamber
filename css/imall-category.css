@@ -1,16 +1,283 @@
-/* css/imall-category.css */
+/* imall-category.css */
 
-/* Add any specific styles for the category page layout here if needed.
-   For example, if you add a sidebar filter, you'd define its layout here. */
-
-/* Example: Basic padding for the main content area if not already defined */
-#imall-category-main-content {
-    padding: 1.5rem; /* Or adjust as per your main.css container */
+/* --- General Category Page Layout --- */
+.category-page-main {
+    max-width: 1200px; /* Max width for the main content area */
+    margin: 20px auto 40px auto; /* Center content with spacing */
+    padding: 0 20px; /* Horizontal padding */
 }
 
-/* You can adjust the product grid column count for this specific page if desired */
-/* @media (min-width: 1024px) {
-    #product-list-grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+.breadcrumbs {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs a {
+    color: #007bff; /* Primary link color */
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    margin: 0 5px;
+    color: #bbb;
+}
+
+.category-content {
+    display: flex; /* Use Flexbox for sidebar and product listing */
+    gap: 30px; /* Space between sidebar and main content */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* --- Sidebar (Filters) --- */
+.sidebar {
+    flex: 0 0 250px; /* Fixed width sidebar, no shrinking/growing */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.filter-section {
+    margin-bottom: 25px;
+}
+
+.filter-section h3 {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Price Range Inputs */
+.price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.price-range-inputs input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.price-range-inputs span {
+    color: #666;
+    font-weight: bold;
+}
+
+#apply-price-filter {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+#apply-price-filter:hover {
+    background-color: #0056b3;
+}
+
+/* Filter Lists (Brands, Ratings) */
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-list input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.1); /* Slightly larger checkboxes */
+    cursor: pointer;
+}
+
+.filter-list label {
+    font-size: 0.95em;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.filter-list label .fas.fa-star {
+    color: #FFD700; /* Gold color for stars */
+    margin-right: 2px;
+}
+
+.clear-filters-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-filters-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* --- Product Listing Area --- */
+.product-listing {
+    flex: 1; /* Takes up remaining space */
+}
+
+.listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.listing-header h1 {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+.sort-options label {
+    font-size: 0.95em;
+    color: #555;
+    margin-right: 10px;
+}
+
+.sort-options select {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Product Grid (reuses styles from imall.css .product-grid) */
+/* .product-grid is defined in imall.css */
+/* Make sure the product cards are responsive within this grid */
+
+.info-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f8ff;
+    border: 1px solid #d0e8ff;
+    border-radius: 8px;
+    color: #007bff;
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+/* --- Pagination / Load More --- */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.load-more-btn {
+    background-color: #28a745; /* Green for "Load More" */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #218838;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .category-content {
+        flex-direction: column; /* Stack sidebar and content on smaller screens */
+        gap: 20px;
     }
-} */
+
+    .sidebar {
+        flex: none; /* Remove fixed width */
+        width: 100%; /* Take full width */
+        padding: 15px;
+    }
+
+    .listing-header {
+        flex-direction: column; /* Stack title and sort options */
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .listing-header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-page-main {
+        padding: 0 15px;
+        margin-top: 15px;
+    }
+
+    .listing-header h1 {
+        font-size: 1.5em;
+    }
+
+    .product-grid {
+        /* Adjust grid columns for smaller screens, e.g., 2 columns */
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        /* Optionally make sidebar collapsible on very small screens */
+        /* For now, it just stacks */
+    }
+
+    .product-grid {
+        /* Adjust grid columns for even smaller screens, e.g., 1 column */
+        grid-template-columns: 1fr;
+    }
+
+    .filter-section h3 {
+        font-size: 1em;
+    }
+
+    .price-range-inputs input[type="number"],
+    .sort-options select,
+    #apply-price-filter,
+    .clear-filters-btn,
+    .load-more-btn {
+        font-size: 0.85em;
+        padding: 6px 10px;
+    }
+}
